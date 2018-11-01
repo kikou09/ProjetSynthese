@@ -53,16 +53,3 @@ void FormeGeometrique::operator=(const FormeGeometrique &forme)
 	setCouleur(forme.couleur);
 }
 
-FormeGeometrique::operator string() const
-{
-	ostringstream os;
-	os << "( " << couleur;
-	return os.str();
-}
-
-ostream & operator<<(ostream & os, const FormeGeometrique &forme)
-{
-	string v = (string)forme;
-	os << v;
-	return os;
-}

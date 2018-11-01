@@ -22,18 +22,16 @@ const char * InterfaceCercle::toString() const
 }
 
 
-void InterfaceCercle::executerInteraction(vector <FormeGeometrique*> formes) const
+void InterfaceCercle::executerInteraction(FormeGeometrique *forme) const
 {
 	Cercle cercle;
 	cin >> cercle ;
-	forme = new Cercle(cercle);
+	forme = &cercle;
+	forme->affiche();
+
 	
 }
 string InterfaceCercle::getDescription() const
 {
 	return "Cercle";
-}
-
-void InterfaceCercle::executerInteraction(obj) const
-{
 }

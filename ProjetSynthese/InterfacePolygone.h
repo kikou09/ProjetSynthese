@@ -3,8 +3,13 @@
 class InterfacePolygone :
 	public InterfaceForme
 {
+protected:
+	virtual bool peutExecuter(string &choix)const;
 public:
-	InterfacePolygone();
+	InterfacePolygone(InterfaceForme *);
 	virtual ~InterfacePolygone();
+	virtual const char* toString() const;
+	virtual string getDescription() const;
+	void executerInteraction(FormeGeometrique *) const;
 };
 

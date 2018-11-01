@@ -6,15 +6,15 @@ InterfaceForme::InterfaceForme(InterfaceForme * suivant) : suivant(suivant)
 {
 }
 
-void InterfaceForme::executer(string &choix , vector <FormeGeometrique*> formes) const
+void InterfaceForme::executer(string &choix , FormeGeometrique *forme) const
 {
 	if (peutExecuter(choix)) 			// cet expert a trouvé une solution 
-		executerInteraction(formes);
+		executerInteraction(forme);
 
 	else            			// échec de cet expert
 		if (this->suivant != NULL) {  		// le problème est transmis à   
 			// l’expert suivant
-			return this->suivant->executer(choix, formes);
+			return this->suivant->executer(choix, forme);
 		}
 		else {
 			//exception

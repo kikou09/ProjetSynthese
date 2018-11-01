@@ -12,7 +12,7 @@ public:
 	virtual ~InterfaceCercle();
 	virtual const char* toString() const;
 	virtual string getDescription() const;
-	void executerInteraction(vector <FormeGeometrique *> formes) const;
+	void executerInteraction(FormeGeometrique *) const;
 
 };
 

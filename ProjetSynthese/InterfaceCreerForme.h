@@ -11,7 +11,7 @@ class InterfaceCreerForme :
 {
 public:
 
-	void executerInteraction(vector <FormeGeometrique*> formes)const;
+	void executerInteraction(FormeGeometrique *)const;
 	virtual const char* toString()const ;
 	virtual string getDescription()const ;
 	InterfaceCreerForme(InterfaceUtilisateur *suivant);

@@ -34,6 +34,7 @@ public:
 	bool operator != (const Cercle &cercle) const { return !(this == &cercle); }
 
 	operator string() const;
+	void affiche() const;
 	friend ostream & operator << (ostream &os, const Cercle &);
 	friend istream & operator >> (istream &is, Cercle&);
 };

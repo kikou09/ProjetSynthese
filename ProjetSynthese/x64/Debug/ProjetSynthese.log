@@ -1,0 +1,42 @@
+﻿  Application.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  Cercle.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  FormeComposee.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  FormeGeometrique.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  FormeSimple.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfaceCalcul.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfaceCercle.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfaceCreerForme.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfaceDessiner.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfaceForme.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfacePolygone.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfaceQuitter.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfaceSegment.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfaceTriangle.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  InterfaceUtilisateur.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  Polygone.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+  Triangle.cpp
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(15): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(20): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(21): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.cpp(15): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.cpp(27): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+  Génération de code en cours...
+c:\users\jorane\documents\github\projetsynthese\projetsynthese\erreur.h(32): warning C4717: 'operator<<' : récurrent sur tous les chemins d'accès de contrôle, la fonction entraînera un dépassement de capacité de la pile d'exécution
+  ProjetSynthese.vcxproj -> C:\Users\Jorane\Documents\GitHub\ProjetSynthese\x64\Debug\ProjetSynthese.exe

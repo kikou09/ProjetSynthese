@@ -16,8 +16,8 @@ protected:
 
 public:
 
-	virtual void executerInteraction(vector <FormeGeometrique*> formes)const=0;
-	void executer(string &choix, vector <FormeGeometrique*> formes) const;
+	virtual void executerInteraction(FormeGeometrique *)const=0;
+	void executer(string &choix, FormeGeometrique *) const;
 	virtual ~InterfaceForme();
 	virtual const char* toString() const = 0;
 	virtual string getDescription() const = 0;

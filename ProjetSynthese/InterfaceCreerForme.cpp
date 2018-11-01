@@ -2,16 +2,17 @@
 #include "InterfaceCreerForme.h"
 
 
-void InterfaceCreerForme::executerInteraction(vector <FormeGeometrique*> formes) const
+void InterfaceCreerForme::executerInteraction(FormeGeometrique *f) const
 {
 	InterfaceForme *forme , *forme_aux;
 	string choix;
 	forme = new InterfaceCercle(nullptr);
 	vector <string> menu_formes;
 	int i, c;
-	//polygone = new InterfacePolygone(cercle);
-	//triangle = new InterfaceTriangle(polygone);
-	//segment = new InterfaceSegment(triangle);
+
+	forme = new InterfacePolygone(forme);
+	forme = new InterfaceTriangle(forme);
+	forme = new InterfaceSegment(forme);
 	
 	cout << "Quelle forme veux tu créer ? " << endl;
 
@@ -30,7 +31,7 @@ void InterfaceCreerForme::executerInteraction(vector <FormeGeometrique*> formes)
 	cin >> c;
 
 	choix = menu_formes[c - 1];
-	forme->executer(choix, formes);
+	forme->executer(choix, f);
 
 	delete forme,forme_aux;
 }

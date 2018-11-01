@@ -2,7 +2,7 @@
 #include "InterfaceQuitter.h"
 
 
-void InterfaceQuitter::executerInteraction(vector <FormeGeometrique*> formes) const
+void InterfaceQuitter::executerInteraction(FormeGeometrique *forme) const
 {
 	cout << "Au revoir !" << endl;
 	exit(0);

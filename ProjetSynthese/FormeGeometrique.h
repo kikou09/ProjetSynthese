@@ -24,11 +24,11 @@ public:
 	const string getCouleur() const;
 	void setCouleur(const string &);
 
+	virtual operator string() const=0;
+	virtual void affiche()const = 0;
 	bool operator == (const FormeGeometrique &)const;
 	bool operator != (const FormeGeometrique &f)const { return !(this == &f); }
 	void operator = (const FormeGeometrique &);
-	operator string() const;
-	friend ostream & operator << (ostream &os, const FormeGeometrique &);
 
 
 };

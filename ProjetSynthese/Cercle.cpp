@@ -67,6 +67,11 @@ Cercle::operator string() const
 	return "ok";
 }
 
+void Cercle::affiche() const
+{
+	cout << "Couleur : " << couleur << " centre : x:" << centre.getX() << " y:" << centre.getY() << " rayon : " << rayon << endl;
+}
+
 ostream & operator<<(ostream & os, const Cercle &cercle)
 {
 	os << "couleur : " << cercle.couleur << " rayon : " << cercle.rayon << cercle.centre.getX();
