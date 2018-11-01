@@ -14,7 +14,7 @@ FormeGeometrique::FormeGeometrique(const string &c)
 {
 	try {
 		couleur = c;
-		if (c != "black" || c != "blue" || c != "red" || c != "green" || c != "yellow" || c != "cyan")
+		if (c != "black" && c != "blue" && c != "red" && c != "green" && c != "yellow" && c != "cyan")
 			throw Erreur("Couleur incorrecte");
 	}
 	catch (Erreur e)

@@ -2,11 +2,6 @@
 #include "InterfacePolygone.h"
 
 
-InterfacePolygone::InterfacePolygone()
-{
-}
-
-
 InterfacePolygone::~InterfacePolygone()
 {
 }

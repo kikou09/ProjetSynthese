@@ -23,6 +23,11 @@ void Polygone::translation(const Vecteur2D * v)
 {
 }
 
+const double Polygone::getAire() const
+{
+	return 0.0;
+}
+
 void Polygone::operator=(const Polygone &)
 {
 }
@@ -34,9 +39,11 @@ bool Polygone::operator==(const Polygone &) const
 
 Polygone::operator string() const
 {
+	return "ok";
 }
 
 ostream & operator<<(ostream & os, const Polygone &)
 {
-	// TODO: insérer une instruction return ici
+	os << "ok";
+	return os;
 }

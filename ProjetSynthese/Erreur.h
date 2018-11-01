@@ -1,6 +1,6 @@
 #pragma once
 
-#include <istream>
+#include <iostream>
 #include <exception>
 
 using namespace std;
@@ -28,7 +28,7 @@ public:
 
 	friend ostream & operator << (ostream &os , const Erreur &erreur)
 	{ 
-		return os << (string)erreur;
+		return os << erreur;
 	}
 
 

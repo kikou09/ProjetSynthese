@@ -12,10 +12,6 @@ Triangle::~Triangle(){
 	delete cote;
 }
 
-const double Triangle::getAire() const
-{
-}
-
 void Triangle::setCote(Vecteur2D *c) throw (Erreur)
 {
 	if (c == NULL)

@@ -41,10 +41,10 @@ const double FormeComposee::getAire() const {
 	vector<FormeGeometrique *>::iterator it;
 	double somme_aire = 0;
 
-	for (it=groupe.begin ; it != groupe.end() ; it++)
+	/*for (it=groupe.begin() ; it != groupe.end() ; it++)
 	{
-		somme_aire += it.getAire();
-	}
+		//somme_aire += it.getAire();
+	}*/
 
 	return somme_aire;
 

@@ -2,11 +2,6 @@
 #include "InterfaceDessiner.h"
 
 
-InterfaceDessiner::InterfaceDessiner()
-{
-}
-
-
 InterfaceDessiner::~InterfaceDessiner()
 {
 }

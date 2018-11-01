@@ -1,6 +1,7 @@
 #pragma once
 #include "FormeSimple.h"
 #include <math.h>
+#include "Vecteur2D.h"
 #include <iostream>
 #include <sstream>
 
@@ -8,14 +9,20 @@ class Cercle :
 	public FormeSimple
 {
 private:
-	double x, y; //Centre
+	Vecteur2D centre; //Centre
 	double rayon;
 public:
-	Cercle(string &c, double x, double y, double r);
+	Cercle(string &c, const Vecteur2D &centre, const double r);
 	Cercle(const Cercle&);
 	Cercle();
 	virtual ~Cercle();
+
 	const double getAire() const;
+	const Vecteur2D & getCentre() const;
+	const double getRayon() const;
+
+	void setCentre(Vecteur2D &);
+	void setRayon(const double);
 
 	virtual void homothetie(const double x, const double y, const double);
 	virtual void rotation(const double x, const double y, const double angle);
@@ -28,5 +35,6 @@ public:
 
 	operator string() const;
 	friend ostream & operator << (ostream &os, const Cercle &);
+	friend istream & operator >> (istream &is, Cercle&);
 };
 

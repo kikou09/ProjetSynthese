@@ -2,11 +2,6 @@
 #include "InterfaceTriangle.h"
 
 
-InterfaceTriangle::InterfaceTriangle()
-{
-}
-
-
 InterfaceTriangle::~InterfaceTriangle()
 {
 }

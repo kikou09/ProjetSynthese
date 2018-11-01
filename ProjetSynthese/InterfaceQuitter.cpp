@@ -2,20 +2,20 @@
 #include "InterfaceQuitter.h"
 
 
-void InterfaceQuitter::executer() const
+void InterfaceQuitter::executerInteraction(vector <FormeGeometrique*> formes) const
 {
+	cout << "Au revoir !" << endl;
 	exit(0);
 }
 
-bool InterfaceQuitter::peutExecuter(string choix) const
+InterfaceQuitter::InterfaceQuitter(InterfaceUtilisateur * suivant): InterfaceUtilisateur(suivant)
+{
+}
+
+bool InterfaceQuitter::peutExecuter(string &choix) const
 {
 	return choix == getDescription();
 }
-
-InterfaceQuitter::InterfaceQuitter()
-{
-}
-
 
 InterfaceQuitter::~InterfaceQuitter()
 {

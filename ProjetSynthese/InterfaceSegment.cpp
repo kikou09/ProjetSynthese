@@ -2,11 +2,6 @@
 #include "InterfaceSegment.h"
 
 
-InterfaceSegment::InterfaceSegment()
-{
-}
-
-
 InterfaceSegment::~InterfaceSegment()
 {
 }

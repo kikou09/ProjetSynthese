@@ -2,30 +2,47 @@
 #include "InterfaceCreerForme.h"
 
 
-void InterfaceCreerForme::executer(FormeGeometrique *) const
+void InterfaceCreerForme::executerInteraction(vector <FormeGeometrique*> formes) const
 {
-	InterfaceForme *forme;
-	InterfaceForme *cercle, *triangle, *polygone, *segment;
-
-	cercle = new InterfaceCercle(NULL);
-	polygone = new InterfacePolygone(cercle);
-	triangle = new InterfaceTriangle(polygone);
-	segment = new InterfaceSegment(triangle);
-
-	forme = segment;
-
-	while (forme != NULL) {
-
-		cout << forme.getDescription();
-		forme.suivant;
-	}
-	cout << "Quelle forme veux tu créer ? " << endl;
+	InterfaceForme *forme , *forme_aux;
+	string choix;
+	forme = new InterfaceCercle(nullptr);
+	vector <string> menu_formes;
+	int i, c;
+	//polygone = new InterfacePolygone(cercle);
+	//triangle = new InterfaceTriangle(polygone);
+	//segment = new InterfaceSegment(triangle);
 	
+	cout << "Quelle forme veux tu créer ? " << endl;
+
+	forme_aux = forme;
+	while (forme_aux != nullptr) {
+		menu_formes.push_back(forme_aux->getDescription());
+		forme_aux = forme_aux->suivant;
+	}
+
+	for (i = 0; i < menu_formes.size(); i++)
+	{
+		cout << i + 1 << ":" << menu_formes[i] << endl;
+	}
+
+	cout << "Quelle est votre choix ? " << endl;
+	cin >> c;
+
+	choix = menu_formes[c - 1];
+	forme->executer(choix, formes);
+
+	delete forme,forme_aux;
 }
 
-string InterfaceCreerForme::getDescription()
+const char * InterfaceCreerForme::toString() const 
 {
-	return "Créer une forme";
+	return nullptr;
+}
+
+string InterfaceCreerForme::getDescription() const
+{
+	return "Creer une forme";
 }
 
 InterfaceCreerForme::InterfaceCreerForme(InterfaceUtilisateur * suivant) : InterfaceUtilisateur(suivant)
@@ -36,7 +53,7 @@ InterfaceCreerForme::~InterfaceCreerForme()
 {
 }
 
-bool InterfaceCreerForme::peutExecuter(string choix)
+bool InterfaceCreerForme::peutExecuter(string &choix)const 
 {
 	return choix==getDescription();
 }

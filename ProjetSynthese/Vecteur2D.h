@@ -1,5 +1,5 @@
 #pragma once
-#include <istream>
+#include <iostream>
 
 using namespace std;
 
@@ -13,28 +13,34 @@ inline const T operator - (const T & u, const T & v)
 	\class
 	\author 
 */
-class Vecteur2D : FormeSimple
+class Vecteur2D 
 {
 public:
 	
 	double x, y;
 
-	inline explicit Vecteur2D(const double & x = 0, const double & y = 0);
+	Vecteur2D(const double & x = 0, const double & y = 0);
+
 	/**
 	 * DONNEES : s respectant le format "(  nombre réel, nombre réel)"
 	 *
 	 * */
-	inline Vecteur2D(const char * s);
-	inline const Vecteur2D operator + (const Vecteur2D & u) const;
-	inline const Vecteur2D operator * (const double & a) const;
+	Vecteur2D(const char * s);
+	Vecteur2D(const Vecteur2D &);
+
+	const Vecteur2D operator + (const Vecteur2D & u) const;
+	const Vecteur2D operator * (const double & a) const;
 	/**
 	 * - unaire (c'est-à- dire opposé d'un vecteur)
 	 * */
-	inline const Vecteur2D operator - () const;
+	const Vecteur2D operator - () const;
 
 	const double getAire() const;
 	const double getX() const;
 	const double getY() const;
+
+	void setX(const double x);
+	void setY(const double y);
 
 	virtual void homothetie(const double x, const double y, const double rapport);
 	virtual void rotation(const double x, const double y, const double angle);
@@ -42,6 +48,7 @@ public:
 
 	operator string() const;
 	friend ostream & operator << (ostream &os ,const Vecteur2D &u);
+	friend istream & operator >>(istream &is, const Vecteur2D &u);
 
 }; 
 

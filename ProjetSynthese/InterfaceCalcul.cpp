@@ -2,11 +2,6 @@
 #include "InterfaceCalcul.h"
 
 
-InterfaceCalcul::InterfaceCalcul()
-{
-}
-
-
 InterfaceCalcul::~InterfaceCalcul()
 {
 }

@@ -10,15 +10,16 @@ class InterfaceCreerForme :
 	public InterfaceUtilisateur
 {
 public:
-	void executer(FormeGeometrique *) const;
-	virtual const char* toString();
-	virtual string getDescription();
+
+	void executerInteraction(vector <FormeGeometrique*> formes)const;
+	virtual const char* toString()const ;
+	virtual string getDescription()const ;
 	InterfaceCreerForme(InterfaceUtilisateur *suivant);
 	virtual ~InterfaceCreerForme();
 
 protected:
 
-	virtual bool peutExecuter(string choix);
+	virtual bool peutExecuter(string &choix) const ;
 
 };
 

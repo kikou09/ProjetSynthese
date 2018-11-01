@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Application.h" />
     <ClInclude Include="Cercle.h" />
     <ClInclude Include="Erreur.h" />
     <ClInclude Include="FormeComposee.h" />
@@ -172,8 +173,8 @@
     <ClInclude Include="Vecteur2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="Cercle.cpp" />
-    <ClCompile Include="Erreur.cpp" />
     <ClCompile Include="FormeComposee.cpp" />
     <ClCompile Include="FormeGeometrique.cpp" />
     <ClCompile Include="FormeSimple.cpp" />
@@ -194,7 +195,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Polygone.cpp" />
-    <ClCompile Include="ProjetSynthese.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
   </ItemGroup>
