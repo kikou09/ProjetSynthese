@@ -42,8 +42,19 @@ Polygone::operator string() const
 	return "ok";
 }
 
+void Polygone::affiche() const
+{
+	cout << "Couleur : " << couleur;
+}
+
 ostream & operator<<(ostream & os, const Polygone &)
 {
 	os << "ok";
 	return os;
+}
+
+istream & operator>>(istream & is, Polygone &polygone)
+{
+	return (is);
+
 }

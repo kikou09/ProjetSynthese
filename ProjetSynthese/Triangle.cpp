@@ -2,14 +2,12 @@
 #include "Triangle.h"
 #include <sstream>
 
-Triangle::Triangle() : FormeSimple("black"), base(nullptr), cote(nullptr)
+Triangle::Triangle() : FormeSimple("black"), base(), cote()
 {
 }
 
-Triangle::Triangle(string & couleur, Vecteur2D *b, Vecteur2D *c) : FormeSimple(couleur) 
+Triangle::Triangle(string & couleur, const Vecteur2D &b, const Vecteur2D &c) : FormeSimple(couleur) , base(b) , cote(c)
 {
-	base = b;
-	cote = c;
 }
 
 Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle) , base(triangle.base), cote(triangle.cote)
@@ -18,24 +16,20 @@ Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle) , base(trian
 
 Triangle::~Triangle(){
 
-	delete base;
-	delete cote;
 }
 
-void Triangle::setCote(Vecteur2D &c) throw (Erreur)
+void Triangle::setCote(const Vecteur2D &c) throw (Erreur)
 {
-	if (cote != &c) {
-		delete cote;
-		cote = new Vecteur2D(c);
+	if (cote != c) {
+		cote = c;
 	}
 
 }
 
-void Triangle::setBase(Vecteur2D &b) throw (Erreur)
+void Triangle::setBase(const Vecteur2D &b) throw (Erreur)
 {
-	if (base != &b) {
-		delete base;
-		base = new Vecteur2D(b);
+	if (base != b) {
+		base = b;
 	}
 }
 
@@ -48,7 +42,7 @@ Triangle::operator string() const {
 
 void Triangle::affiche() const
 {
-	cout << "Couleur : " << couleur << " cote 1 x:" << base->getX() << "y: " << base->getY() << "cote 2 x:" << cote->getX() << " y:" << cote->getY() << endl;
+	cout << "Couleur : " << couleur << " cote 1 x:" << base.getX() << "y: " << base.getY() << "cote 2 x:" << cote.getX() << " y:" << cote.getY() << endl;
 }
 
 bool Triangle::operator==(const Triangle &t) const
@@ -60,8 +54,8 @@ bool Triangle::operator==(const Triangle &t) const
 void Triangle::operator=(const Triangle &t)
 {
 	if (this != &t) {
-		setBase(*t.base);
-		setCote(*t.cote);
+		setBase(t.base);
+		setCote(t.cote);
 	}
 }
 
@@ -80,7 +74,7 @@ const double Triangle::getAire() const {
 
 const double Triangle::getDeterminant() const {
 
-	return base->getX()*cote->getY() - base->getY()*cote->getX();
+	return base.getX()*cote.getY() - base.getY()*cote.getX();
 }
 
 void Triangle::homothetie(const double x, const double y, const double rapport)
@@ -98,10 +92,12 @@ void Triangle::translation(const Vecteur2D * v)
 
 istream & operator>>(istream & is, Triangle &triangle)
 {
-
 	Vecteur2D base;
 	Vecteur2D cote;
 	double xa, xb, ya, yb;
+
+	//cin >> base;
+	//cin >> cote;
 
 	cout << "Saisir le point x  du premier cote : " << endl;
 	is >> xa;
@@ -122,6 +118,7 @@ istream & operator>>(istream & is, Triangle &triangle)
 	cin >> triangle.couleur;
 	triangle.setBase(base);
 	triangle.setCote(cote);
+	
 
 	return (is);
 

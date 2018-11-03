@@ -34,6 +34,11 @@ const Vecteur2D Vecteur2D::operator * (const double & a) const
 	return Vecteur2D(x*a, y*a);
 }
 
+bool Vecteur2D::operator==(const Vecteur2D &v) const
+{
+	return x == v.x && y == v.y;
+}
+
 const Vecteur2D Vecteur2D::operator - () const
 {
 	return Vecteur2D(-x, -y);
@@ -93,6 +98,7 @@ ostream & operator << (ostream & os, const Vecteur2D & u)
 istream & operator>>(istream & is, Vecteur2D &u)
 {
 		double x, y;
+
 		cout << "Saisir le point x : " << endl;
 		is >> x;
 		cout << "Saisir le point y : " << endl;
@@ -101,6 +107,6 @@ istream & operator>>(istream & is, Vecteur2D &u)
 		u.setX(x);
 		u.setY(y);
 
-		return is;
+		return (is);
 
 }

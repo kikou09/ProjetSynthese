@@ -1,13 +1,15 @@
 #include "pch.h"
 #include "Segment.h"
+#include "Vecteur2D.h"
 
 
-Segment::Segment() :FormeSimple("black"), pointA(nullptr), pointB(nullptr)
+Segment::Segment() :FormeSimple("black"), pointA(), pointB()
 {
 }
 
 Segment::Segment(string c, const Vecteur2D &pa, const Vecteur2D &pb): FormeSimple(c) , pointA(pa) , pointB(pb)
 {
+
 }
 
 Segment::Segment(const Segment &segment): FormeSimple(segment),pointA(segment.pointA) , pointB(segment.pointB)
@@ -75,6 +77,7 @@ bool Segment::operator==(const Segment &segment) const
 
 Segment::operator string() const
 {
+	return nullptr;
 }
 
 void Segment::affiche() const

@@ -29,7 +29,7 @@ string InterfacePolygone::getDescription() const
 void InterfacePolygone::executerInteraction(FormeGeometrique *forme) const
 {
 	Polygone polygone;
-	cin >> polygone;
+	//cin >> polygone;
 	forme = &polygone;
 	forme->affiche();
 }

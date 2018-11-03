@@ -1,5 +1,6 @@
 #pragma once
 #include "InterfaceForme.h"
+#include "Polygone.h"
 class InterfacePolygone :
 	public InterfaceForme
 {

@@ -4,15 +4,17 @@
 
 void InterfaceCreerForme::executerInteraction(FormeGeometrique *f) const
 {
-	InterfaceForme *forme , *forme_aux;
+	InterfaceForme *forme , *forme_aux , *triangle , *polygone , *segment , *cercle ;
 	string choix;
-	forme = new InterfaceCercle(nullptr);
 	vector <string> menu_formes;
 	int i, c;
 
-	forme = new InterfacePolygone(forme);
-	forme = new InterfaceTriangle(forme);
-	forme = new InterfaceSegment(forme);
+	cercle = new InterfaceCercle(nullptr);
+	polygone = new InterfacePolygone(cercle);
+	triangle = new InterfaceTriangle(polygone);
+	segment = new InterfaceSegment(triangle);
+
+	forme = segment;
 	
 	cout << "Quelle forme veux tu créer ? " << endl;
 
@@ -33,7 +35,7 @@ void InterfaceCreerForme::executerInteraction(FormeGeometrique *f) const
 	choix = menu_formes[c - 1];
 	forme->executer(choix, f);
 
-	delete forme,forme_aux;
+	delete triangle , polygone , cercle , segment ,forme,forme_aux;
 }
 
 const char * InterfaceCreerForme::toString() const 

@@ -30,6 +30,8 @@ public:
 
 	const Vecteur2D operator + (const Vecteur2D & u) const;
 	const Vecteur2D operator * (const double & a) const;
+	bool operator ==(const Vecteur2D &)const;
+	bool operator != (const Vecteur2D &v)const { return !(this == &v); }
 	/**
 	 * - unaire (c'est-à- dire opposé d'un vecteur)
 	 * */

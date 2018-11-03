@@ -18,6 +18,9 @@ public:
 	bool operator != (const Polygone&polygone)const { return !(this == &polygone); }
 	operator string() const;
 	friend ostream & operator << (ostream &os, const Polygone &);
+	friend istream &operator >> (istream& is, const Polygone &);
+
+	void affiche() const;
 
 };
 

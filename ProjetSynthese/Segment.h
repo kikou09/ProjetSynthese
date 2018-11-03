@@ -11,7 +11,7 @@ private:
 
 public:
 	Segment();
-	Segment(string c,const Vecteur2D &, const Vecteur2D &);
+	Segment(string c, const Vecteur2D &, const Vecteur2D &);
 	Segment(const Segment &);
 	virtual ~Segment();
 

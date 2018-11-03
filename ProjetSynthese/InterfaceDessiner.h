@@ -4,7 +4,13 @@ class InterfaceDessiner :
 	public InterfaceUtilisateur
 {
 public:
-	InterfaceDessiner();
+	void executerInteraction(FormeGeometrique *)const;
+	InterfaceDessiner(InterfaceUtilisateur *s);
 	virtual ~InterfaceDessiner();
+	virtual const char* toString()const;
+	virtual string getDescription()const;
+
+protected:
+	virtual bool peutExecuter(string &choix)const;
 };
 
