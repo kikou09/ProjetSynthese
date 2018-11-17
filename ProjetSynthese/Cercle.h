@@ -5,6 +5,11 @@
 #include <iostream>
 #include <sstream>
 
+
+/**
+* \class Cercle
+* \brief Classe Cercle qui modélise un cercle et qui dérive de FormeSimple
+*/
 class Cercle :
 	public FormeSimple
 {
@@ -37,5 +42,8 @@ public:
 	void affiche() const;
 	friend ostream & operator << (ostream &os, const Cercle &);
 	friend istream & operator >> (istream &is, Cercle&);
+
+	void accepte(const VisiteurForme *);
+	void accepteSauvegarde(const VisiteurForme *);
 };
 

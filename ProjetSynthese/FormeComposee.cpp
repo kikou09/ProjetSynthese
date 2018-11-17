@@ -27,6 +27,13 @@ void FormeComposee::supprimerForme(const FormeGeometrique *forme)
 	groupe.erase(it);
 }
 
+
+/**
+* \brief Effectue l'homothetie de toutes les formes contenues dans la forme composee
+* \param[in] x
+* \param[in] y
+* \param[in] rapport
+*/
 void FormeComposee::homothetie(const double x, const double y, const double rapport)
 {
 	for (int i = 0; i < groupe.size(); i++)
@@ -51,6 +58,12 @@ const double FormeComposee::getAire() const {
 
 }
 
+/**
+* \brief Effectue la rotation de toutes les formes contenues dans la forme composee
+* \param[in] x
+* \param[in] y
+* \param[in] angle : angle de rotation
+*/
 void FormeComposee::rotation(const double x, const double y, const double angle)
 {
 	for (int i = 0; i < groupe.size(); i++)
@@ -59,6 +72,11 @@ void FormeComposee::rotation(const double x, const double y, const double angle)
 	}
 }
 
+
+/**
+* \brief Effectue la translation de toutes les formes contenues dans la forme composee
+* \param[in] v :
+*/
 void FormeComposee::translation(const Vecteur2D * v)
 {
 	for (int i = 0; i < groupe.size(); i++)
@@ -70,4 +88,14 @@ void FormeComposee::translation(const Vecteur2D * v)
 FormeComposee::~FormeComposee()
 {
 	groupe.erase(groupe.begin(), groupe.end());
+}
+
+void FormeComposee::accepte(const VisiteurForme *visiteur)
+{
+	return visiteur->visite(this);
+}
+
+void FormeComposee::accepteSauvegarde(const VisiteurForme *visiteur)
+{
+	visiteur->sauvegarde(this);
 }

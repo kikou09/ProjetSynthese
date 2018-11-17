@@ -2,13 +2,9 @@
 #include "FormeGeometrique.h"
 
 
-FormeGeometrique::FormeGeometrique()
-{
-}
+FormeGeometrique::FormeGeometrique(){}
 
-FormeGeometrique::FormeGeometrique(const FormeGeometrique &forme) : couleur(forme.couleur)
-{
-}
+FormeGeometrique::FormeGeometrique(const FormeGeometrique &forme) : couleur(forme.couleur){}
 
 FormeGeometrique::FormeGeometrique(const string &c)
 {
@@ -24,9 +20,7 @@ FormeGeometrique::FormeGeometrique(const string &c)
 	}
 }
 
-FormeGeometrique::~FormeGeometrique()
-{
-}
+FormeGeometrique::~FormeGeometrique(){}
 
 const string FormeGeometrique::getCouleur() const
 {

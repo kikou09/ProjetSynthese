@@ -2,21 +2,15 @@
 #include "Triangle.h"
 #include <sstream>
 
-Triangle::Triangle() : FormeSimple("black"), base(), cote()
-{
-}
+Triangle::Triangle() : FormeSimple("black"), base(), cote(){}
 
 Triangle::Triangle(string & couleur, const Vecteur2D &b, const Vecteur2D &c) : FormeSimple(couleur) , base(b) , cote(c)
 {
 }
 
-Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle) , base(triangle.base), cote(triangle.cote)
-{
-}
+Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle) , base(triangle.base), cote(triangle.cote){}
 
-Triangle::~Triangle(){
-
-}
+Triangle::~Triangle(){}
 
 void Triangle::setCote(const Vecteur2D &c) throw (Erreur)
 {
@@ -59,6 +53,16 @@ void Triangle::operator=(const Triangle &t)
 	}
 }
 
+void Triangle::accepte(const VisiteurForme *visiteur)
+{
+	visiteur->visite(this);
+}
+
+void Triangle::accepteSauvegarde(const VisiteurForme *visiteur)
+{
+	visiteur->sauvegarde(this);
+}
+
 ostream & operator << (ostream & os, const Triangle &t)
 {
 	string v = (string)t;
@@ -72,20 +76,42 @@ const double Triangle::getAire() const {
 	return 0.5*getDeterminant();
 }
 
+/**
+* \brief Fonction qui calcul le determinant du triangle 
+* \return la valeur du determinant (double)
+*/
 const double Triangle::getDeterminant() const {
 
 	return base.getX()*cote.getY() - base.getY()*cote.getX();
 }
 
+/**
+* \brief Effectue l'homothetie du triangle
+* \param[in] x 
+* \param[in] y
+* \param[in] rapport
+*/
 void Triangle::homothetie(const double x, const double y, const double rapport)
 {
 
 }
 
+
+/**
+* \brief Effectue la rotation du triangle
+* \param[in] x
+* \param[in] y
+* \param[in] angle : angle de rotation
+*/
 void Triangle::rotation(const double x, const double y, const double angle)
 {
 }
 
+
+/**
+* \brief Effectue la translation du triangle
+* \param[in] v :
+*/
 void Triangle::translation(const Vecteur2D * v)
 {
 }

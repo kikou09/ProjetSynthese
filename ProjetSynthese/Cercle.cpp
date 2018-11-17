@@ -72,6 +72,16 @@ void Cercle::affiche() const
 	cout << "Couleur : " << couleur << " centre : x:" << centre.getX() << " y:" << centre.getY() << " rayon : " << rayon << endl;
 }
 
+void Cercle::accepte(const VisiteurForme *visiteur)
+{
+	visiteur->visite(this);
+}
+
+void Cercle::accepteSauvegarde(const VisiteurForme *visiteur)
+{
+	visiteur->sauvegarde(this);
+}
+
 ostream & operator<<(ostream & os, const Cercle &cercle)
 {
 	os << "couleur : " << cercle.couleur << " rayon : " << cercle.rayon << cercle.centre.getX();

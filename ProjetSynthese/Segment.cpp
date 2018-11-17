@@ -46,14 +46,33 @@ void Segment::setPointB(const Vecteur2D &pb)
 	pointB = pb;
 }
 
+
+/**
+* \brief Effectue l'homothetie du segment
+* \param[in] x
+* \param[in] y
+* \param[in] rapport
+*/
 void Segment::homothetie(const double x, const double y, const double)
 {
 }
 
+
+/**
+* \brief Effectue la rotation du segment
+* \param[in] x
+* \param[in] y
+* \param[in] angle : angle de rotation
+*/
 void Segment::rotation(const double x, const double y, const double angle)
 {
 }
 
+
+/**
+* \brief Effectue la translation du segment
+* \param[in] v :
+*/
 void Segment::translation(const Vecteur2D * v)
 {
 }
@@ -83,6 +102,16 @@ Segment::operator string() const
 void Segment::affiche() const
 {
 	cout << "Couleur : " << couleur << "point A x:" << pointA.getX() << " y:" << pointA.getY() << " point B x:" << pointB.getX() << " y:" << pointB.getY() << endl;
+}
+
+void Segment::accepte(const VisiteurForme *visiteur)
+{
+	visiteur->visite(this);
+}
+
+void Segment::accepteSauvegarde(const VisiteurForme *visiteur)
+{
+	visiteur->sauvegarde(this);
 }
 
 ostream & operator<<(ostream & os, const Segment &)

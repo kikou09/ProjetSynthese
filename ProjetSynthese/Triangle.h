@@ -6,6 +6,12 @@
 #include <stdlib.h>
 
 using namespace std;
+
+
+/**
+* \class Triangle
+* \brief Classe Triangle qui modélise un triangle et qui dérive de FormeSimple
+*/
 class Triangle : public FormeSimple
 {
 private :
@@ -32,5 +38,8 @@ public:
 	void operator = (const Triangle &);
 	friend ostream &operator << (ostream &f, const Triangle&);
 	friend istream & operator>>(istream & is, Triangle &triangle);
+
+	void accepte(const VisiteurForme *);
+	void accepteSauvegarde(const VisiteurForme *);
 };
 

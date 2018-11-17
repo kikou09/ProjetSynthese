@@ -4,9 +4,15 @@
 #include "Erreur.h"
 #include <stdlib.h>
 #include <sstream>;
+#include "VisiteurForme.h"
 
 using namespace std;
 
+
+/**
+* \class FormeGeometrique
+* \brief Classe FormeGeometrique qui modélise une forme . Classe mère 
+*/
 class FormeGeometrique
 {
 protected :
@@ -29,6 +35,8 @@ public:
 	bool operator == (const FormeGeometrique &)const;
 	bool operator != (const FormeGeometrique &f)const { return !(this == &f); }
 	void operator = (const FormeGeometrique &);
+
+	virtual void accepte(const VisiteurForme *)=0;
 
 
 };

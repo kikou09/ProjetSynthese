@@ -88,6 +88,16 @@ Vecteur2D::operator string() const
 	return os.str();
 }
 
+void Vecteur2D::accepte(const VisiteurForme *visiteur)
+{
+	visiteur->visite(this);
+}
+
+void Vecteur2D::accepteSauvegarde(const VisiteurForme *visiteur)
+{
+	visiteur->sauvegarde(this);
+}
+
 ostream & operator << (ostream & os, const Vecteur2D & u)
 {
 	string v = (string)u;

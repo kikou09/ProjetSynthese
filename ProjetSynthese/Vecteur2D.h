@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "VisiteurForme.h"
 
 using namespace std;
 
@@ -10,8 +11,8 @@ inline const T operator - (const T & u, const T & v)
 }
 
 /**
-	\class
-	\author 
+* \class Vecteur2D
+* \brief Classe Vecteur2D qui modélise un vecteur en 2D par un point x,y
 */
 class Vecteur2D 
 {
@@ -52,6 +53,8 @@ public:
 	friend ostream & operator << (ostream &os ,const Vecteur2D &u);
 	friend istream & operator >>(istream &is, const Vecteur2D &u);
 
+	void accepte(const VisiteurForme *);
+	void accepteSauvegarde(const VisiteurForme *);
 }; 
 
 

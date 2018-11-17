@@ -1,5 +1,10 @@
 #pragma once
 #include "FormeSimple.h"
+
+/**
+* \class Polygone
+* \brief Classe Polygone qui modélise un polygone et qui dérive de FormeSimple
+*/
 class Polygone :
 	public FormeSimple
 {
@@ -21,6 +26,10 @@ public:
 	friend istream &operator >> (istream& is, const Polygone &);
 
 	void affiche() const;
+
+	void accepte(const VisiteurForme *);
+	void accepteSauvegarde(const VisiteurForme *);
+
 
 };
 

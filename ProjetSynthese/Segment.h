@@ -2,6 +2,11 @@
 #include "FormeSimple.h"
 #include "Vecteur2D.h"
 
+
+/**
+* \class Segment
+* \brief Classe Segment qui modélise un segment et qui dérive de FormeSimple
+*/
 class Segment :
 	public FormeSimple
 {
@@ -37,5 +42,9 @@ public:
 	void affiche() const;
 	friend ostream & operator << (ostream &os, const Segment &);
 	friend istream & operator >> (istream &is, Segment&);
+
+	void accepte(const VisiteurForme *);
+	void accepteSauvegarde(const VisiteurForme *);
+
 };
 

@@ -16,5 +16,8 @@ public:
 	virtual void homothetie(const double x, const double y, const double) = 0;
 	virtual void rotation(const double x, const double y, const double angle) = 0;
 	virtual void translation(const Vecteur2D *v) = 0;
+
+	virtual void accepte(const VisiteurForme *) = 0;
+	void accepteSauvegarde(const VisiteurForme *)=0;
 };
 
