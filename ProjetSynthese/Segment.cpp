@@ -7,7 +7,7 @@ Segment::Segment() :FormeSimple("black"), pointA(), pointB()
 {
 }
 
-Segment::Segment(string c, const Vecteur2D &pa, const Vecteur2D &pb): FormeSimple(c) , pointA(pa) , pointB(pb)
+Segment::Segment(string &c, const Vecteur2D &pa, const Vecteur2D &pb): FormeSimple(c) , pointA(pa) , pointB(pb)
 {
 
 }
@@ -19,6 +19,11 @@ Segment::Segment(const Segment &segment): FormeSimple(segment),pointA(segment.po
 
 Segment::~Segment()
 {
+}
+
+Segment * Segment::clone() const
+{
+	return new Segment(*this);
 }
 
 const Vecteur2D & Segment::getPointA() const
@@ -53,8 +58,12 @@ void Segment::setPointB(const Vecteur2D &pb)
 * \param[in] y
 * \param[in] rapport
 */
-void Segment::homothetie(const double x, const double y, const double)
+Segment * Segment::homothetie(const Vecteur2D &v, const double angle) const 
 {
+	Vecteur2D *p1 = pointA.homothetie(v, angle);
+	Vecteur2D *p2 = pointB.homothetie(v, angle);
+	return new Segment(couleur ,*p1, *p2);
+
 }
 
 
@@ -64,8 +73,11 @@ void Segment::homothetie(const double x, const double y, const double)
 * \param[in] y
 * \param[in] angle : angle de rotation
 */
-void Segment::rotation(const double x, const double y, const double angle)
+Segment *Segment::rotation(const Vecteur2D &v ,const double angle) const
 {
+	Vecteur2D *p1 = pointA.rotation(v, angle);
+	Vecteur2D *p2 = pointB.rotation(v, angle);
+	return new Segment(couleur, *p1, *p2);
 }
 
 
@@ -73,8 +85,11 @@ void Segment::rotation(const double x, const double y, const double angle)
 * \brief Effectue la translation du segment
 * \param[in] v :
 */
-void Segment::translation(const Vecteur2D * v)
+Segment * Segment::translation(const Vecteur2D &v)const
 {
+	Vecteur2D *p1 = pointA.translation(v);
+	Vecteur2D *p2 = pointB.translation(v);
+	return new Segment(couleur, *p1, *p2);
 }
 
 void Segment::operator=(const Segment &segment)

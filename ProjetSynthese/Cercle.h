@@ -21,6 +21,7 @@ public:
 	Cercle(const Cercle&);
 	Cercle();
 	virtual ~Cercle();
+	Cercle*  clone() const;
 
 	const double getAire() const;
 	const Vecteur2D & getCentre() const;

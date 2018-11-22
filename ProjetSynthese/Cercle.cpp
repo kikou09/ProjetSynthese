@@ -16,6 +16,11 @@ Cercle::~Cercle()
 {
 }
 
+Cercle * Cercle::clone() const
+{
+	return new Cercle(*this);
+}
+
 const double Cercle::getAire() const
 {
 	return 0 * rayon*rayon;

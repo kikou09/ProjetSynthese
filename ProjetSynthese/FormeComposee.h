@@ -18,17 +18,21 @@ class FormeComposee :
 		FormeComposee();
 		FormeComposee(const string &);
 		FormeComposee(const FormeComposee &);
+		FormeComposee*  clone() const;
 
 		void ajouterForme(FormeGeometrique *);
 		void supprimerForme(const int indice);
 		void supprimerForme(const FormeGeometrique *);
 
-		virtual void homothetie(const double x, const double y, const double);
-		virtual void rotation(const double x, const double y, const double angle);
-		virtual void translation(const Vecteur2D *v) ;
+		virtual FormeComposee* homothetie(const Vecteur2D &, const double)const;
+		virtual FormeComposee * rotation(const Vecteur2D &, const double angle)const;
+		virtual FormeComposee * translation(const Vecteur2D &v) const;
 		virtual const double getAire()const;
 
 		virtual ~FormeComposee();
+
+		virtual operator string() const;
+		virtual void affiche()const;
 
 		void accepte(const VisiteurForme *);
 		void accepteSauvegarde(const VisiteurForme *);

@@ -13,9 +13,9 @@ public:
 	virtual operator string() const = 0;
 	void affiche() const = 0;
 
-	virtual void homothetie(const double x, const double y, const double) = 0;
-	virtual void rotation(const double x, const double y, const double angle) = 0;
-	virtual void translation(const Vecteur2D *v) = 0;
+	virtual FormeSimple * homothetie(const Vecteur2D &, const double) const= 0;
+	virtual FormeSimple * rotation(const Vecteur2D &, const double angle)const = 0;
+	virtual FormeSimple * translation(const Vecteur2D &v) const= 0;
 
 	virtual void accepte(const VisiteurForme *) = 0;
 	void accepteSauvegarde(const VisiteurForme *)=0;

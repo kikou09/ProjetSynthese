@@ -16,10 +16,10 @@ private:
 
 public:
 	Segment();
-	Segment(string c, const Vecteur2D &, const Vecteur2D &);
+	Segment(string &c, const Vecteur2D &, const Vecteur2D &);
 	Segment(const Segment &);
 	virtual ~Segment();
-
+	Segment*  clone() const;
 
 	const Vecteur2D & getPointA() const;
 	const Vecteur2D & getPointB() const;
@@ -29,9 +29,9 @@ public:
 	void setPointA(const Vecteur2D &);
 	void setPointB(const Vecteur2D &);
 
-	virtual void homothetie(const double x, const double y, const double);
-	virtual void rotation(const double x, const double y, const double angle);
-	virtual void translation(const Vecteur2D *v);
+	virtual Segment * homothetie(const Vecteur2D &, const double)const;
+	virtual Segment * rotation(const Vecteur2D &, const double angle)const;
+	virtual Segment * translation(const Vecteur2D &v)const;
 
 	void operator = (const Segment&);
 

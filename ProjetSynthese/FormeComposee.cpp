@@ -11,6 +11,11 @@ FormeComposee::FormeComposee(const FormeComposee &forme_c): FormeGeometrique(for
 	groupe = forme_c.groupe;
 }
 
+FormeComposee * FormeComposee::clone() const
+{
+	return new FormeComposee(*this);
+}
+
 void FormeComposee::ajouterForme(FormeGeometrique *forme)
 {
 	groupe.push_back(forme); //On rajoute la forme à la fin  
@@ -88,6 +93,14 @@ void FormeComposee::translation(const Vecteur2D * v)
 FormeComposee::~FormeComposee()
 {
 	groupe.erase(groupe.begin(), groupe.end());
+}
+
+FormeComposee::operator string() const
+{
+}
+
+void FormeComposee::affiche() const
+{
 }
 
 void FormeComposee::accepte(const VisiteurForme *visiteur)

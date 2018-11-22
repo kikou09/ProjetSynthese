@@ -23,6 +23,11 @@ Vecteur2D::Vecteur2D(const char * s)
 
 Vecteur2D::Vecteur2D(const Vecteur2D &v) : x(v.x), y(v.y) {}
 
+Vecteur2D * Vecteur2D::clone() const
+{
+	return new Vecteur2D(*this);
+}
+
 const Vecteur2D Vecteur2D::operator + (const Vecteur2D & u) const
 {
 	return Vecteur2D(x + u.x, y + u.y);

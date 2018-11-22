@@ -28,6 +28,7 @@ public:
 	 * */
 	Vecteur2D(const char * s);
 	Vecteur2D(const Vecteur2D &);
+	Vecteur2D*  clone() const;
 
 	const Vecteur2D operator + (const Vecteur2D & u) const;
 	const Vecteur2D operator * (const double & a) const;

@@ -22,9 +22,9 @@ public:
 	FormeGeometrique(const FormeGeometrique &);
 	FormeGeometrique(const string &);
 	virtual ~FormeGeometrique();
-	virtual void homothetie(const double x , const double y ,const double)=0;
-	virtual void rotation(const double x, const double y ,const double angle)=0;
-	virtual void translation(const Vecteur2D *v)=0;
+	virtual FormeGeometrique * homothetie(const Vecteur2D &,const double)const =0;
+	virtual FormeGeometrique* rotation(const Vecteur2D &,const double angle)const=0;
+	virtual FormeGeometrique *translation(const Vecteur2D &v)const=0;
 
 	virtual const double getAire()const = 0;
 	const string getCouleur() const;

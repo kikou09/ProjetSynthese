@@ -22,6 +22,8 @@ public:
 	Triangle(string &couleur , const Vecteur2D &b , const Vecteur2D &cote) throw (Erreur);
 	Triangle(const Triangle &);
 	virtual ~Triangle();
+	Triangle*  clone() const;
+
 	const double getAire() const;
 	const double getDeterminant() const;
 	void setCote(const Vecteur2D &) throw (Erreur);

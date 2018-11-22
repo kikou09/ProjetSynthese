@@ -12,6 +12,11 @@ Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle) , base(trian
 
 Triangle::~Triangle(){}
 
+Triangle * Triangle::clone() const
+{
+	return new Triangle(*this);
+}
+
 void Triangle::setCote(const Vecteur2D &c) throw (Erreur)
 {
 	if (cote != c) {
