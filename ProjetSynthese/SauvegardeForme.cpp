@@ -2,35 +2,11 @@
 #include "SauvegardeForme.h"
 
 
-SauvegardeForme::SauvegardeForme()
+void SauvegardeForme::sauvegarde(const FormeGeometrique * f, const string nomFichier) const
 {
-}
-
-
-SauvegardeForme::~SauvegardeForme()
-{
-}
-
-void SauvegardeForme::sauvegarde(const Cercle * c) const
-{
-}
-
-void SauvegardeForme::sauvegarde(const Triangle * t) const
-{
-}
-
-void SauvegardeForme::sauvegarde(const Polygone * p) const
-{
-}
-
-void SauvegardeForme::sauvegarde(const Segment * s) const
-{
-}
-
-void SauvegardeForme::sauvegarde(const Vecteur2D * v) const
-{
-}
-
-void SauvegardeForme::sauvegarde(const FormeComposee * f) const
-{
+	filebuf fb;
+	fb.open(nomFichier, ios::out);
+	ostream os(&fb);
+	os << (string)*f;
+	fb.close();
 }

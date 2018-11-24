@@ -17,7 +17,6 @@ public:
 	virtual FormeSimple * rotation(const Vecteur2D &, const double angle)const = 0;
 	virtual FormeSimple * translation(const Vecteur2D &v) const= 0;
 
-	virtual void accepte(const VisiteurForme *) = 0;
-	void accepteSauvegarde(const VisiteurForme *)=0;
+	virtual void dessin(const VisiteurForme *)const = 0;
 };
 

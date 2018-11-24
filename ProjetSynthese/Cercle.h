@@ -17,7 +17,7 @@ private:
 	Vecteur2D centre; //Centre
 	double rayon;
 public:
-	Cercle(string &c, const Vecteur2D &centre, const double r);
+	Cercle(const string &c, const Vecteur2D &centre, const double r);
 	Cercle(const Cercle&);
 	Cercle();
 	virtual ~Cercle();
@@ -27,12 +27,12 @@ public:
 	const Vecteur2D & getCentre() const;
 	const double getRayon() const;
 
-	void setCentre(Vecteur2D &);
+	void setCentre(const Vecteur2D &);
 	void setRayon(const double);
 
-	virtual void homothetie(const double x, const double y, const double);
-	virtual void rotation(const double x, const double y, const double angle);
-	virtual void translation(const Vecteur2D *v);
+	virtual Cercle * homothetie(const Vecteur2D & v, const double)const;
+	virtual Cercle * rotation(const Vecteur2D &v , const double angle)const;
+	virtual Cercle * translation(const Vecteur2D &v)const;
 
 	void operator = (const Cercle&);
 
@@ -44,7 +44,7 @@ public:
 	friend ostream & operator << (ostream &os, const Cercle &);
 	friend istream & operator >> (istream &is, Cercle&);
 
-	void accepte(const VisiteurForme *);
+	void dessin(const VisiteurForme *)const;
 	void accepteSauvegarde(const VisiteurForme *);
 };
 

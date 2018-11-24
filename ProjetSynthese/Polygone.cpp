@@ -2,7 +2,7 @@
 #include "Polygone.h"
 
 
-Polygone::Polygone(string &couleur, const Vecteur2D &p1, const Vecteur2D &p2, const Vecteur2D &p3) : FormeSimple(couleur) {
+Polygone::Polygone(const string &couleur, const Vecteur2D &p1, const Vecteur2D &p2, const Vecteur2D &p3) : FormeSimple(couleur) {
 
 	formes.push_back(&p1);
 	formes.push_back(&p2);
@@ -54,7 +54,7 @@ void Polygone::supprimerDernier()
 * \param[in] y
 * \param[in] rapport
 */
-void Polygone::homothetie(const double x, const double y, const double)
+Polygone * Polygone::homothetie(const Vecteur2D &v , const double)const
 {
 }
 
@@ -65,7 +65,7 @@ void Polygone::homothetie(const double x, const double y, const double)
 * \param[in] y
 * \param[in] angle : angle de rotation
 */
-void Polygone::rotation(const double x, const double y, const double angle)
+Polygone * Polygone::rotation(const Vecteur2D &v, const double angle)const 
 {
 }
 
@@ -74,7 +74,7 @@ void Polygone::rotation(const double x, const double y, const double angle)
 * \brief Effectue la translation du polygone
 * \param[in] v :
 */
-void Polygone::translation(const Vecteur2D * v)
+Polygone * Polygone::translation(const Vecteur2D &v)const
 {
 }
 
@@ -109,14 +109,9 @@ void Polygone::affiche() const
 	cout << "Couleur : " << couleur;
 }
 
-void Polygone::accepte(const VisiteurForme *visiteur)
+void Polygone::dessin(const VisiteurForme *visiteur)const
 {
-	visiteur->visite(this);
-}
-
-void Polygone::accepteSauvegarde(const VisiteurForme *visiteur)
-{
-	visiteur->sauvegarde(this);
+	visiteur->dessiner(this);
 }
 
 ostream & operator<<(ostream & os, const Polygone &)

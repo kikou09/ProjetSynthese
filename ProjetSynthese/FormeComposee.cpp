@@ -39,12 +39,14 @@ void FormeComposee::supprimerForme(const FormeGeometrique *forme)
 * \param[in] y
 * \param[in] rapport
 */
-void FormeComposee::homothetie(const double x, const double y, const double rapport)
+FormeComposee * FormeComposee::homothetie(const Vecteur2D &v, const double rapport)const
 {
-	for (int i = 0; i < groupe.size(); i++)
+	FormeComposee *groupe2 = new FormeComposee(*this);
+	for (int i = 0; i < groupe2->groupe.size(); i++)
 	{
-		groupe[i]->homothetie(x, y, rapport);
+		groupe2->groupe[i]->homothetie(v, rapport);
 	}
+	return groupe2;
 }
 
 const double FormeComposee::getAire() const {
@@ -69,12 +71,14 @@ const double FormeComposee::getAire() const {
 * \param[in] y
 * \param[in] angle : angle de rotation
 */
-void FormeComposee::rotation(const double x, const double y, const double angle)
+FormeComposee * FormeComposee::rotation(const Vecteur2D &v, const double angle)const
 {
-	for (int i = 0; i < groupe.size(); i++)
+	FormeComposee *groupe2 = new FormeComposee(*this);
+	for (int i = 0; i < groupe2->groupe.size(); i++)
 	{
-		groupe[i]->rotation(x, y, angle);
+		groupe2->groupe[i]->rotation(v, angle);
 	}
+	return groupe2;
 }
 
 
@@ -82,12 +86,14 @@ void FormeComposee::rotation(const double x, const double y, const double angle)
 * \brief Effectue la translation de toutes les formes contenues dans la forme composee
 * \param[in] v :
 */
-void FormeComposee::translation(const Vecteur2D * v)
+FormeComposee * FormeComposee::translation(const Vecteur2D &v)const
 {
-	for (int i = 0; i < groupe.size(); i++)
+	FormeComposee *groupe2 = new FormeComposee(*this);
+	for (int i = 0; i < groupe2->groupe.size(); i++)
 	{
-		groupe[i]->translation(v);
+		groupe2->groupe[i]->translation(v);
 	}
+	return groupe2;
 }
 
 FormeComposee::~FormeComposee()
@@ -103,12 +109,8 @@ void FormeComposee::affiche() const
 {
 }
 
-void FormeComposee::accepte(const VisiteurForme *visiteur)
+void FormeComposee::dessin(const VisiteurForme *visiteur)const
 {
-	return visiteur->visite(this);
+	return visiteur->dessiner(this);
 }
 
-void FormeComposee::accepteSauvegarde(const VisiteurForme *visiteur)
-{
-	visiteur->sauvegarde(this);
-}

@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "FormeGeometrique.h"
+#include "VisiteurForme.h"
 
 
 FormeGeometrique::FormeGeometrique(){}
@@ -45,5 +46,10 @@ bool FormeGeometrique::operator==(const FormeGeometrique &forme) const
 void FormeGeometrique::operator=(const FormeGeometrique &forme)
 {
 	setCouleur(forme.couleur);
+}
+
+void FormeGeometrique::accepteSauvegarde(const VisiteurForme *visiteur , const string nomFichier) const
+{
+	visiteur->sauvegarde(this,nomFichier);
 }
 

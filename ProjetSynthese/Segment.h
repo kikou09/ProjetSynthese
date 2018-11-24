@@ -16,7 +16,7 @@ private:
 
 public:
 	Segment();
-	Segment(string &c, const Vecteur2D &, const Vecteur2D &);
+	Segment(const string &c, const Vecteur2D &, const Vecteur2D &);
 	Segment(const Segment &);
 	virtual ~Segment();
 	Segment*  clone() const;
@@ -43,8 +43,7 @@ public:
 	friend ostream & operator << (ostream &os, const Segment &);
 	friend istream & operator >> (istream &is, Segment&);
 
-	void accepte(const VisiteurForme *);
-	void accepteSauvegarde(const VisiteurForme *);
+	void dessin(const VisiteurForme *)const;
 
 };
 

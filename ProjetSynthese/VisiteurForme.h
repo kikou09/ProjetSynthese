@@ -10,19 +10,14 @@
 class VisiteurForme
 {
 public:
-	virtual void visite(const Cercle *c) const = 0;
-	virtual void visite(const Triangle *t) const = 0;
-	virtual void visite(const Polygone *p) const = 0;
-	virtual void visite(const Segment *s) const = 0;
-	virtual void visite(const Vecteur2D *v) const = 0;
-	virtual void visite(const FormeComposee *f) const=0;
+	virtual void dessiner(const Cercle *c) const = 0;
+	virtual void dessiner(const Triangle *t) const = 0;
+	virtual void dessiner(const Polygone *p) const = 0;
+	virtual void dessiner(const Segment *s) const = 0;
+	virtual void dessiner(const FormeComposee *f) const=0;
 
 
-	virtual void sauvegarde(const Cercle *c) const=0;
-	virtual void sauvegarde(const Triangle *t) const=0;
-	virtual void sauvegarde(const Polygone *p) const=0;
-	virtual void sauvegarde(const Segment *s) const=0;
-	virtual void sauvegarde(const Vecteur2D *v) const=0;
-	virtual void sauvegarde(const FormeComposee *f) const=0;
+	virtual void sauvegarde(const FormeGeometrique *forme , const string nomFichier) const=0;
+
 };
 

@@ -7,30 +7,78 @@ Java::Java()
 }
 
 
-Java::~Java()
+Java::Java(Connexion * c):connexion(c){}
+
+Java::~Java(){}
+
+void Java::dessiner(const Cercle * c) const
 {
+	string message = (string)*c;
+	cout << message;
+	connexion->envoyer(message.c_str());
+
+	if (connexion->recevoir() != 0) {
+		cout << "le serveur a bien reçu le cercle" << endl;
+	}
+	else {
+		cout << "il y a eu une erreur lors de l'envoie" << endl;
+	}
+
 }
 
-void Java::visite(const Cercle * c) const
+void Java::dessiner(const Triangle * t) const
 {
+	string message = (string)*t;
+	cout << message;
+	connexion->envoyer(message.c_str());
+
+	if (connexion->recevoir() != 0) {
+		cout << "le serveur a bien reçu le triangle" << endl;
+	}
+	else {
+		cout << "il y a eu une erreur lors de l'envoie" << endl;
+	}
+
 }
 
-void Java::visite(const Triangle * t) const
+void Java::dessiner(const Polygone * p) const
 {
+	string message = (string)*p;
+	cout << message;
+	connexion->envoyer(message.c_str());
+
+	if (connexion->recevoir() != 0) {
+		cout << "le serveur a bien reçu le polygone" << endl;
+	}
+	else {
+		cout << "il y a eu une erreur lors de l'envoie" << endl;
+	}
 }
 
-void Java::visite(const Polygone * p) const
+void Java::dessiner(const Segment * s) const
 {
+	string message = (string)*s;
+	cout << message;
+	connexion->envoyer(message.c_str());
+
+	if (connexion->recevoir() != 0) {
+		cout << "le serveur a bien reçu le segment" << endl;
+	}
+	else {
+		cout << "il y a eu une erreur lors de l'envoie" << endl;
+	}
 }
 
-void Java::visite(const Segment * s) const
+void Java::dessiner(const FormeComposee * f) const
 {
-}
+	string message = (string)*f;
+	cout << message;
+	connexion->envoyer(message.c_str());
 
-void Java::visite(const Vecteur2D * v) const
-{
-}
-
-void Java::visite(const FormeComposee * f) const
-{
+	if (connexion->recevoir() != 0) {
+		cout << "le serveur a bien reçu la forme composee " << endl;
+	}
+	else {
+		cout << "il y a eu une erreur lors de l'envoie" << endl;
+	}
 }

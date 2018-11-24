@@ -34,7 +34,7 @@ class FormeComposee :
 		virtual operator string() const;
 		virtual void affiche()const;
 
-		void accepte(const VisiteurForme *);
-		void accepteSauvegarde(const VisiteurForme *);
+		void dessin(const VisiteurForme *)const;
+		void accepteSauvegarde(const VisiteurForme *)const;
 };
 

@@ -14,7 +14,7 @@ private :
 	vector<Vecteur2D *> formes;
 
 public:
-	Polygone(string &couleur,const Vecteur2D &p1, const Vecteur2D &p2, const Vecteur2D &p3);
+	Polygone(const string &couleur,const Vecteur2D &p1, const Vecteur2D &p2, const Vecteur2D &p3);
 	Polygone();
 	Polygone(const Polygone &);
 	virtual ~Polygone();
@@ -24,9 +24,9 @@ public:
 	void ajoutVecteur(Vecteur2D *v);
 	void supprimerDernier();
 
-	virtual void homothetie(const double x, const double y, const double);
-	virtual void rotation(const double x, const double y, const double angle);
-	virtual void translation(const Vecteur2D *v);
+	virtual Polygone * homothetie(const Vecteur2D &v,  const double)const ;
+	virtual Polygone * rotation(const Vecteur2D &v , const double angle)const;
+	virtual Polygone * translation(const Vecteur2D &v)const;
 
 	const double getAire() const;
 
@@ -39,8 +39,7 @@ public:
 
 	void affiche() const;
 
-	void accepte(const VisiteurForme *);
-	void accepteSauvegarde(const VisiteurForme *);
+	void dessin(const VisiteurForme *)const;
 
 
 };

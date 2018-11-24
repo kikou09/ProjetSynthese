@@ -2,11 +2,3 @@
 #include "VisiteurForme.h"
 
 
-VisiteurForme::VisiteurForme()
-{
-}
-
-
-VisiteurForme::~VisiteurForme()
-{
-}

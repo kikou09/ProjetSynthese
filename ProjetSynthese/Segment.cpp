@@ -7,7 +7,7 @@ Segment::Segment() :FormeSimple("black"), pointA(), pointB()
 {
 }
 
-Segment::Segment(string &c, const Vecteur2D &pa, const Vecteur2D &pb): FormeSimple(c) , pointA(pa) , pointB(pb)
+Segment::Segment(const string &c, const Vecteur2D &pa, const Vecteur2D &pb): FormeSimple(c) , pointA(pa) , pointB(pb)
 {
 
 }
@@ -60,9 +60,11 @@ void Segment::setPointB(const Vecteur2D &pb)
 */
 Segment * Segment::homothetie(const Vecteur2D &v, const double angle) const 
 {
-	Vecteur2D *p1 = pointA.homothetie(v, angle);
-	Vecteur2D *p2 = pointB.homothetie(v, angle);
-	return new Segment(couleur ,*p1, *p2);
+	Vecteur2D *p1 = &pointA.homothetie(v, angle);
+	Vecteur2D *p2 = &pointB.homothetie(v, angle);
+	Segment *s = new Segment(couleur, *p1, *p2);
+	delete p1, p2;
+	return s;
 
 }
 
@@ -75,9 +77,11 @@ Segment * Segment::homothetie(const Vecteur2D &v, const double angle) const
 */
 Segment *Segment::rotation(const Vecteur2D &v ,const double angle) const
 {
-	Vecteur2D *p1 = pointA.rotation(v, angle);
-	Vecteur2D *p2 = pointB.rotation(v, angle);
-	return new Segment(couleur, *p1, *p2);
+	Vecteur2D *p1 = &pointA.rotation(v, angle);
+	Vecteur2D *p2 = &pointB.rotation(v, angle);
+	Segment *s =new Segment(couleur, *p1, *p2);
+	delete p1, p2;
+	return s;
 }
 
 
@@ -87,9 +91,11 @@ Segment *Segment::rotation(const Vecteur2D &v ,const double angle) const
 */
 Segment * Segment::translation(const Vecteur2D &v)const
 {
-	Vecteur2D *p1 = pointA.translation(v);
-	Vecteur2D *p2 = pointB.translation(v);
-	return new Segment(couleur, *p1, *p2);
+	Vecteur2D *p1 = &pointA.translation(v);
+	Vecteur2D *p2 = &pointB.translation(v);
+	Segment *s =new Segment(couleur, *p1, *p2);
+	delete p1, p2;
+	return s;
 }
 
 void Segment::operator=(const Segment &segment)
@@ -119,14 +125,9 @@ void Segment::affiche() const
 	cout << "Couleur : " << couleur << "point A x:" << pointA.getX() << " y:" << pointA.getY() << " point B x:" << pointB.getX() << " y:" << pointB.getY() << endl;
 }
 
-void Segment::accepte(const VisiteurForme *visiteur)
+void Segment::dessin(const VisiteurForme *visiteur)const
 {
-	visiteur->visite(this);
-}
-
-void Segment::accepteSauvegarde(const VisiteurForme *visiteur)
-{
-	visiteur->sauvegarde(this);
+	visiteur->dessiner(this);
 }
 
 ostream & operator<<(ostream & os, const Segment &)

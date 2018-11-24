@@ -1,14 +1,15 @@
 #include "pch.h"
 #include "Triangle.h"
 #include <sstream>
+#include "VisiteurForme.h"
 
-Triangle::Triangle() : FormeSimple("black"), base(), cote(){}
+Triangle::Triangle() : FormeSimple("black"), p1(), p2(), p3(){}
 
-Triangle::Triangle(string & couleur, const Vecteur2D &b, const Vecteur2D &c) : FormeSimple(couleur) , base(b) , cote(c)
+Triangle::Triangle(const string & couleur, const Vecteur2D &pointA, const Vecteur2D &pointB , const Vecteur2D &pointC) : FormeSimple(couleur) , p1(pointA) , p2(pointB) , p3(pointC)
 {
 }
 
-Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle) , base(triangle.base), cote(triangle.cote){}
+Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle) , p1(triangle.p1), p2(triangle.p2) , p3(triangle.p3){}
 
 Triangle::~Triangle(){}
 
@@ -17,55 +18,58 @@ Triangle * Triangle::clone() const
 	return new Triangle(*this);
 }
 
-void Triangle::setCote(const Vecteur2D &c) throw (Erreur)
+void Triangle::setP1(const Vecteur2D &c) throw (Erreur)
 {
-	if (cote != c) {
-		cote = c;
+	if (p1 != c) {
+		p1 = c;
 	}
 
 }
 
-void Triangle::setBase(const Vecteur2D &b) throw (Erreur)
+void Triangle::setP2(const Vecteur2D &b) throw (Erreur)
 {
-	if (base != b) {
-		base = b;
+	if (p2 != b) {
+		p2 = b;
+	}
+}
+
+void Triangle::setP3(const Vecteur2D &b) throw (Erreur)
+{
+	if (p3 != b) {
+		p3 = b;
 	}
 }
 
 Triangle::operator string() const {
 
 	ostringstream os;
-	os << "( " << &base << ", " << &cote << "," << couleur << ")";
+	os << "( " << &p1 << ", " << &p2 << "," << &p3 << "," << couleur << ")";
 	return os.str();
 }
 
 void Triangle::affiche() const
 {
-	cout << "Couleur : " << couleur << " cote 1 x:" << base.getX() << "y: " << base.getY() << "cote 2 x:" << cote.getX() << " y:" << cote.getY() << endl;
+	cout << "Couleur : " << couleur << " cote 1 x:" << p1.getX() << "y: " << p1.getY() << "cote 2 x:" << p2.getX() << " y:" << p2.getY() << "cote 3 x : " << p3.getX() << "y: " << p3.getY() << endl;
 }
 
 bool Triangle::operator==(const Triangle &t) const
 {
 	if(FormeGeometrique::operator==(t))
-		return (base == t.base && cote == t.cote);
+		return (p1 == t.p1 && p2 == t.p2 && p3==t.p3);
 }
 
 void Triangle::operator=(const Triangle &t)
 {
 	if (this != &t) {
-		setBase(t.base);
-		setCote(t.cote);
+		setP1(t.p1);
+		setP2(t.p2);
+		setP3(t.p3);
 	}
 }
 
-void Triangle::accepte(const VisiteurForme *visiteur)
+void Triangle::dessin(const VisiteurForme *visiteur)const
 {
-	visiteur->visite(this);
-}
-
-void Triangle::accepteSauvegarde(const VisiteurForme *visiteur)
-{
-	visiteur->sauvegarde(this);
+	visiteur->dessiner(this);
 }
 
 ostream & operator << (ostream & os, const Triangle &t)
@@ -87,7 +91,7 @@ const double Triangle::getAire() const {
 */
 const double Triangle::getDeterminant() const {
 
-	return base.getX()*cote.getY() - base.getY()*cote.getX();
+	return p1.getX()*p2.getY() - p1.getY()*p2.getX();
 }
 
 /**
@@ -96,8 +100,14 @@ const double Triangle::getDeterminant() const {
 * \param[in] y
 * \param[in] rapport
 */
-void Triangle::homothetie(const double x, const double y, const double rapport)
+Triangle *Triangle::homothetie(const Vecteur2D &v , const double rapport)const
 {
+	Vecteur2D *point1 = &p1.homothetie(v, rapport);
+	Vecteur2D *point2 = &p2.rotation(v, rapport);
+	Vecteur2D *point3 = &p3.rotation(v, rapport);
+	Triangle *t = new Triangle(couleur, *point1, *point2, *point3);
+	delete point1, point2, point3;
+	return t;
 
 }
 
@@ -108,8 +118,14 @@ void Triangle::homothetie(const double x, const double y, const double rapport)
 * \param[in] y
 * \param[in] angle : angle de rotation
 */
-void Triangle::rotation(const double x, const double y, const double angle)
+Triangle * Triangle::rotation(const Vecteur2D & v, const double angle)const
 {
+	Vecteur2D *point1 = &p1.rotation(v,angle);
+	Vecteur2D *point2 = &p2.rotation(v,angle);
+	Vecteur2D *point3 = &p3.rotation(v,angle);
+	Triangle *t = new Triangle(couleur, *point1, *point2,*point3);
+	delete point1, point2 ,point3;
+	return t;
 }
 
 
@@ -117,15 +133,28 @@ void Triangle::rotation(const double x, const double y, const double angle)
 * \brief Effectue la translation du triangle
 * \param[in] v :
 */
-void Triangle::translation(const Vecteur2D * v)
+Triangle * Triangle::translation(const Vecteur2D &v)const
 {
+	Vecteur2D *point1 = &p1.translation(v);
+	Vecteur2D *point2 = &p2.translation(v);
+	Vecteur2D *point3 = &p3.translation(v);
+	Triangle *t = new Triangle(couleur, *point1, *point2, *point3);
+	delete point1, point2, point3;
+	return t;
+}
+
+Triangle::operator string() const {
+	ostringstream ser;
+	ser << "triangle: " << couleur << ", " << p1 << ", " << p2 << ", " << p3;
+	return ser.str();
 }
 
 istream & operator>>(istream & is, Triangle &triangle)
 {
-	Vecteur2D base;
-	Vecteur2D cote;
-	double xa, xb, ya, yb;
+	Vecteur2D point1;
+	Vecteur2D point2;
+	Vecteur2D point3;
+	double xa, xb, ya, yb,xc,yc;
 
 	//cin >> base;
 	//cin >> cote;
@@ -138,17 +167,25 @@ istream & operator>>(istream & is, Triangle &triangle)
 	is >> xb;
 	cout << "Saisir le point y du deuxieme cote : " << endl;
 	is >> yb;
+	cout << "Saisir le point x  du troisieme cote : " << endl;
+	is >> xc;
+	cout << "Saisir le point y du troisieme cote : " << endl;
+	is >> yc;
 
-	base.setX(xa);
-	base.setY(ya);
+	point1.setX(xa);
+	point1.setY(ya);
 
-	cote.setX(xb);
-	cote.setY(yb);
+	point2.setX(xb);
+	point2.setY(yb);
+
+	point3.setX(xc);
+	point3.setY(yc);
 
 	cout << "Saisir la couleur : " << endl;
 	cin >> triangle.couleur;
-	triangle.setBase(base);
-	triangle.setCote(cote);
+	triangle.setP1(point1);
+	triangle.setP2(point2);
+	triangle.setP3(point3);
 	
 
 	return (is);

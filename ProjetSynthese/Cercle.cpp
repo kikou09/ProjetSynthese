@@ -2,7 +2,7 @@
 #include "Cercle.h"
 
 
-Cercle::Cercle(string &c, const Vecteur2D &centre, const double r) : FormeSimple(c), centre(centre), rayon(r)
+Cercle::Cercle(const string &c, const Vecteur2D &centre, const double r) : FormeSimple(c), centre(centre), rayon(r)
 {
 }
 
@@ -36,7 +36,7 @@ const double Cercle::getRayon() const
 	return rayon;
 }
 
-void Cercle::setCentre(Vecteur2D &c)
+void Cercle::setCentre(const Vecteur2D &c)
 {
 	centre = c;
 }
@@ -46,30 +46,49 @@ void Cercle::setRayon(const double r)
 	rayon = r;
 }
 
-void Cercle::homothetie(const double x, const double y, const double)
+Cercle * Cercle::homothetie(const Vecteur2D &v, const double rapport)const
 {
+	Vecteur2D * c = &centre.homothetie(p, rapport);
+	Cercle* cercle = new Cercle(couleur, *c, rayon * rapport);
+	delete c;
+	return cercle;
 }
 
-void Cercle::rotation(const double x, const double y, const double angle)
+Cercle * Cercle::rotation(const Vecteur2D &v, const double angle)const
 {
+	Vecteur2D * c = &centre.rotation(v, angle);
+	Cercle* cercle = new Cercle(couleur, *c, rayon);
+	delete c;
+	return cercle;
 }
 
-void Cercle::translation(const Vecteur2D * v)
+Cercle * Cercle::translation(const Vecteur2D &v)const
 {
+	Vecteur2D*c = &centre.translation(v);
+	Cercle* cercle = new Cercle(couleur, *c, rayon);
+	delete c;
+	return cercle;
 }
 
-void Cercle::operator=(const Cercle &)
+void Cercle::operator=(const Cercle &c)
 {
+	if (this != &c) {
+
+		setCentre(c.centre);
+		setRayon(c.rayon);
+	}
 }
 
-bool Cercle::operator==(const Cercle &) const
+bool Cercle::operator==(const Cercle &c) const
 {
-	return false;
+	return(couleur==c.getCouleur() && rayon==c.rayon && centre==c.centre);
 }
 
 Cercle::operator string() const
 {
-	return "ok";
+	ostringstream oss;
+	oss << "cercle: " << couleur << ", " << centre << ", " << rayon;
+	return oss.str();
 }
 
 void Cercle::affiche() const
@@ -77,14 +96,9 @@ void Cercle::affiche() const
 	cout << "Couleur : " << couleur << " centre : x:" << centre.getX() << " y:" << centre.getY() << " rayon : " << rayon << endl;
 }
 
-void Cercle::accepte(const VisiteurForme *visiteur)
+void Cercle::dessin(const VisiteurForme *visiteur)const
 {
-	visiteur->visite(this);
-}
-
-void Cercle::accepteSauvegarde(const VisiteurForme *visiteur)
-{
-	visiteur->sauvegarde(this);
+	visiteur->dessiner(this);
 }
 
 ostream & operator<<(ostream & os, const Cercle &cercle)

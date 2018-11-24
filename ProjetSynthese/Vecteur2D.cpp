@@ -21,6 +21,11 @@ Vecteur2D::Vecteur2D(const char * s)
 	this->y = y;
 }
 
+Vecteur2D::Vecteur2D(const Vecteur2D & p1, const Vecteur2D & p2):
+	x(p2.getX() - p1.getX()),
+	y(p2.getY() - p1.getY())
+{}
+
 Vecteur2D::Vecteur2D(const Vecteur2D &v) : x(v.x), y(v.y) {}
 
 Vecteur2D * Vecteur2D::clone() const
@@ -37,6 +42,11 @@ const Vecteur2D Vecteur2D::operator * (const double & a) const
 {
 
 	return Vecteur2D(x*a, y*a);
+}
+
+double Vecteur2D::operator*(const Vecteur2D & v) const
+{
+	return (x * v.x + y * v.y);
 }
 
 bool Vecteur2D::operator==(const Vecteur2D &v) const
@@ -74,16 +84,24 @@ void Vecteur2D::setY(const double py)
 	y = py;
 }
 
-void Vecteur2D::homothetie(const double x, const double y, const double rapport)
+Vecteur2D Vecteur2D::homothetie(const Vecteur2D &v, const double rapport)const
 {
+	return v + (rapport* Vecteur2D(v, *this));
 }
 
-void Vecteur2D::rotation(const double x, const double y, const double angle)
+Vecteur2D Vecteur2D::rotation(const Vecteur2D &v , const double angle)const
 {
+	double rad = angle / 180 * 3.14159265359;
+	Vecteur2D l1(cos(rad), -sin(rad));
+	Vecteur2D l2(sin(rad), cos(rad));
+	Vecteur2D temp(v, *this);
+	Vecteur2D rot(l1*temp, l2*temp);
+	return  Vecteur2D(v.getX() + rot.getX(), v.getY() + rot.getY());
 }
 
-void Vecteur2D::translation(const Vecteur2D * v)
+Vecteur2D Vecteur2D::translation(const Vecteur2D &v)const
 {
+	return Vecteur2D(this->x + v.getX(), this->y + v.getY());
 }
 
 Vecteur2D::operator string() const
@@ -91,11 +109,6 @@ Vecteur2D::operator string() const
 	ostringstream os;
 	os << "( " << x << ", " << y << ")";
 	return os.str();
-}
-
-void Vecteur2D::accepte(const VisiteurForme *visiteur)
-{
-	visiteur->visite(this);
 }
 
 void Vecteur2D::accepteSauvegarde(const VisiteurForme *visiteur)
