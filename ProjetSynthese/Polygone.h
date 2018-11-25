@@ -6,6 +6,9 @@
 /**
 * \class Polygone
 * \brief Classe Polygone qui modélise un polygone et qui dérive de FormeSimple
+* Un polygone est un ensemble de points
+* Un polygone a au moins 3 points
+ * Les points sont reliés dans l'ordre donnée: si on insère un point dans un polygone, il sera relié au premier et dernier point
 */
 class Polygone :
 	public FormeSimple
@@ -20,7 +23,19 @@ public:
 	virtual ~Polygone();
 	Polygone*  clone() const;
 
+
+	/**
+	 * \brief getVecteur
+	 * \param indice
+	 * \return Une copie du point à la position demandée, ou NULL si l'indice est incorrect.
+	 */
 	Vecteur2D * getVecteur(const int indice)const;
+
+	/**
+	* \brief ajoutVecteur
+	* \param p
+	* Ajoute un point à la suite des autres
+	*/
 	void ajoutVecteur(Vecteur2D *v);
 	void supprimerDernier();
 

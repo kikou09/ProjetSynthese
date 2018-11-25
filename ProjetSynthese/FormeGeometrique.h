@@ -22,6 +22,8 @@ public:
 	FormeGeometrique(const FormeGeometrique &);
 	FormeGeometrique(const string &);
 	virtual ~FormeGeometrique();
+
+	virtual FormeGeometrique * clone() const= 0;
 	virtual FormeGeometrique * homothetie(const Vecteur2D &,const double)const =0;
 	virtual FormeGeometrique* rotation(const Vecteur2D &,const double angle)const=0;
 	virtual FormeGeometrique *translation(const Vecteur2D &v)const=0;

@@ -18,7 +18,7 @@ FormeComposee * FormeComposee::clone() const
 
 void FormeComposee::ajouterForme(FormeGeometrique *forme)
 {
-	groupe.push_back(forme); //On rajoute la forme à la fin  
+	groupe.push_back(forme->clone()); //On rajoute la forme à la fin  
 }
 
 void FormeComposee::supprimerForme(const int indice)

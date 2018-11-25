@@ -9,6 +9,7 @@
 /**
 * \class Cercle
 * \brief Classe Cercle qui modélise un cercle et qui dérive de FormeSimple
+*  Le rayon ne peut ni être négatif ni égal à zero.
 */
 class Cercle :
 	public FormeSimple

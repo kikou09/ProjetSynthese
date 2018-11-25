@@ -143,12 +143,6 @@ Triangle * Triangle::translation(const Vecteur2D &v)const
 	return t;
 }
 
-Triangle::operator string() const {
-	ostringstream ser;
-	ser << "triangle: " << couleur << ", " << p1 << ", " << p2 << ", " << p3;
-	return ser.str();
-}
-
 istream & operator>>(istream & is, Triangle &triangle)
 {
 	Vecteur2D point1;

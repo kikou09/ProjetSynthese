@@ -2,8 +2,20 @@
 #include "Cercle.h"
 
 
-Cercle::Cercle(const string &c, const Vecteur2D &centre, const double r) : FormeSimple(c), centre(centre), rayon(r)
+Cercle::Cercle(const string &c, const Vecteur2D &centre, const double r) : FormeSimple(c), centre(centre)
 {
+	try {
+		rayon = r;
+		if (r <= 0) {
+
+			throw Erreur("Le rayon doit être > 0");
+		}
+	}
+	catch (Erreur e)
+	{
+		cout << e;
+
+	}
 }
 
 Cercle::Cercle(const Cercle &cercle): FormeSimple(cercle), centre(cercle.centre) , rayon(cercle.rayon){}

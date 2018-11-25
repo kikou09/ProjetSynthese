@@ -32,8 +32,9 @@ Polygone*  Polygone::clone() const {
 Vecteur2D * Polygone::getVecteur(const int indice) const
 {
 	if (indice > formes.size())
-		//exception
-		return formes[indice];
+		return nullptr;
+
+	return formes[indice];
 }
 
 void Polygone::ajoutVecteur(Vecteur2D *v)
