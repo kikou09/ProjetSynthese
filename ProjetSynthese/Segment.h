@@ -2,14 +2,15 @@
 #include "FormeSimple.h"
 #include "Vecteur2D.h"
 
+using namespace std;
 
+class FormeSimple;
 /**
 * \class Segment
 * \brief Classe Segment qui modélise un segment et qui dérive de FormeSimple
 * Un segment est representé par 2 points
 */
-class Segment :
-	public FormeSimple
+class Segment : public FormeSimple
 {
 private:
 	Vecteur2D pointA;

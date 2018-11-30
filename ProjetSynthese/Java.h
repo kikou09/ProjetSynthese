@@ -1,6 +1,6 @@
 #pragma once
 #include "VisiteurForme.h"
-#include "connexion.h"
+#include "EnvoyeurReceveur.h"
 
 
 /**
@@ -14,11 +14,11 @@ class Java :
 
 private:
 
-	Connexion* connexion;
+	EnvoyeurReceveur* connexion;
 
 public:
 
-	Java(Connexion *c);
+	Java(EnvoyeurReceveur *c);
 	virtual ~Java();
 
 	virtual void dessiner(const Cercle *c) const;

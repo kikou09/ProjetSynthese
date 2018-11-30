@@ -106,6 +106,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,15 +154,18 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Cercle.h" />
+    <ClInclude Include="EnvoyeurReceveur.h" />
     <ClInclude Include="Erreur.h" />
     <ClInclude Include="FormeComposee.h" />
     <ClInclude Include="FormeGeometrique.h" />
     <ClInclude Include="FormeSimple.h" />
     <ClInclude Include="InterfaceCalcul.h" />
     <ClInclude Include="InterfaceCercle.h" />
+    <ClInclude Include="InterfaceChargement.h" />
     <ClInclude Include="InterfaceCreerForme.h" />
     <ClInclude Include="InterfaceDessiner.h" />
     <ClInclude Include="InterfaceForme.h" />
+    <ClInclude Include="InterfaceFormes.h" />
     <ClInclude Include="InterfacePolygone.h" />
     <ClInclude Include="InterfaceQuitter.h" />
     <ClInclude Include="InterfaceSegment.h" />
@@ -179,14 +183,17 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Cercle.cpp" />
+    <ClCompile Include="EnvoyeurReceveur.cpp" />
     <ClCompile Include="FormeComposee.cpp" />
     <ClCompile Include="FormeGeometrique.cpp" />
     <ClCompile Include="FormeSimple.cpp" />
     <ClCompile Include="InterfaceCalcul.cpp" />
     <ClCompile Include="InterfaceCercle.cpp" />
+    <ClCompile Include="InterfaceChargement.cpp" />
     <ClCompile Include="InterfaceCreerForme.cpp" />
     <ClCompile Include="InterfaceDessiner.cpp" />
     <ClCompile Include="InterfaceForme.cpp" />
+    <ClCompile Include="InterfaceFormes.cpp" />
     <ClCompile Include="InterfacePolygone.cpp" />
     <ClCompile Include="InterfaceQuitter.cpp" />
     <ClCompile Include="InterfaceSegment.cpp" />

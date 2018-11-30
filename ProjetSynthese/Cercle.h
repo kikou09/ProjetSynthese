@@ -5,14 +5,16 @@
 #include <iostream>
 #include <sstream>
 
+using namespace std;
 
+class VisiteurForme;
+class FormeSimple;
 /**
 * \class Cercle
 * \brief Classe Cercle qui modélise un cercle et qui dérive de FormeSimple
 *  Le rayon ne peut ni être négatif ni égal à zero.
 */
-class Cercle :
-	public FormeSimple
+class Cercle : public FormeSimple
 {
 private:
 	Vecteur2D centre; //Centre
@@ -42,7 +44,7 @@ public:
 
 	operator string() const;
 	void affiche() const;
-	friend ostream & operator << (ostream &os, const Cercle &);
+	friend ostream & operator << (ostream &os, const FormeGeometrique &);
 	friend istream & operator >> (istream &is, Cercle&);
 
 	void dessin(const VisiteurForme *)const;

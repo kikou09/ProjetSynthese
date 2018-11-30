@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Cercle.h"
+#include "VisiteurForme.h"
 
 
 Cercle::Cercle(const string &c, const Vecteur2D &centre, const double r) : FormeSimple(c), centre(centre)
@@ -35,7 +36,7 @@ Cercle * Cercle::clone() const
 
 const double Cercle::getAire() const
 {
-	return 0 * rayon*rayon;
+	return 3.14159265359 * rayon*rayon;
 }
 
 const Vecteur2D & Cercle::getCentre() const
@@ -60,9 +61,10 @@ void Cercle::setRayon(const double r)
 
 Cercle * Cercle::homothetie(const Vecteur2D &v, const double rapport)const
 {
-	Vecteur2D * c = &centre.homothetie(p, rapport);
+	Vecteur2D * c = &centre.homothetie(v, rapport);
+	cout << &c;
 	Cercle* cercle = new Cercle(couleur, *c, rayon * rapport);
-	delete c;
+	//delete c;
 	return cercle;
 }
 
@@ -70,7 +72,7 @@ Cercle * Cercle::rotation(const Vecteur2D &v, const double angle)const
 {
 	Vecteur2D * c = &centre.rotation(v, angle);
 	Cercle* cercle = new Cercle(couleur, *c, rayon);
-	delete c;
+	//delete c;
 	return cercle;
 }
 
@@ -78,7 +80,7 @@ Cercle * Cercle::translation(const Vecteur2D &v)const
 {
 	Vecteur2D*c = &centre.translation(v);
 	Cercle* cercle = new Cercle(couleur, *c, rayon);
-	delete c;
+	//delete c;
 	return cercle;
 }
 
@@ -113,9 +115,9 @@ void Cercle::dessin(const VisiteurForme *visiteur)const
 	visiteur->dessiner(this);
 }
 
-ostream & operator<<(ostream & os, const Cercle &cercle)
+ostream & operator<<(ostream & os, const FormeGeometrique &cercle)
 {
-	os << "couleur : " << cercle.couleur << " rayon : " << cercle.rayon << cercle.centre.getX();
+	cercle.affiche();
 	return os;
 }
 

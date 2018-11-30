@@ -2,7 +2,11 @@
 #include "FormeSimple.h"
 #include "Vecteur2D.h"
 #include <iostream>
+#include <vector>
 
+using namespace std;
+
+class FormeSimple;
 /**
 * \class Polygone
 * \brief Classe Polygone qui modélise un polygone et qui dérive de FormeSimple
@@ -10,14 +14,13 @@
 * Un polygone a au moins 3 points
  * Les points sont reliés dans l'ordre donnée: si on insère un point dans un polygone, il sera relié au premier et dernier point
 */
-class Polygone :
-	public FormeSimple
+class Polygone : public FormeSimple
 {
 private :
-	vector<Vecteur2D *> formes;
+	vector <Vecteur2D*> formes;
 
 public:
-	Polygone(const string &couleur,const Vecteur2D &p1, const Vecteur2D &p2, const Vecteur2D &p3);
+	Polygone(const string &couleur,Vecteur2D *p1, Vecteur2D *p2, Vecteur2D *p3);
 	Polygone();
 	Polygone(const Polygone &);
 	virtual ~Polygone();

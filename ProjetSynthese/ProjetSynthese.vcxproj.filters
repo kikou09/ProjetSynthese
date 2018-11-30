@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\ChargementFormes">
+      <UniqueIdentifier>{4c966783-5ab5-4ee9-898e-c4314de87adc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -57,9 +60,6 @@
     <ClInclude Include="InterfaceCalcul.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="InterfaceForme.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="InterfaceCercle.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -86,6 +86,18 @@
     </ClInclude>
     <ClInclude Include="SauvegardeForme.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvoyeurReceveur.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceChargement.h">
+      <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceFormes.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceForme.h">
+      <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +168,15 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="SauvegardeForme.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvoyeurReceveur.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceChargement.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceFormes.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

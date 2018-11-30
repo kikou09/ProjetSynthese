@@ -1,12 +1,13 @@
 #include "pch.h"
 #include "Polygone.h"
+#include "VisiteurForme.h"
 
 
-Polygone::Polygone(const string &couleur, const Vecteur2D &p1, const Vecteur2D &p2, const Vecteur2D &p3) : FormeSimple(couleur) {
+Polygone::Polygone(const string &couleur, Vecteur2D *p1, Vecteur2D *p2, Vecteur2D *p3) : FormeSimple(couleur) {
 
-	formes.push_back(&p1);
-	formes.push_back(&p2);
-	formes.push_back(&p3);
+	formes.push_back(p1);
+	formes.push_back(p2);
+	formes.push_back(p3);
 }
 
 Polygone::Polygone() 
@@ -57,6 +58,7 @@ void Polygone::supprimerDernier()
 */
 Polygone * Polygone::homothetie(const Vecteur2D &v , const double)const
 {
+	return nullptr;
 }
 
 
@@ -68,6 +70,7 @@ Polygone * Polygone::homothetie(const Vecteur2D &v , const double)const
 */
 Polygone * Polygone::rotation(const Vecteur2D &v, const double angle)const 
 {
+	return nullptr;
 }
 
 
@@ -77,6 +80,7 @@ Polygone * Polygone::rotation(const Vecteur2D &v, const double angle)const
 */
 Polygone * Polygone::translation(const Vecteur2D &v)const
 {
+	return nullptr;
 }
 
 const double Polygone::getAire() const

@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "FormeComposee.h"
 #include <vector>
+#include "VisiteurForme.h"
 
 FormeComposee::FormeComposee(){}
 
@@ -103,6 +104,7 @@ FormeComposee::~FormeComposee()
 
 FormeComposee::operator string() const
 {
+	return nullptr;
 }
 
 void FormeComposee::affiche() const

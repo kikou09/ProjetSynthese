@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "Vecteur2D.h"
 #include <sstream>
+#include "VisiteurForme.h"
 
 using namespace std;
 
@@ -86,7 +87,7 @@ void Vecteur2D::setY(const double py)
 
 Vecteur2D Vecteur2D::homothetie(const Vecteur2D &v, const double rapport)const
 {
-	return v + (rapport* Vecteur2D(v, *this));
+	return v + (rapport * Vecteur2D(v, *this));
 }
 
 Vecteur2D Vecteur2D::rotation(const Vecteur2D &v , const double angle)const
@@ -109,11 +110,6 @@ Vecteur2D::operator string() const
 	ostringstream os;
 	os << "( " << x << ", " << y << ")";
 	return os.str();
-}
-
-void Vecteur2D::accepteSauvegarde(const VisiteurForme *visiteur)
-{
-	visiteur->sauvegarde(this);
 }
 
 ostream & operator << (ostream & os, const Vecteur2D & u)

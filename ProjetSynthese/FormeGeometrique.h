@@ -6,9 +6,8 @@
 #include <sstream>;
 using namespace std;
 
+class VisiteurForme;
 
-
-class VisteurForme;
 /**
 * \class FormeGeometrique
 * \brief Classe FormeGeometrique qui modélise une forme . Classe mère 

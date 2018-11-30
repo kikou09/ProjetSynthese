@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Segment.h"
 #include "Vecteur2D.h"
-
+#include "VisiteurForme.h"
 
 Segment::Segment() :FormeSimple("black"), pointA(), pointB()
 {

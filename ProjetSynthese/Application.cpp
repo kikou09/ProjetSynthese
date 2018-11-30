@@ -18,14 +18,37 @@ int main()
 
 	vector <string> menu;
 	InterfaceUtilisateur *ihm,*ihm_aux , *creer_forme , *calcul , *dessiner , *quitter ;
-	Cercle cercle;
 	int choix=0;
 	string c;
-	FormeGeometrique *f=nullptr;
-	class forme;
+
+
+	double aire;
+	FormeGeometrique *f;
+	FormeGeometrique *forme;
 	int i;
 
-	quitter = new InterfaceQuitter(nullptr);
+
+	//Test cercle 
+	Vecteur2D v(12, 10);
+	Vecteur2D rotation(5, 8);
+	forme = new Cercle("black", v, 5);
+	forme->affiche();
+	aire = forme->getAire();
+	cout << aire << endl;
+	f = forme->rotation(rotation, 50);
+	f->affiche();
+
+	f = forme->homothetie(rotation, 50);
+	cout << "Homothetie : " << endl;
+	f->affiche();
+
+	f = forme->translation(rotation);
+	cout << "Rotation : " << endl;
+	f->affiche();
+
+
+
+	/*quitter = new InterfaceQuitter(nullptr);
 	creer_forme = new InterfaceCreerForme(quitter);
 	calcul = new InterfaceCalcul(creer_forme);
 	dessiner = new InterfaceDessiner(calcul);
@@ -53,6 +76,7 @@ int main()
 	
 	system("pause");
 
-	delete f, quitter, creer_forme, dessiner, calcul,ihm , ihm_aux;
+	delete f, quitter, creer_forme, dessiner, calcul,ihm , ihm_aux;*/
+	system("pause");
 	return 0;
 }

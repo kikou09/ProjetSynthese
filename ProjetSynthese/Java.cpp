@@ -1,13 +1,7 @@
 #include "pch.h"
 #include "Java.h"
 
-
-Java::Java()
-{
-}
-
-
-Java::Java(Connexion * c):connexion(c){}
+Java::Java(EnvoyeurReceveur * c):connexion(c){}
 
 Java::~Java(){}
 
@@ -17,7 +11,7 @@ void Java::dessiner(const Cercle * c) const
 	cout << message;
 	connexion->envoyer(message.c_str());
 
-	if (connexion->recevoir() != 0) {
+	if (connexion->recevoir() == "") {
 		cout << "le serveur a bien reçu le cercle" << endl;
 	}
 	else {
@@ -32,7 +26,7 @@ void Java::dessiner(const Triangle * t) const
 	cout << message;
 	connexion->envoyer(message.c_str());
 
-	if (connexion->recevoir() != 0) {
+	if (connexion->recevoir() != "") {
 		cout << "le serveur a bien reçu le triangle" << endl;
 	}
 	else {
@@ -47,7 +41,7 @@ void Java::dessiner(const Polygone * p) const
 	cout << message;
 	connexion->envoyer(message.c_str());
 
-	if (connexion->recevoir() != 0) {
+	if (connexion->recevoir() != "") {
 		cout << "le serveur a bien reçu le polygone" << endl;
 	}
 	else {
@@ -61,7 +55,7 @@ void Java::dessiner(const Segment * s) const
 	cout << message;
 	connexion->envoyer(message.c_str());
 
-	if (connexion->recevoir() != 0) {
+	if (connexion->recevoir() != "") {
 		cout << "le serveur a bien reçu le segment" << endl;
 	}
 	else {
@@ -75,7 +69,7 @@ void Java::dessiner(const FormeComposee * f) const
 	cout << message;
 	connexion->envoyer(message.c_str());
 
-	if (connexion->recevoir() != 0) {
+	if (connexion->recevoir() != "") {
 		cout << "le serveur a bien reçu la forme composee " << endl;
 	}
 	else {
