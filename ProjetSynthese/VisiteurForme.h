@@ -17,7 +17,7 @@ public:
 	virtual void dessiner(const FormeComposee *f) const=0;
 
 
-	virtual void sauvegarde(const FormeGeometrique *forme , const string nomFichier) const=0;
+	virtual void sauvegarde(const FormeGeometrique *forme) const=0;
 
 };
 

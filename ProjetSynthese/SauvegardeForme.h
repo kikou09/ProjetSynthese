@@ -3,11 +3,12 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <algorithm>
 class SauvegardeForme :
 	public VisiteurForme
 {
 public:
 
-	virtual void sauvegarde(const FormeGeometrique *f , const string nomFichier) const;
+	void sauvegarde(const FormeGeometrique *f) const;
 };
 

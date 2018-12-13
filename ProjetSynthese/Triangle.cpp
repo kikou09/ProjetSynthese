@@ -43,7 +43,10 @@ void Triangle::setP3(const Vecteur2D &b) throw (Erreur)
 Triangle::operator string() const {
 
 	ostringstream os;
-	os << "( " << &p1 << ", " << &p2 << "," << &p3 << "," << couleur << ")";
+	os << "triangle : " << p1.getX() << " " << p1.getY()
+		<< " " << p2.getX() << " " << p2.getY()
+		<< " " << p3.getX() << " " << p3.getY()
+		<< " " << couleur;
 	return os.str();
 }
 

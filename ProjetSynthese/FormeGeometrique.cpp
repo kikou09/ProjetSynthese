@@ -48,8 +48,8 @@ void FormeGeometrique::operator=(const FormeGeometrique &forme)
 	setCouleur(forme.couleur);
 }
 
-void FormeGeometrique::accepteSauvegarde(const VisiteurForme *visiteur , const string nomFichier) const
+void FormeGeometrique::accepteSauvegarde(const VisiteurForme *visiteur) const
 {
-	visiteur->sauvegarde(this,nomFichier);
+	visiteur->sauvegarde(this);
 }
 

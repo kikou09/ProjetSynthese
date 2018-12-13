@@ -21,11 +21,11 @@ public:
 	Java(EnvoyeurReceveur *c);
 	virtual ~Java();
 
-	virtual void dessiner(const Cercle *c) const;
-	virtual void dessiner(const Triangle *t) const;
-	virtual void dessiner(const Polygone *p) const;
-	virtual void dessiner(const Segment *s) const;
-	virtual void dessiner(const FormeComposee *f) const;
+	void dessiner(const Cercle *c) const;
+	void dessiner(const Triangle *t) const;
+	void dessiner(const Polygone *p) const;
+	void dessiner(const Segment *s) const;
+	void dessiner(const FormeComposee *f) const;
 
 };
 

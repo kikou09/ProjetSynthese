@@ -2,7 +2,7 @@
 #include "InterfaceFormes.h"
 
 
-InterfaceFormes::InterfaceFormes()
+InterfaceFormes::InterfaceFormes(InterfaceFormes *s)
 {
 }
 

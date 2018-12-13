@@ -38,7 +38,7 @@ public:
 	void operator = (const FormeGeometrique &);
 
 	virtual void dessin(const VisiteurForme *)const=0;
-	void accepteSauvegarde(const VisiteurForme *visiteur, const string nomFichier)const;
+	void accepteSauvegarde(const VisiteurForme *visiteur)const;
 
 
 };

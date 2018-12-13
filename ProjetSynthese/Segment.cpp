@@ -2,6 +2,7 @@
 #include "Segment.h"
 #include "Vecteur2D.h"
 #include "VisiteurForme.h"
+#include <sstream>
 
 Segment::Segment() :FormeSimple("black"), pointA(), pointB()
 {
@@ -117,7 +118,9 @@ bool Segment::operator==(const Segment &segment) const
 
 Segment::operator string() const
 {
-	return nullptr;
+	ostringstream os;
+	os << "segment : " << pointA.getX() << " " << pointA.getY() << " " << pointB.getX() << " " << pointB.getY() << " " << couleur;
+	return os.str();
 }
 
 void Segment::affiche() const
