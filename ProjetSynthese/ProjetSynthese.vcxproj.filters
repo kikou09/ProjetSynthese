@@ -16,6 +16,18 @@
     <Filter Include="Fichiers d%27en-tête\ChargementFormes">
       <UniqueIdentifier>{4c966783-5ab5-4ee9-898e-c4314de87adc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\DessinForme">
+      <UniqueIdentifier>{c674dc4b-b85c-48f0-85b9-7bcdd944dddf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\SauvegardeForme">
+      <UniqueIdentifier>{e9c18d7e-6eee-4b93-99d6-80b10eb92223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Client">
+      <UniqueIdentifier>{cd97bc49-10c2-4353-9bcb-e6bb4d0fdb78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\CORUtilisateur">
+      <UniqueIdentifier>{910e837d-b150-42e4-82c5-305356618a4c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -45,31 +57,7 @@
     <ClInclude Include="Erreur.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="InterfaceUtilisateur.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceQuitter.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceCreerForme.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="InterfaceDessiner.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceCalcul.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceCercle.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceTriangle.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceSegment.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfacePolygone.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Application.h">
@@ -81,15 +69,6 @@
     <ClInclude Include="VisiteurForme.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Java.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SauvegardeForme.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="EnvoyeurReceveur.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="InterfaceChargement.h">
       <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
     </ClInclude>
@@ -98,6 +77,42 @@
     </ClInclude>
     <ClInclude Include="InterfaceForme.h">
       <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvoyeurReceveur.h">
+      <Filter>Fichiers d%27en-tête\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceCalcul.h">
+      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceCercle.h">
+      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceCreerForme.h">
+      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfacePolygone.h">
+      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceQuitter.h">
+      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceSegment.h">
+      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceTriangle.h">
+      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceUtilisateur.h">
+      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
+    </ClInclude>
+    <ClInclude Include="SauvegardeForme.h">
+      <Filter>Fichiers d%27en-tête\SauvegardeForme</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrice.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="VisiteurDessinJava.h">
+      <Filter>Fichiers d%27en-tête\DessinForme</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -164,9 +179,6 @@
     <ClCompile Include="VisiteurForme.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Java.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="SauvegardeForme.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -177,6 +189,12 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceFormes.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrice.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="VisiteurDessinJava.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

@@ -31,6 +31,7 @@ void FormeComposee::supprimerForme(const FormeGeometrique *forme)
 {
 	vector<FormeGeometrique *>::iterator it = find(groupe.begin(), groupe.end(), forme);
 	groupe.erase(it);
+	delete *it;
 }
 
 
@@ -99,7 +100,10 @@ FormeComposee * FormeComposee::translation(const Vecteur2D &v)const
 
 FormeComposee::~FormeComposee()
 {
-	groupe.erase(groupe.begin(), groupe.end());
+	for (int i = 0; i < groupe.size(); i++) {
+		delete groupe[i];
+	}
+	groupe.clear();
 }
 
 FormeComposee::operator string() const

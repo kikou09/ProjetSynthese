@@ -42,9 +42,12 @@ public:
 
 	operator string() const;
 	void affiche() const;
-	friend ostream & operator << (ostream &os, const Segment &);
 	friend istream & operator >> (istream &is, Segment&);
 
+	/**
+	*Methode lié au visiteur DessinJava
+	*Accepte le dessin du visiteur
+	*/
 	void dessin(const VisiteurForme *)const;
 
 };

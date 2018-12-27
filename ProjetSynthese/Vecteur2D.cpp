@@ -3,6 +3,7 @@
 #include "Vecteur2D.h"
 #include <sstream>
 #include "VisiteurForme.h"
+#include "Matrice.h"
 
 using namespace std;
 
@@ -92,11 +93,7 @@ Vecteur2D Vecteur2D::homothetie(const Vecteur2D &v, const double rapport)const
 
 Vecteur2D Vecteur2D::rotation(const Vecteur2D &v , const double angle)const
 {
-	double rad = angle / 180 * 3.14159265359;
-	Vecteur2D l1(cos(rad), -sin(rad));
-	Vecteur2D l2(sin(rad), cos(rad));
-	Vecteur2D temp(v, *this);
-	Vecteur2D rot(l1*temp, l2*temp);
+	Vecteur2D rot(Matrice::getMatriceRotation(angle) * Vecteur2D(v, *this));
 	return  Vecteur2D(v.getX() + rot.getX(), v.getY() + rot.getY());
 }
 

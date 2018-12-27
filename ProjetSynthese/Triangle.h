@@ -40,9 +40,12 @@ public:
 	bool operator ==(const Triangle&)const;
 	bool operator !=(const Triangle &t)const { return !(this == &t); }
 	void operator = (const Triangle &);
-	friend ostream &operator << (ostream &f, const Triangle&);
 	friend istream & operator>>(istream & is, Triangle &triangle);
 
+	/**
+	*Methode lié au visiteur DessinJava
+	*Accepte le dessin du visiteur 
+	*/
 	void dessin(const VisiteurForme *)const;
 };
 

@@ -115,12 +115,6 @@ void Cercle::dessin(const VisiteurForme *visiteur)const
 	visiteur->dessiner(this);
 }
 
-ostream & operator<<(ostream & os, const FormeGeometrique &cercle)
-{
-	cercle.affiche();
-	return os;
-}
-
 istream & operator>>(istream & is, Cercle &c)
 {
 	Vecteur2D centre;

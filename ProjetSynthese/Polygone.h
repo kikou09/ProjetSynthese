@@ -52,11 +52,14 @@ public:
 	bool operator ==(const Polygone&)const;
 	bool operator != (const Polygone&polygone)const { return !(this == &polygone); }
 	operator string() const;
-	friend ostream & operator << (ostream &os, const Polygone &);
 	friend istream &operator >> (istream& is, const Polygone &);
 
 	void affiche() const;
 
+	/**
+	*Methode lié au visiteur DessinJava
+	*Accepte le dessin du visiteur
+	*/
 	void dessin(const VisiteurForme *)const;
 
 

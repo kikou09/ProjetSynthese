@@ -7,6 +7,12 @@
 #include "Vecteur2D.h"
 #include "FormeComposee.h"
 
+/*
+*\class VisiteurForme
+*\brief classe de base du visteur pour les formes géométriques
+* Visteur pour le dessin de la forme 
+* Visiteur pour la sauvegarde de la forme
+*/
 class VisiteurForme
 {
 public:

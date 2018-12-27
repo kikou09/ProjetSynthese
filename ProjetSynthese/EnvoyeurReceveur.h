@@ -28,20 +28,25 @@ public:
 	EnvoyeurReceveur(const char* adresseIP, short portServeur);
 	~EnvoyeurReceveur();
 
+	/**
+	*\brief initialise la connexion au serveur
+	*/
 	void init() const;
 
+	/**
+	*\brief ferme la connexion au serveur
+	*/
 	void close() const;
 
 	/*!
-	*\brief permet d'envoyer une chaine de caractère
-	*au serveur java
+	*\brief envoie l'instruction du dessin 
+	*sous forme d'une chaine de caractère
 	*
 	*/
 	void envoyer(const char* message) const;
 
 	/*!
-	*\brief permet de récuperer le message du serveur java
-	*
+	*\brief récupère  le message du serveur java
 	*\return string : message du serveur java
 	*/
 	const string recevoir() const;

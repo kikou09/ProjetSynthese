@@ -44,10 +44,13 @@ public:
 
 	operator string() const;
 	void affiche() const;
-	friend ostream & operator << (ostream &os, const FormeGeometrique &);
 	friend istream & operator >> (istream &is, Cercle&);
 
+	/**
+	*Methode lié au visiteur DessinJava
+	*Accepte le dessin du visiteur
+	*/
 	void dessin(const VisiteurForme *)const;
-	void accepteSauvegarde(const VisiteurForme *);
+	//void accepteSauvegarde(const VisiteurForme *);
 };
 

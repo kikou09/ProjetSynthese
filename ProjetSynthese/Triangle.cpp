@@ -75,13 +75,7 @@ void Triangle::dessin(const VisiteurForme *visiteur)const
 	visiteur->dessiner(this);
 }
 
-ostream & operator << (ostream & os, const Triangle &t)
-{
-	string v = (string)t;
-	os << v;
-	return os;
 
-}
 
 const double Triangle::getAire() const {
 

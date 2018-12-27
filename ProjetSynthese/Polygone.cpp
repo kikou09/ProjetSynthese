@@ -118,13 +118,6 @@ void Polygone::dessin(const VisiteurForme *visiteur)const
 {
 	visiteur->dessiner(this);
 }
-
-ostream & operator<<(ostream & os, const Polygone &)
-{
-	os << "ok";
-	return os;
-}
-
 istream & operator>>(istream & is, Polygone &polygone)
 {
 	return (is);

@@ -133,11 +133,6 @@ void Segment::dessin(const VisiteurForme *visiteur)const
 	visiteur->dessiner(this);
 }
 
-ostream & operator<<(ostream & os, const Segment &)
-{
-	return os;
-}
-
 istream & operator>>(istream & is, Segment &segment)
 {
 

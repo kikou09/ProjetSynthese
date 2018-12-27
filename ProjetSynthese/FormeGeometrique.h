@@ -24,8 +24,11 @@ public:
 
 	virtual FormeGeometrique * clone() const= 0;
 	virtual FormeGeometrique * homothetie(const Vecteur2D &,const double)const =0;
+	virtual void homothetie2(const Vecteur2D &, const double);
 	virtual FormeGeometrique* rotation(const Vecteur2D &,const double angle)const=0;
+	virtual void rotation2(const Vecteur2D &, const double);
 	virtual FormeGeometrique *translation(const Vecteur2D &v)const=0;
+	virtual void translation2(const Vecteur2D &);
 
 	virtual const double getAire()const = 0;
 	const string getCouleur() const;
@@ -39,6 +42,8 @@ public:
 
 	virtual void dessin(const VisiteurForme *)const=0;
 	void accepteSauvegarde(const VisiteurForme *visiteur)const;
+
+	friend ostream &operator << (ostream &os, FormeGeometrique &f);
 
 
 };
