@@ -28,6 +28,9 @@
     <Filter Include="Fichiers d%27en-tête\CORUtilisateur">
       <UniqueIdentifier>{910e837d-b150-42e4-82c5-305356618a4c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\NewFilter1">
+      <UniqueIdentifier>{7803b55f-6027-4a7b-a510-1139d5865fae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -55,9 +58,6 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Erreur.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceDessiner.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Application.h">
@@ -113,6 +113,9 @@
     </ClInclude>
     <ClInclude Include="VisiteurDessinJava.h">
       <Filter>Fichiers d%27en-tête\DessinForme</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceDessiner.h">
+      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

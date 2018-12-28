@@ -17,13 +17,28 @@ FormeComposee * FormeComposee::clone() const
 	return new FormeComposee(*this);
 }
 
+bool FormeComposee::contient(FormeGeometrique *f)
+{
+	for (int i = 0; i < groupe.size(); i++) {
+
+		if (f == groupe[i])
+			return true;
+	}
+
+	return false;
+}
+
 void FormeComposee::ajouterForme(FormeGeometrique *forme)
 {
-	groupe.push_back(forme->clone()); //On rajoute la forme à la fin  
+	if(!contient(forme))
+		groupe.push_back(forme->clone()); //On rajoute la forme à la fin  
 }
 
 void FormeComposee::supprimerForme(const int indice)
 {
+	if (indice<0 || indice > groupe.size())
+		throw Erreur("Indice incorrect");
+
 	groupe.erase(groupe.begin() + indice);
 }
 
@@ -37,8 +52,7 @@ void FormeComposee::supprimerForme(const FormeGeometrique *forme)
 
 /**
 * \brief Effectue l'homothetie de toutes les formes contenues dans la forme composee
-* \param[in] x
-* \param[in] y
+* \param[in] v
 * \param[in] rapport
 */
 FormeComposee * FormeComposee::homothetie(const Vecteur2D &v, const double rapport)const
@@ -69,8 +83,7 @@ const double FormeComposee::getAire() const {
 
 /**
 * \brief Effectue la rotation de toutes les formes contenues dans la forme composee
-* \param[in] x
-* \param[in] y
+* \param[in] v
 * \param[in] angle : angle de rotation
 */
 FormeComposee * FormeComposee::rotation(const Vecteur2D &v, const double angle)const

@@ -29,7 +29,7 @@ int main()
 	int i;
 
 
-	/*Test cercle 
+	//Test cercle 
 	Vecteur2D v(12, 10);
 	Vecteur2D rotation(5, 8);
 	forme = new Cercle("black", v, 5);
@@ -45,7 +45,7 @@ int main()
 
 	f = forme->translation(rotation);
 	cout << "Rotation : " << endl;
-	f->affiche();*/
+	f->affiche();
 
 
 
@@ -81,14 +81,14 @@ int main()
 
 	// Test de la sauvegarde
 	//création d'un cercle
-	Vecteur2D centre(2, 10);
+	/*Vecteur2D centre(2, 10);
 	forme = new Cercle("blue", centre, 5);
 	cout << "voici la forme créée" << endl;
 	forme->affiche();
 	cout << "Test de la surchage string" << endl;
 	//string(forme);
 	cout << "Test de la sauvegarde" << endl;
-	forme->accepteSauvegarde(new SauvegardeForme);
+	forme->accepteSauvegarde(new SauvegardeForme);*/
 	system("pause");
 	return 0;
 }

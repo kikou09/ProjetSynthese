@@ -59,15 +59,23 @@ void Cercle::setRayon(const double r)
 	rayon = r;
 }
 
+/**
+* \brief Effectue l'homothetie du cercle
+* \param[in] v
+* \param[in] rapport
+*/
 Cercle * Cercle::homothetie(const Vecteur2D &v, const double rapport)const
 {
 	Vecteur2D * c = &centre.homothetie(v, rapport);
-	cout << &c;
 	Cercle* cercle = new Cercle(couleur, *c, rayon * rapport);
-	//delete c;
 	return cercle;
 }
 
+/**
+* \brief Effectue la rotation du cercle
+* \param[in] v
+* \param[in] angle : angle de rotation
+*/
 Cercle * Cercle::rotation(const Vecteur2D &v, const double angle)const
 {
 	Vecteur2D * c = &centre.rotation(v, angle);
@@ -76,6 +84,10 @@ Cercle * Cercle::rotation(const Vecteur2D &v, const double angle)const
 	return cercle;
 }
 
+/**
+* \brief Effectue la translation du cercle
+* \param[in] v :
+*/
 Cercle * Cercle::translation(const Vecteur2D &v)const
 {
 	Vecteur2D*c = &centre.translation(v);
@@ -101,7 +113,7 @@ bool Cercle::operator==(const Cercle &c) const
 Cercle::operator string() const
 {
 	ostringstream oss;
-	oss << "cercle: " << centre.getX() << " " << centre.getY() << " " << rayon << " " << couleur;
+	oss << "Cercle: " << centre.getX() << " " << centre.getY() << " " << rayon << " " << couleur;
 	return oss.str();
 }
 

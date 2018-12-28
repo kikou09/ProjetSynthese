@@ -14,19 +14,23 @@ const static int L = 200;
 
 /*! \class EnvoyeurReceveur
 *\brief Classe EnvoyeurReceveur
-*
 *\La classe permet la connection à un socket distant à partir
 * de ses champs
+* Singleton EnvoyeurReceveur pour ne pas creer plusieurs connexions 
 */
 class EnvoyeurReceveur{
 
 private:
+	static EnvoyeurReceveur *instance;
 	SOCKET sock;
+
+	EnvoyeurReceveur(const char* adresseIP, short portServeur);
 
 public:
 
-	EnvoyeurReceveur(const char* adresseIP, short portServeur);
 	~EnvoyeurReceveur();
+
+	static EnvoyeurReceveur* getInstance();
 
 	/**
 	*\brief initialise la connexion au serveur

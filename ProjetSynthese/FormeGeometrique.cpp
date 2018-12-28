@@ -9,16 +9,7 @@ FormeGeometrique::FormeGeometrique(const FormeGeometrique &forme) : couleur(form
 
 FormeGeometrique::FormeGeometrique(const string &c)
 {
-	try {
-		couleur = c;
-		if (c != "black" && c != "blue" && c != "red" && c != "green" && c != "yellow" && c != "cyan")
-			throw Erreur("Couleur incorrecte");
-	}
-	catch (Erreur e)
-	{
-		cout << e;
-
-	}
+	setCouleur(c);
 }
 
 FormeGeometrique::~FormeGeometrique(){}

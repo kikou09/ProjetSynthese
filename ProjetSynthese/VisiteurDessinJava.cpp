@@ -1,7 +1,8 @@
 #include "pch.h"
 #include "VisiteurDessinJava.h"
+#include "EnvoyeurReceveur.h"
 
-VisiteurDessinJava::VisiteurDessinJava(EnvoyeurReceveur * e) : connexion(e) {}
+VisiteurDessinJava::VisiteurDessinJava() {}
 
 VisiteurDessinJava::~VisiteurDessinJava(){}
 
@@ -9,9 +10,9 @@ void VisiteurDessinJava::dessiner(const Cercle * c) const
 {
 	string message = string(*c);
 	cout << message;
-	connexion->envoyer(message.c_str());
+	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 
-	string reponse = connexion->recevoir();
+	string reponse = EnvoyeurReceveur::getInstance()->recevoir();
 
 	if ( reponse != "") {
 		cout << reponse << endl;

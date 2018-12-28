@@ -8,7 +8,15 @@ using namespace std;
 
 static int active = 0; // Si les DLL sont ouvertes ou non
 
+EnvoyeurReceveur* EnvoyeurReceveur::instance = nullptr;
 
+EnvoyeurReceveur * EnvoyeurReceveur::getInstance() {
+
+	if (instance == nullptr)
+		instance = new EnvoyeurReceveur(ADRESSE_IP, PORT_SERVEUR);
+	
+	return instance;
+}
 EnvoyeurReceveur::EnvoyeurReceveur(const char * adresseIP, short portServeur)
 {
 	try {

@@ -10,8 +10,7 @@ using namespace std;
 
 const Vecteur2D operator *(const double & a, const Vecteur2D & u) { return u * a; }
 
-//------------ implémentation des fonctions inline ----------------------
-
+//------------ implémentation des fonctions----------------------
 
 Vecteur2D::Vecteur2D(const double &x, const double &y) : x(x), y(y) {}
 

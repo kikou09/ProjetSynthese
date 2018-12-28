@@ -22,7 +22,11 @@ Polygone::Polygone(const Polygone &p): FormeSimple(p.couleur)
 
 Polygone::~Polygone()
 {
-	formes.erase(formes.begin(), formes.end());
+	for (int i = 0; i < formes.size(); i++) {
+
+		delete formes[i];
+	}
+	formes.clear();
 }
 
 
@@ -40,7 +44,7 @@ Vecteur2D * Polygone::getVecteur(const int indice) const
 
 void Polygone::ajoutVecteur(Vecteur2D *v)
 {
-	formes.push_back(v);
+	formes.push_back(v->clone());
 }
 
 void Polygone::supprimerDernier()
@@ -52,25 +56,29 @@ void Polygone::supprimerDernier()
 
 /**
 * \brief Effectue l'homothetie du polygone
-* \param[in] x
-* \param[in] y
+* \param[in] v
 * \param[in] rapport
 */
-Polygone * Polygone::homothetie(const Vecteur2D &v , const double)const
+Polygone * Polygone::homothetie(const Vecteur2D &v , const double rapport)const
 {
-	return nullptr;
+	for (int i = 0; i < formes.size(); i++) {
+
+		formes[i]->homothetie(v, rapport);
+	}
 }
 
 
 /**
 * \brief Effectue la rotation du polygone
-* \param[in] x
-* \param[in] y
+* \param[in] v
 * \param[in] angle : angle de rotation
 */
 Polygone * Polygone::rotation(const Vecteur2D &v, const double angle)const 
 {
-	return nullptr;
+	for (int i = 0; i < formes.size(); i++) {
+
+		formes[i]->rotation(v, angle);
+	}
 }
 
 
@@ -80,7 +88,10 @@ Polygone * Polygone::rotation(const Vecteur2D &v, const double angle)const
 */
 Polygone * Polygone::translation(const Vecteur2D &v)const
 {
-	return nullptr;
+	for (int i = 0; i < formes.size(); i++) {
+
+		formes[i]->translation(v);
+	}
 }
 
 const double Polygone::getAire() const

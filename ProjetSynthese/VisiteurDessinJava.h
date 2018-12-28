@@ -10,11 +10,9 @@
 class VisiteurDessinJava :
 	public VisiteurForme
 {
-private :
-	EnvoyeurReceveur *connexion;
 public:
 	
-	VisiteurDessinJava(EnvoyeurReceveur *e);
+	VisiteurDessinJava();
 	virtual ~VisiteurDessinJava();
 
 	virtual void dessiner(const Cercle *c) const;
