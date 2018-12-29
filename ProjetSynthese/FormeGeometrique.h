@@ -7,6 +7,7 @@
 using namespace std;
 
 class VisiteurForme;
+class VisiteurSauvegarde;
 
 /**
 * \class FormeGeometrique
@@ -89,7 +90,7 @@ public:
 	/**
 	*\brief Accepte le visiteur qui va sauvegarder la forme dans un fichier
 	*/
-	void accepteSauvegarde(const VisiteurForme *visiteur)const;
+	void accepteSauvegarde(const VisiteurSauvegarde *visiteur)const;
 
 	friend ostream &operator << (ostream &os, FormeGeometrique &f);
 

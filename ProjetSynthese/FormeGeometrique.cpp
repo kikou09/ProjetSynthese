@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "FormeGeometrique.h"
-#include "VisiteurForme.h"
-
+#include "VisiteurSauvegarde.h"
 
 FormeGeometrique::FormeGeometrique(){}
 
@@ -9,7 +8,8 @@ FormeGeometrique::FormeGeometrique(const FormeGeometrique &forme) : couleur(form
 
 FormeGeometrique::FormeGeometrique(const string &c)
 {
-	setCouleur(c);
+		setCouleur(c);
+
 }
 
 FormeGeometrique::~FormeGeometrique(){}
@@ -33,8 +33,8 @@ const string FormeGeometrique::getCouleur() const
 
 void FormeGeometrique::setCouleur(const string &c)
 {
-	if (c != "black" || c != "blue" || c != "red" || c != "green" || c != "yellow" || c != "cyan")
-		throw Erreur("Couleur incorrecte");
+	/*if (c != "black" || c != "blue" || c != "red" || c != "green" || c != "yellow" || c != "cyan")
+		throw Erreur("Couleur incorrecte");*/
 	couleur = c;
 }
 
@@ -51,7 +51,7 @@ void FormeGeometrique::operator=(const FormeGeometrique &forme)
 	setCouleur(forme.couleur);
 }
 
-void FormeGeometrique::accepteSauvegarde(const VisiteurForme *visiteur) const
+void FormeGeometrique::accepteSauvegarde(const VisiteurSauvegarde *visiteur) const
 {
 	visiteur->sauvegarde(this);
 }

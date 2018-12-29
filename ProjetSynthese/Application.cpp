@@ -11,16 +11,17 @@
 #include "SauvegardeForme.h"
 #include <iostream>
 #include "Application.h"
+#include "VisiteurDessinJava.h"
 
 using namespace std;
 
 int main()
 {
 
-	vector <string> menu;
+	/*vector <string> menu;
 	InterfaceUtilisateur *ihm,*ihm_aux , *creer_forme , *calcul , *dessiner , *quitter ;
 	int choix=0;
-	string c;
+	string c;*/
 
 
 	double aire;
@@ -30,24 +31,34 @@ int main()
 
 
 	//Test cercle 
-	Vecteur2D v(12, 10);
-	Vecteur2D rotation(5, 8);
-	forme = new Cercle("black", v, 5);
-	forme->affiche();
-	aire = forme->getAire();
-	cout << aire << endl;
-	f = forme->rotation(rotation, 50);
-	f->affiche();
+	Vecteur2D v(8, 6);
+	Vecteur2D v2(3, 4);
+	Vecteur2D v3(6, 4);
+	Vecteur2D v4(4, 6);
+	//Vecteur2D rotation(5, 8);
+	try {
+		forme = new Cercle("red", v, 8);
+		f = new Triangle("cyan", v2, v3, v4);
+		//aire = forme->getAire();
+		//cout << aire << endl;
+		//f = forme->rotation(rotation, 50);
+		//f->affiche();
 
-	f = forme->homothetie(rotation, 50);
-	cout << "Homothetie : " << endl;
-	f->affiche();
+		/*f = forme->homothetie(rotation, 50);
+		cout << "Homothetie : " << endl;
+		f->affiche();
 
-	f = forme->translation(rotation);
-	cout << "Rotation : " << endl;
-	f->affiche();
+		f = forme->translation(rotation);
+		cout << "Rotation : " << endl;
+		f->affiche();*/
 
+		forme->dessin(new VisiteurDessinJava);
+		f->dessin(new VisiteurDessinJava);
+	}
+	catch (Erreur e) {
 
+		cout << e.getMessage();
+	}
 
 	/*quitter = new InterfaceQuitter(nullptr);
 	creer_forme = new InterfaceCreerForme(quitter);

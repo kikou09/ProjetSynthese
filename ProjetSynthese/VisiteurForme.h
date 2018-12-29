@@ -11,7 +11,6 @@
 *\class VisiteurForme
 *\brief classe de base du visteur pour les formes géométriques
 * Visteur pour le dessin de la forme 
-* Visiteur pour la sauvegarde de la forme
 */
 class VisiteurForme
 {
@@ -21,9 +20,6 @@ public:
 	virtual void dessiner(const Polygone *p) const = 0;
 	virtual void dessiner(const Segment *s) const = 0;
 	virtual void dessiner(const FormeComposee *f) const=0;
-
-
-	virtual void sauvegarde(const FormeGeometrique *forme) const=0;
 
 };
 

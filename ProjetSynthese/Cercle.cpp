@@ -113,7 +113,7 @@ bool Cercle::operator==(const Cercle &c) const
 Cercle::operator string() const
 {
 	ostringstream oss;
-	oss << "Cercle: " << centre.getX() << " " << centre.getY() << " " << rayon << " " << couleur;
+	oss << "Cercle:" << centre.getX() << " " << centre.getY() << " " << rayon << " " << couleur << " \n";
 	return oss.str();
 }
 

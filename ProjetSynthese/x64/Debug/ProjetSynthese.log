@@ -1,8 +1,9 @@
-﻿  Cercle.cpp
+﻿  Application.cpp
 c:\users\jorane\documents\github\projetsynthèse\projetsynthese\formegeometrique.h(6): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
 c:\users\jorane\documents\github\projetsynthèse\projetsynthese\triangle.h(23): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
 c:\users\jorane\documents\github\projetsynthèse\projetsynthese\triangle.h(30): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
 c:\users\jorane\documents\github\projetsynthèse\projetsynthese\triangle.h(31): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
 c:\users\jorane\documents\github\projetsynthèse\projetsynthese\triangle.h(32): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthèse\projetsynthese\erreur.h(32): warning C4717: 'operator<<' : récurrent sur tous les chemins d'accès de contrôle, la fonction entraînera un dépassement de capacité de la pile d'exécution
+c:\users\jorane\documents\github\projetsynthèse\projetsynthese\application.cpp(27): warning C4101: 'aire' : variable locale non référencée
+c:\users\jorane\documents\github\projetsynthèse\projetsynthese\application.cpp(30): warning C4101: 'i' : variable locale non référencée
   ProjetSynthese.vcxproj -> C:\Users\Jorane\Documents\GitHub\ProjetSynthèse\x64\Debug\ProjetSynthese.exe

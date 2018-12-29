@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#define ADRESSE_IP "192.168.1.73"
+#define ADRESSE_IP "192.168.0.44"
 #define PORT_SERVEUR 9111
 
 const static int L = 200;
@@ -24,7 +24,7 @@ private:
 	static EnvoyeurReceveur *instance;
 	SOCKET sock;
 
-	EnvoyeurReceveur(const char* adresseIP, short portServeur);
+	EnvoyeurReceveur(const char* adresseIP, int portServeur);
 
 public:
 

@@ -17,7 +17,7 @@ EnvoyeurReceveur * EnvoyeurReceveur::getInstance() {
 	
 	return instance;
 }
-EnvoyeurReceveur::EnvoyeurReceveur(const char * adresseIP, short portServeur)
+EnvoyeurReceveur::EnvoyeurReceveur(const char * adresseIP, int portServeur)
 {
 	try {
 

@@ -1,11 +1,11 @@
 #pragma once
-#include "VisiteurForme.h"
+#include "VisiteurSauvegarde.h"
 #include <iostream>
 #include <sstream>
 #include <fstream>
 #include <algorithm>
 class SauvegardeForme :
-	public VisiteurForme
+	public VisiteurSauvegarde
 {
 public:
 

@@ -117,6 +117,9 @@
     <ClInclude Include="InterfaceDessiner.h">
       <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
     </ClInclude>
+    <ClInclude Include="VisiteurSauvegarde.h">
+      <Filter>Fichiers d%27en-tête\SauvegardeForme</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -198,6 +201,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="VisiteurDessinJava.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="VisiteurSauvegarde.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

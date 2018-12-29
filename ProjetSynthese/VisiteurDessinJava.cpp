@@ -26,9 +26,9 @@ void VisiteurDessinJava::dessiner(const Triangle * t) const
 {
 	string message = string(*t);
 	cout << message;
-	connexion->envoyer(message.c_str());
+	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 
-	string reponse = connexion->recevoir();
+	string reponse = EnvoyeurReceveur::getInstance()->recevoir();
 
 	if (reponse!= "") {
 		cout << reponse << endl;
@@ -42,9 +42,9 @@ void VisiteurDessinJava::dessiner(const Polygone * p) const
 {
 	string message = string(*p);
 	cout << message;
-	connexion->envoyer(message.c_str());
+	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 
-	string reponse = connexion->recevoir();
+	string reponse = EnvoyeurReceveur::getInstance()->recevoir();
 
 	if (reponse != "") {
 		cout << reponse << endl;
@@ -58,9 +58,9 @@ void VisiteurDessinJava::dessiner(const Segment * s) const
 {
 	string message = string(*s);
 	cout << message;
-	connexion->envoyer(message.c_str());
+	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 
-	string reponse = connexion->recevoir();
+	string reponse = EnvoyeurReceveur::getInstance()->recevoir();
 
 	if (reponse != "") {
 		cout << reponse << endl;
@@ -74,9 +74,9 @@ void VisiteurDessinJava::dessiner(const FormeComposee * f) const
 {
 	string message = string(*f);
 	cout << message;
-	connexion->envoyer(message.c_str());
+	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 
-	string reponse = connexion->recevoir();
+	string reponse = EnvoyeurReceveur::getInstance()->recevoir();
 
 	if (reponse != "") {
 		cout << reponse << endl;

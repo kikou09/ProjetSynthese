@@ -61,10 +61,12 @@ void Polygone::supprimerDernier()
 */
 Polygone * Polygone::homothetie(const Vecteur2D &v , const double rapport)const
 {
-	for (int i = 0; i < formes.size(); i++) {
+	Polygone *polygone = this->clone();
+	for (int i = 0; i < polygone->formes.size(); i++) {
 
-		formes[i]->homothetie(v, rapport);
+		polygone->formes[i]->homothetie(v, rapport);
 	}
+	return polygone;
 }
 
 
@@ -75,10 +77,12 @@ Polygone * Polygone::homothetie(const Vecteur2D &v , const double rapport)const
 */
 Polygone * Polygone::rotation(const Vecteur2D &v, const double angle)const 
 {
-	for (int i = 0; i < formes.size(); i++) {
+	Polygone *polygone = this->clone();
+	for (int i = 0; i < polygone->formes.size(); i++) {
 
-		formes[i]->rotation(v, angle);
+		polygone->formes[i]->rotation(v, angle);
 	}
+	return polygone;
 }
 
 
@@ -88,10 +92,12 @@ Polygone * Polygone::rotation(const Vecteur2D &v, const double angle)const
 */
 Polygone * Polygone::translation(const Vecteur2D &v)const
 {
-	for (int i = 0; i < formes.size(); i++) {
+	Polygone *polygone = this->clone();
+	for (int i = 0; i < polygone->formes.size(); i++) {
 
-		formes[i]->translation(v);
+		polygone->formes[i]->translation(v);
 	}
+	return polygone;
 }
 
 const double Polygone::getAire() const
