@@ -8,9 +8,17 @@ Segment::Segment() :FormeSimple("black"), pointA(), pointB()
 {
 }
 
-Segment::Segment(const string &c, const Vecteur2D &pa, const Vecteur2D &pb): FormeSimple(c) , pointA(pa) , pointB(pb)
+Segment::Segment(const string &c, const Vecteur2D &pa, const Vecteur2D &pb): FormeSimple(c) 
 {
+	try {
 
+		setPointA(pa);
+		setPointB(pb);
+	}
+	catch (Erreur e) {
+
+		throw;
+	}
 }
 
 Segment::Segment(const Segment &segment): FormeSimple(segment),pointA(segment.pointA) , pointB(segment.pointB)
@@ -44,11 +52,19 @@ const double Segment::getAire() const
 
 void Segment::setPointA(const Vecteur2D &pa)
 {
+	if (pa.getX() < -1 || pa.getX()>20)
+		throw Erreur("x doit etre entre -1 et 20");
+	if (pa.getY() < -1 || pa.getY() > 12)
+		throw Erreur("y doit etre entre -1 et 12");
 	pointA = pa;
 }
 
 void Segment::setPointB(const Vecteur2D &pb)
 {
+	if (pb.getX() < -1 || pb.getX() > 20)
+		throw Erreur("x doit etre entre -1 et 20");
+	if (pb.getY() < -1 || pb.getY() > 12)
+		throw Erreur("y doit etre entre -1 et 12");
 	pointB = pb;
 }
 
@@ -122,7 +138,7 @@ Segment::operator string() const
 
 void Segment::affiche() const
 {
-	cout << "Couleur : " << couleur << "point A x:" << pointA.getX() << " y:" << pointA.getY() << " point B x:" << pointB.getX() << " y:" << pointB.getY() << endl;
+	cout << string(*this);
 }
 
 void Segment::dessin(const VisiteurForme *visiteur)const
@@ -135,28 +151,25 @@ istream & operator>>(istream & is, Segment &segment)
 
 	Vecteur2D pointa;
 	Vecteur2D pointb;
-	double xa, xb, ya, yb;
-	
-	cout << "Saisir le point x  du point A : " << endl;
-	is >> xa;
-	cout << "Saisir le point y du point A : " << endl;
-	is >> ya;
-	cout << "Saisir le point x  du point B : " << endl;
-	is >> xb;
-	cout << "Saisir le point y du point B : " << endl;
-	is >> yb;
+	string couleur;
 
-	pointa.setX(xa);
-	pointa.setY(ya);
+	try {
+		is >> pointa;
+		is >> pointb;
 
-	pointb.setX(xb);
-	pointb.setY(yb);
 
-	cout << "Saisir la couleur : " << endl;
-	is >> segment.couleur;
+		cout << "Saisir la couleur : " << endl;
+		is >> couleur;
 
-	segment.setPointA(pointa);
-	segment.setPointB(pointb);
+		segment.setPointA(pointa);
+		segment.setPointB(pointb);
+		segment.setCouleur(couleur);
+	}
+	catch (Erreur e) {
+
+		cerr << e.getMessage();
+		cin >> segment;
+	}
 
 	return (is);
 	

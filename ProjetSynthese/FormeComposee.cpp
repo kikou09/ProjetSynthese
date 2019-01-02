@@ -9,6 +9,10 @@ FormeComposee::FormeComposee(const string &c) : FormeGeometrique(c){}
 
 FormeComposee::FormeComposee(const FormeComposee &forme_c): FormeGeometrique(forme_c.couleur)
 {
+	for (int i = 0; i < groupe.size(); i++) {
+
+		delete groupe[i];
+	}
 	groupe = forme_c.groupe;
 }
 
@@ -31,7 +35,16 @@ bool FormeComposee::contient(FormeGeometrique *f)
 void FormeComposee::ajouterForme(FormeGeometrique *forme)
 {
 	if(!contient(forme))
-		groupe.push_back(forme->clone()); //On rajoute la forme à la fin  
+		groupe.push_back(forme->clone()); //On rajoute la forme à la fin 
+
+	for (int i = 0; i < groupe.size()-1; i++) {
+
+		groupe[i]->setCouleur(forme->getCouleur());
+	}
+
+	couleur = forme->getCouleur();
+
+	
 }
 
 void FormeComposee::supprimerForme(const int indice)
@@ -113,7 +126,9 @@ FormeComposee * FormeComposee::translation(const Vecteur2D &v)const
 
 FormeComposee::~FormeComposee()
 {
-	for (int i = 0; i < groupe.size(); i++) {
+	for (int i = 1; i < groupe.size(); i++) {
+
+		cout << groupe[i];
 		delete groupe[i];
 	}
 	groupe.clear();
@@ -121,11 +136,21 @@ FormeComposee::~FormeComposee()
 
 FormeComposee::operator string() const
 {
-	return nullptr;
+	ostringstream os;
+	os << "Forme Composee [ ";
+	for (int i = 0; i < groupe.size(); i++) {
+
+		os << *groupe[i];
+	}
+
+	os << "] " << couleur << "\n";
+
+	return os.str();
 }
 
 void FormeComposee::affiche() const
 {
+	cout << string(*this);
 }
 
 void FormeComposee::dessin(const VisiteurForme *visiteur)const
@@ -133,3 +158,39 @@ void FormeComposee::dessin(const VisiteurForme *visiteur)const
 	return visiteur->dessiner(this);
 }
 
+istream & operator>>(istream & is, FormeComposee & fc)
+{
+	int nbformes;
+	int i=0;
+	int choix;
+
+	cout << "Combien de formes voulez vous ajouter ? \n";
+	is >> nbformes;
+
+	try {
+
+		while (i != nbformes && (choix >5 || choix <1)) {
+
+			cout << "Quel forme voulez vous ajouter ?\n";
+			cout << "1. Un Cercle\n";
+			cout << "2. Un Segment\n";
+			cout << "3. Un Triangle\n";
+			cout << "4. Un Polygone\n";
+			cout << "5. Une forme composee\n";
+
+			is >> choix;
+
+			//obligé de faire un while donc pas bon 
+
+		}
+
+
+	}
+	catch (Erreur e) {
+
+		cerr << e.getMessage();
+		cin >> fc;
+	}
+
+	return is;
+}

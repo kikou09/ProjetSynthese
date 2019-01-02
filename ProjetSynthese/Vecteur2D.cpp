@@ -127,6 +127,6 @@ istream & operator>>(istream & is, Vecteur2D &u)
 		u.setX(x);
 		u.setY(y);
 
-		return (is);
+		return is;
 
 }

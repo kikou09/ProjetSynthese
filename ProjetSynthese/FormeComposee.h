@@ -19,7 +19,7 @@ class FormeComposee :
 		FormeComposee();
 		FormeComposee(const string &);
 		FormeComposee(const FormeComposee &);
-		FormeComposee*  clone() const;
+		virtual FormeComposee*  clone() const;
 
 		/**
 		\brief Verfie si la forme appartient deja ou pas au groupe de formes 
@@ -59,11 +59,14 @@ class FormeComposee :
 		virtual operator string() const;
 		virtual void affiche()const;
 
+
 		/**
 		*\brief Accepte le visiteur qui va envoyer l'instruction de dessin au serveur 
 		*\param[in] visiteur : visiteur qui souhaite envoyer l'instruction au serveur
 		*/
 		void dessin(const VisiteurForme *visiteur)const;
 		//void accepteSauvegarde(const VisiteurForme *)const;
+
+		friend istream & operator >> (istream &is, FormeComposee &fc);
 };
 

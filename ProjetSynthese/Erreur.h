@@ -11,20 +11,20 @@ class Erreur :
 public:
 
 	string message;            //Description de l'erreur
-	Erreur() : message("Erreur !") {};
-	Erreur(const string&phrase)
+	Erreur() throw() : message("Erreur !"){};
+	Erreur(const string&phrase) throw()
 		: message(phrase) {}
-	Erreur(const char * messageErreur) : Erreur((string)messageErreur) {}
+	Erreur(const char * messageErreur) throw() : Erreur((string)messageErreur) {}
 
-	virtual ~Erreur()
+	virtual ~Erreur() throw()
 	{}
 
-	virtual const char* getMessage() const 
+	virtual const char* getMessage() const throw()
 	{
 		return message.c_str();
 	}
 
-	operator string() const { return this->message; }
+	operator string() const throw() { return this->message; }
 
 	friend ostream & operator << (ostream &os , const Erreur &erreur)
 	{ 

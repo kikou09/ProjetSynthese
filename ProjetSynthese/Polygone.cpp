@@ -5,12 +5,12 @@
 
 Polygone::Polygone(const string &couleur, Vecteur2D *p1, Vecteur2D *p2, Vecteur2D *p3) : FormeSimple(couleur) {
 
-	formes.push_back(p1);
-	formes.push_back(p2);
-	formes.push_back(p3);
+	this->ajoutPoint(p1);
+	this->ajoutPoint(p2);
+	this->ajoutPoint(p3);
 }
 
-Polygone::Polygone() 
+Polygone::Polygone() : FormeSimple("black") 
 {
 }
 
@@ -37,13 +37,17 @@ Polygone*  Polygone::clone() const {
 Vecteur2D * Polygone::getVecteur(const int indice) const
 {
 	if (indice > formes.size())
-		return nullptr;
+		throw Erreur("indice incorrecte\n");
 
 	return formes[indice];
 }
 
-void Polygone::ajoutVecteur(Vecteur2D *v)
+void Polygone::ajoutPoint(Vecteur2D *v)
 {
+	if (v->getX() < -1 || v->getX()>20)
+		throw Erreur("x doit etre entre -1 et 20\n");
+	if (v->getY() < -1 || v->getY() >12)
+		throw Erreur("y doit etre entre -1 et 12\n");
 	formes.push_back(v->clone());
 }
 
@@ -112,23 +116,50 @@ const double Polygone::getAire() const
 	return abs(somme / 2);
 }
 
-void Polygone::operator=(const Polygone &)
+void Polygone::operator=(const Polygone &p)
 {
+	if (this != &p) {
+		setCouleur(p.couleur);
+		for (int i = 0; i < formes.size(); i++) {
+			delete formes[i];
+		}
+		formes = p.formes;
+	}
 }
 
-bool Polygone::operator==(const Polygone &) const
+bool Polygone::operator==(const Polygone &p) const
 {
-	return false;
+	if (couleur == p.getCouleur())
+	{
+		for (int i = 0; i < formes.size(); i++) {
+
+			if (formes[i] != p.formes[i])
+				return false;
+		}
+
+		return true;
+	}
+	else
+		return false;
 }
 
 Polygone::operator string() const
 {
-	return "ok";
+	ostringstream os;
+	os << "Polygone :";
+	for (int i = 0; i < formes.size(); i++) {
+
+		os << formes[i]->getX() << " " << formes[i]->getY() << " ";
+	}
+
+	os << couleur << " \n";
+	
+	return os.str();
 }
 
 void Polygone::affiche() const
 {
-	cout << "Couleur : " << couleur;
+	cout << string(*this);
 }
 
 void Polygone::dessin(const VisiteurForme *visiteur)const
@@ -137,6 +168,35 @@ void Polygone::dessin(const VisiteurForme *visiteur)const
 }
 istream & operator>>(istream & is, Polygone &polygone)
 {
+	string couleur;
+	int nbpoints;
+	Vecteur2D point;
+	try {
+
+		cout << "Saisir la couleur du polygone :";
+		is >> couleur;
+
+		cout << "Saisir le nombre de points du polygone ( au minimum 3 )\n";
+		is >> nbpoints;
+
+		if (nbpoints < 3)
+			throw Erreur("Le nombre de points doit etre superieur a 3\n");
+
+		for (int i = 0; i < nbpoints; i++) {
+
+			is >> point;
+			polygone.ajoutPoint(&point);
+		}
+
+		polygone.setCouleur(couleur);
+
+	}
+	catch(Erreur e){
+
+		cerr << e.getMessage();
+		cin >> polygone;
+
+	}
 	return (is);
 
 }

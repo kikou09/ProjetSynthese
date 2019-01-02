@@ -54,7 +54,7 @@ public:
 
 	operator string() const;
 	friend ostream & operator << (ostream &os ,const Vecteur2D &u);
-	friend istream & operator >>(istream &is, const Vecteur2D &u);
+	friend istream & operator >>(istream &is, Vecteur2D &u);
 }; 
 
 

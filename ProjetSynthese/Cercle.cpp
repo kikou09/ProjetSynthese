@@ -6,22 +6,28 @@
 Cercle::Cercle(const string &c, const Vecteur2D &centre, const double r) : FormeSimple(c), centre(centre)
 {
 	try {
-		rayon = r;
-		if (r <= 0) {
-
-			throw Erreur("Le rayon doit être > 0");
-		}
+		setRayon(r);
+		setCentre(centre);
 	}
 	catch (Erreur e)
 	{
-		cout << e;
-
+		cerr << e;
 	}
 }
 
-Cercle::Cercle(const Cercle &cercle): FormeSimple(cercle), centre(cercle.centre) , rayon(cercle.rayon){}
+Cercle::Cercle(const Cercle &cercle): FormeSimple(cercle){
 
-Cercle::Cercle() : FormeSimple("black"), rayon(0)
+	try {
+		setCentre(cercle.centre);
+		setRayon(rayon);
+	}
+	catch (Erreur e) {
+
+		cerr << e.getMessage();
+	}
+}
+
+Cercle::Cercle() : FormeSimple("black"), rayon(1)
 {
 }
 
@@ -51,11 +57,18 @@ const double Cercle::getRayon() const
 
 void Cercle::setCentre(const Vecteur2D &c)
 {
+	if (c.getX() < -1 || c.getX() > 20)
+		throw Erreur("x doit être entre -1 et 20\n");
+	if (c.getY() < -1 || c.getY() > 10)
+		throw Erreur("y doit être entre -1 et 10\n");
+	
 	centre = c;
 }
 
 void Cercle::setRayon(const double r)
 {
+	if (rayon <= 0 && rayon > 25)
+		throw Erreur("Le rayon doit être entre 0 et 25 \n");
 	rayon = r;
 }
 
@@ -119,7 +132,7 @@ Cercle::operator string() const
 
 void Cercle::affiche() const
 {
-	cout << "Couleur : " << couleur << " centre : x:" << centre.getX() << " y:" << centre.getY() << " rayon : " << rayon << endl;
+	cout << string(*this);
 }
 
 void Cercle::dessin(const VisiteurForme *visiteur)const
@@ -130,25 +143,27 @@ void Cercle::dessin(const VisiteurForme *visiteur)const
 istream & operator>>(istream & is, Cercle &c)
 {
 	Vecteur2D centre;
-	double rayon , x ,y;
+	double rayon;
+	string couleur;
+	try {
+		is >> centre;
 
-	cout << "Saisir le point x : " << endl;
-	is >> x;
-	cout << "Saisir le point y : " << endl;
-	is >> y;
+		cout << "Saisir le rayon : " << endl;
+		is >> rayon;
 
-	centre.setX(x);
-	centre.setY(y);
+		cout << "Saisir la couleur : " << endl;
+		is >> couleur;
 
-	cout << "Saisir le rayon : " << endl;
-	is >> rayon;
-	
-	cout << "Saisir la couleur : " << endl;
-	is >> c.couleur;
+		c.setCentre(centre);
+		c.setRayon(rayon);
+		c.setCouleur(couleur);
+	}
+	catch (Erreur e) {
 
-	c.setCentre(centre);
-	c.setRayon(rayon);
+		cerr << e.getMessage();
+		cin >> c;
+	}
 
-	return (is);
+	return is;
 	
 }

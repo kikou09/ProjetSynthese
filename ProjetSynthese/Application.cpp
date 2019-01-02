@@ -25,8 +25,14 @@ int main()
 
 
 	double aire;
-	FormeGeometrique *f;
 	FormeGeometrique *forme;
+	Cercle cercle;
+	Triangle *triangle=new Triangle();
+	Segment *segment=new Segment();
+	Polygone polygone;
+	FormeComposee fc("red");
+	FormeComposee fc2("black");
+
 	int i;
 
 
@@ -37,8 +43,11 @@ int main()
 	Vecteur2D v4(4, 6);
 	//Vecteur2D rotation(5, 8);
 	try {
-		forme = new Cercle("red", v, 8);
-		f = new Triangle("cyan", v2, v3, v4);
+
+		cin >> cercle;
+
+		//forme = new Cercle("red", v, 8);
+		//f = new Triangle("cyan", v2, v3, v4);
 		//aire = forme->getAire();
 		//cout << aire << endl;
 		//f = forme->rotation(rotation, 50);
@@ -52,8 +61,8 @@ int main()
 		cout << "Rotation : " << endl;
 		f->affiche();*/
 
-		forme->dessin(new VisiteurDessinJava);
-		f->dessin(new VisiteurDessinJava);
+		//forme->dessin(new VisiteurDessinJava);
+		//f->dessin(new VisiteurDessinJava);
 	}
 	catch (Erreur e) {
 

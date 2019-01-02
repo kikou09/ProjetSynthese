@@ -10,6 +10,7 @@ public:
 	virtual ~FormeSimple();
 
 	virtual const double getAire()const = 0;
+	virtual FormeSimple * clone()const=0;
 	virtual operator string() const = 0;
 	void affiche() const = 0;
 

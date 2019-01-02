@@ -39,7 +39,7 @@ public:
 	* \param p
 	* Ajoute un point à la suite des autres
 	*/
-	void ajoutVecteur(Vecteur2D *v);
+	void ajoutPoint(Vecteur2D *v);
 	void supprimerDernier();
 
 	virtual Polygone * homothetie(const Vecteur2D &v,  const double)const ;
@@ -52,7 +52,7 @@ public:
 	bool operator ==(const Polygone&)const;
 	bool operator != (const Polygone&polygone)const { return !(this == &polygone); }
 	operator string() const;
-	friend istream &operator >> (istream& is, const Polygone &);
+	friend istream &operator >> (istream& is, Polygone &);
 
 	void affiche() const;
 

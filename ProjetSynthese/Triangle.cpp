@@ -5,8 +5,18 @@
 
 Triangle::Triangle() : FormeSimple("black"), p1(), p2(), p3(){}
 
-Triangle::Triangle(const string & couleur, const Vecteur2D &pointA, const Vecteur2D &pointB , const Vecteur2D &pointC) : FormeSimple(couleur) , p1(pointA) , p2(pointB) , p3(pointC)
+Triangle::Triangle(const string & couleur, const Vecteur2D &pointA, const Vecteur2D &pointB , const Vecteur2D &pointC) : FormeSimple(couleur)
 {
+	try {
+		setP1(pointA);
+		setP2(pointB);
+		setP3(pointC);
+	}
+	catch (Erreur e) {
+
+		throw;
+	}
+
 }
 
 Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle) , p1(triangle.p1), p2(triangle.p2) , p3(triangle.p3){}
@@ -18,10 +28,15 @@ Triangle * Triangle::clone() const
 	return new Triangle(*this);
 }
 
-void Triangle::setP1(const Vecteur2D &c) throw (Erreur)
+void Triangle::setP1(const Vecteur2D &b) throw (Erreur)
 {
-	if (p1 != c) {
-		p1 = c;
+	if (p1 != b) {
+		if (b.getX() < -1 || b.getX() > 20)
+			throw Erreur("x doit etre entre -1 et 20");
+		if (b.getY() < -1 || b.getY()>12)
+			throw Erreur("y doit etre entre -1 et 12");
+
+		p1 = b;
 	}
 
 }
@@ -29,6 +44,10 @@ void Triangle::setP1(const Vecteur2D &c) throw (Erreur)
 void Triangle::setP2(const Vecteur2D &b) throw (Erreur)
 {
 	if (p2 != b) {
+		if (b.getX() < -1 || b.getX() > 20)
+			throw Erreur("x doit etre entre -1 et 20");
+		if (b.getY() < -1 || b.getY() > 12)
+			throw Erreur("y doit etre entre -1 et 12");
 		p2 = b;
 	}
 }
@@ -36,6 +55,11 @@ void Triangle::setP2(const Vecteur2D &b) throw (Erreur)
 void Triangle::setP3(const Vecteur2D &b) throw (Erreur)
 {
 	if (p3 != b) {
+		if (b.getX() < -1 || b.getX() > 20)
+			throw Erreur("x doit etre entre -1 et 20");
+		if (b.getY() < -1 || b.getY() > 12)
+			throw Erreur("y doit etre entre -1 et 12");
+
 		p3 = b;
 	}
 }
@@ -52,7 +76,7 @@ Triangle::operator string() const {
 
 void Triangle::affiche() const
 {
-	cout << "Couleur : " << couleur << " cote 1 x:" << p1.getX() << "y: " << p1.getY() << "cote 2 x:" << p2.getX() << " y:" << p2.getY() << "cote 3 x : " << p3.getX() << "y: " << p3.getY() << endl;
+	cout << string(*this);
 }
 
 bool Triangle::operator==(const Triangle &t) const
@@ -64,6 +88,7 @@ bool Triangle::operator==(const Triangle &t) const
 void Triangle::operator=(const Triangle &t)
 {
 	if (this != &t) {
+		setCouleur(t.couleur);
 		setP1(t.p1);
 		setP2(t.p2);
 		setP3(t.p3);
@@ -145,39 +170,29 @@ istream & operator>>(istream & is, Triangle &triangle)
 	Vecteur2D point1;
 	Vecteur2D point2;
 	Vecteur2D point3;
-	double xa, xb, ya, yb,xc,yc;
+	string couleur;
 
-	//cin >> base;
-	//cin >> cote;
+	try {
 
-	cout << "Saisir le point x  du premier cote : " << endl;
-	is >> xa;
-	cout << "Saisir le point y du premier cote : " << endl;
-	is >> ya;
-	cout << "Saisir le point x  du deuxieme cote : " << endl;
-	is >> xb;
-	cout << "Saisir le point y du deuxieme cote : " << endl;
-	is >> yb;
-	cout << "Saisir le point x  du troisieme cote : " << endl;
-	is >> xc;
-	cout << "Saisir le point y du troisieme cote : " << endl;
-	is >> yc;
+		is >> point1;
+		is >> point2;
+		is >> point3;
 
-	point1.setX(xa);
-	point1.setY(ya);
+		cout << "Saisir la couleur : " << endl;
 
-	point2.setX(xb);
-	point2.setY(yb);
+		is >> couleur;
 
-	point3.setX(xc);
-	point3.setY(yc);
+		triangle.setP1(point1);
+		triangle.setP2(point2);
+		triangle.setP3(point3);
+		triangle.setCouleur(couleur);
 
-	cout << "Saisir la couleur : " << endl;
-	cin >> triangle.couleur;
-	triangle.setP1(point1);
-	triangle.setP2(point2);
-	triangle.setP3(point3);
-	
+	}
+	catch (Erreur e) {
+
+		cerr << e.getMessage();
+		cin >> triangle;
+	}
 
 	return (is);
 

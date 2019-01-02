@@ -8,8 +8,13 @@ FormeGeometrique::FormeGeometrique(const FormeGeometrique &forme) : couleur(form
 
 FormeGeometrique::FormeGeometrique(const string &c)
 {
+	try {
 		setCouleur(c);
-
+	}
+	catch (Erreur e) {
+		
+		throw;
+	}
 }
 
 FormeGeometrique::~FormeGeometrique(){}
@@ -33,9 +38,17 @@ const string FormeGeometrique::getCouleur() const
 
 void FormeGeometrique::setCouleur(const string &c)
 {
-	/*if (c != "black" || c != "blue" || c != "red" || c != "green" || c != "yellow" || c != "cyan")
-		throw Erreur("Couleur incorrecte");*/
+	if (c.compare("black") != 0 && c.compare("blue") != 0
+		&& c.compare("red") != 0 && c.compare("green") != 0
+		&& c.compare("yellow") != 0 && c.compare("cyan") != 0) {
+
+		throw Erreur("Couleur incorrecte");
+
+	}
+
+
 	couleur = c;
+
 }
 
 bool FormeGeometrique::operator==(const FormeGeometrique &forme) const

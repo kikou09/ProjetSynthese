@@ -92,8 +92,8 @@ public:
 	*/
 	void accepteSauvegarde(const VisiteurSauvegarde *visiteur)const;
 
-	friend ostream &operator << (ostream &os, FormeGeometrique &f);
-
+	friend ostream &operator << (ostream &os, const FormeGeometrique &f);
+	//virtual friend istream &operator >>(istream &is, FormeGeometrique *f)=0;
 
 };
 
