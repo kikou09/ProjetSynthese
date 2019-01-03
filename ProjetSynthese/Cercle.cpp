@@ -57,18 +57,18 @@ const double Cercle::getRayon() const
 
 void Cercle::setCentre(const Vecteur2D &c)
 {
-	if (c.getX() < -1 || c.getX() > 20)
+	/*if (c.getX() < -1 || c.getX() > 20)
 		throw Erreur("x doit être entre -1 et 20\n");
 	if (c.getY() < -1 || c.getY() > 10)
-		throw Erreur("y doit être entre -1 et 10\n");
+		throw Erreur("y doit être entre -1 et 10\n");*/
 	
 	centre = c;
 }
 
 void Cercle::setRayon(const double r)
 {
-	if (rayon <= 0 && rayon > 25)
-		throw Erreur("Le rayon doit être entre 0 et 25 \n");
+	/*if (rayon <= 0 && rayon > 25)
+		throw Erreur("Le rayon doit être entre 0 et 25 \n");*/
 	rayon = r;
 }
 

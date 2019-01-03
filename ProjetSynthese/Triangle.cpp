@@ -31,10 +31,10 @@ Triangle * Triangle::clone() const
 void Triangle::setP1(const Vecteur2D &b) throw (Erreur)
 {
 	if (p1 != b) {
-		if (b.getX() < -1 || b.getX() > 20)
+		/*if (b.getX() < -1 || b.getX() > 20)
 			throw Erreur("x doit etre entre -1 et 20");
 		if (b.getY() < -1 || b.getY()>12)
-			throw Erreur("y doit etre entre -1 et 12");
+			throw Erreur("y doit etre entre -1 et 12");*/
 
 		p1 = b;
 	}
@@ -44,10 +44,10 @@ void Triangle::setP1(const Vecteur2D &b) throw (Erreur)
 void Triangle::setP2(const Vecteur2D &b) throw (Erreur)
 {
 	if (p2 != b) {
-		if (b.getX() < -1 || b.getX() > 20)
+		/*if (b.getX() < -1 || b.getX() > 20)
 			throw Erreur("x doit etre entre -1 et 20");
 		if (b.getY() < -1 || b.getY() > 12)
-			throw Erreur("y doit etre entre -1 et 12");
+			throw Erreur("y doit etre entre -1 et 12");*/
 		p2 = b;
 	}
 }
@@ -55,10 +55,10 @@ void Triangle::setP2(const Vecteur2D &b) throw (Erreur)
 void Triangle::setP3(const Vecteur2D &b) throw (Erreur)
 {
 	if (p3 != b) {
-		if (b.getX() < -1 || b.getX() > 20)
+		/*if (b.getX() < -1 || b.getX() > 20)
 			throw Erreur("x doit etre entre -1 et 20");
 		if (b.getY() < -1 || b.getY() > 12)
-			throw Erreur("y doit etre entre -1 et 12");
+			throw Erreur("y doit etre entre -1 et 12");*/
 
 		p3 = b;
 	}
@@ -128,7 +128,6 @@ Triangle *Triangle::homothetie(const Vecteur2D &v , const double rapport)const
 	Vecteur2D *point2 = &p2.rotation(v, rapport);
 	Vecteur2D *point3 = &p3.rotation(v, rapport);
 	Triangle *t = new Triangle(couleur, *point1, *point2, *point3);
-	delete point1, point2, point3;
 	return t;
 
 }
@@ -146,7 +145,6 @@ Triangle * Triangle::rotation(const Vecteur2D & v, const double angle)const
 	Vecteur2D *point2 = &p2.rotation(v,angle);
 	Vecteur2D *point3 = &p3.rotation(v,angle);
 	Triangle *t = new Triangle(couleur, *point1, *point2,*point3);
-	delete point1, point2 ,point3;
 	return t;
 }
 
@@ -161,7 +159,6 @@ Triangle * Triangle::translation(const Vecteur2D &v)const
 	Vecteur2D *point2 = &p2.translation(v);
 	Vecteur2D *point3 = &p3.translation(v);
 	Triangle *t = new Triangle(couleur, *point1, *point2, *point3);
-	delete point1, point2, point3;
 	return t;
 }
 

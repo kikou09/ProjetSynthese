@@ -52,19 +52,19 @@ const double Segment::getAire() const
 
 void Segment::setPointA(const Vecteur2D &pa)
 {
-	if (pa.getX() < -1 || pa.getX()>20)
+	/*if (pa.getX() < -1 || pa.getX()>20)
 		throw Erreur("x doit etre entre -1 et 20");
 	if (pa.getY() < -1 || pa.getY() > 12)
-		throw Erreur("y doit etre entre -1 et 12");
+		throw Erreur("y doit etre entre -1 et 12");*/
 	pointA = pa;
 }
 
 void Segment::setPointB(const Vecteur2D &pb)
 {
-	if (pb.getX() < -1 || pb.getX() > 20)
+	/*if (pb.getX() < -1 || pb.getX() > 20)
 		throw Erreur("x doit etre entre -1 et 20");
 	if (pb.getY() < -1 || pb.getY() > 12)
-		throw Erreur("y doit etre entre -1 et 12");
+		throw Erreur("y doit etre entre -1 et 12");*/
 	pointB = pb;
 }
 

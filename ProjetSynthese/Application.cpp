@@ -14,7 +14,11 @@
 #include "VisiteurDessinJava.h"
 
 using namespace std;
-
+/**
+*	Pour que la forme s'affiche sur l'ecran lors du dessin 
+*	Coordoonnes : X entre -1.5 et 40 et Y entre -2 et 20
+*	Donc difficultés à dessiner les rotations ... car les coordonnees risquent de dépasser l'écran
+*/
 int main()
 {
 
@@ -27,42 +31,51 @@ int main()
 	double aire;
 	FormeGeometrique *forme;
 	Cercle cercle;
-	Triangle *triangle=new Triangle();
-	Segment *segment=new Segment();
+	Triangle triangle;
+	Segment segment;
 	Polygone polygone;
 	FormeComposee fc("red");
-	FormeComposee fc2("black");
-
+	Vecteur2D rotation(5, 4);
 	int i;
 
 
-	//Test cercle 
-	Vecteur2D v(8, 6);
-	Vecteur2D v2(3, 4);
-	Vecteur2D v3(6, 4);
-	Vecteur2D v4(4, 6);
-	//Vecteur2D rotation(5, 8);
 	try {
 
+		/*cin >> segment;
+		cout << "Aire du segment : " << segment.getAire() << endl;
+		cout << "Rotation du segment : " << *(segment.rotation(rotation, 30)) << endl;
+		cout << "Homothetie du segment : " << *(segment.homothetie(rotation, 30)) << endl;
+		cout << "Translation du segment : " << *(segment.translation(rotation)) << endl << endl;*/
+
+		//Test cercle 
 		cin >> cercle;
+		/*cout << "Aire du cercle : " << cercle.getAire() << endl;
+		cout << "Rotation du cercle : " << *(cercle.rotation(rotation, 30)) << endl;
+		cout << "Homothetie du cercle : " << *(cercle.homothetie(rotation, 30)) << endl;
+		cout << "Translation du cercle : " << *(cercle.translation(rotation)) << endl << endl;*/
 
-		//forme = new Cercle("red", v, 8);
-		//f = new Triangle("cyan", v2, v3, v4);
-		//aire = forme->getAire();
-		//cout << aire << endl;
-		//f = forme->rotation(rotation, 50);
-		//f->affiche();
+		/*cin >> triangle;
+		cout << "Aire du triangle : " << triangle.getAire() << endl;
+		cout << "Rotation du triangle : " << *(triangle.rotation(rotation, 30)) << endl;
+		cout << "Homothetie du triangle : " << *(triangle.homothetie(rotation, 30)) << endl;
+		cout << "Translation du triangle : " << *(triangle.translation(rotation)) << endl << endl;*/
 
-		/*f = forme->homothetie(rotation, 50);
-		cout << "Homothetie : " << endl;
-		f->affiche();
+		/*cin >> polygone;
+		cout << "Aire du polygone : " << polygone.getAire() << endl;
+		cout << "Rotation du polygone : " << *(polygone.rotation(rotation, 30)) << endl;
+		cout << "Homothetie du polygone : " << *(polygone.homothetie(rotation, 30)) << endl;
+		cout << "Translation du polygone : " << *(polygone.translation(rotation)) << endl << endl;
 
-		f = forme->translation(rotation);
-		cout << "Rotation : " << endl;
-		f->affiche();*/
-
+		fc.ajouterForme(&segment);
+		fc.ajouterForme(&triangle);
+		cout << "Aire de la forme composee : " << fc.getAire() << endl;
+		cout << "Rotation de la forme composee : " << *(fc.rotation(rotation, 30)) << endl;
+		cout << "Homothetie de la forme composee : " << *(fc.homothetie(rotation, 30)) << endl;
+		cout << "Translation de la forme composee : " << *(fc.translation(rotation)) << endl;*/
+	
 		//forme->dessin(new VisiteurDessinJava);
-		//f->dessin(new VisiteurDessinJava);
+
+		cercle.dessin(new VisiteurDessinJava);
 	}
 	catch (Erreur e) {
 

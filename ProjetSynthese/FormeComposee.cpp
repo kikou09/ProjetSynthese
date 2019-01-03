@@ -70,10 +70,10 @@ void FormeComposee::supprimerForme(const FormeGeometrique *forme)
 */
 FormeComposee * FormeComposee::homothetie(const Vecteur2D &v, const double rapport)const
 {
-	FormeComposee *groupe2 = new FormeComposee(*this);
+	FormeComposee *groupe2 = this->clone();
 	for (int i = 0; i < groupe2->groupe.size(); i++)
 	{
-		groupe2->groupe[i]->homothetie(v, rapport);
+		groupe2->groupe[i]=groupe2->groupe[i]->homothetie(v, rapport);
 	}
 	return groupe2;
 }

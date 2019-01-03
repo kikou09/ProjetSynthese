@@ -44,10 +44,10 @@ Vecteur2D * Polygone::getVecteur(const int indice) const
 
 void Polygone::ajoutPoint(Vecteur2D *v)
 {
-	if (v->getX() < -1 || v->getX()>20)
+	/*if (v->getX() < -1 || v->getX()>20)
 		throw Erreur("x doit etre entre -1 et 20\n");
 	if (v->getY() < -1 || v->getY() >12)
-		throw Erreur("y doit etre entre -1 et 12\n");
+		throw Erreur("y doit etre entre -1 et 12\n");*/
 	formes.push_back(v->clone());
 }
 
@@ -68,7 +68,7 @@ Polygone * Polygone::homothetie(const Vecteur2D &v , const double rapport)const
 	Polygone *polygone = this->clone();
 	for (int i = 0; i < polygone->formes.size(); i++) {
 
-		polygone->formes[i]->homothetie(v, rapport);
+		*polygone->formes[i]=polygone->formes[i]->homothetie(v, rapport);
 	}
 	return polygone;
 }
@@ -84,7 +84,7 @@ Polygone * Polygone::rotation(const Vecteur2D &v, const double angle)const
 	Polygone *polygone = this->clone();
 	for (int i = 0; i < polygone->formes.size(); i++) {
 
-		polygone->formes[i]->rotation(v, angle);
+		*polygone->formes[i]=polygone->formes[i]->rotation(v, angle);
 	}
 	return polygone;
 }
@@ -99,7 +99,7 @@ Polygone * Polygone::translation(const Vecteur2D &v)const
 	Polygone *polygone = this->clone();
 	for (int i = 0; i < polygone->formes.size(); i++) {
 
-		polygone->formes[i]->translation(v);
+		*polygone->formes[i]=polygone->formes[i]->translation(v);
 	}
 	return polygone;
 }
