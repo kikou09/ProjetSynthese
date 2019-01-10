@@ -4,15 +4,18 @@
 
 void SauvegardeForme::sauvegarde(const FormeGeometrique * f) const
 {
-	ofstream fichierSortie("formesSauvegardees.txt", ios::app);
+	ofstream fichier("C:/Users/Alexis/source/kikou09/ProjetSynthese/ProjetSynthese/Nouveau_Dossier/FormesSauvegardees.txt", ios::app);
 	//Test d'ouverture
-	if (! fichierSortie) {
+	if (fichier.is_open())
+		cout << "ok";
+
+	if (! fichier) {
 		cerr << "Problème d'ouverture de fichier" << endl;
 		exit(1);
 	}
-	fichierSortie << (string)*f << endl;
+	fichier << (string)*f << endl;
 	// fermeture du fichier
-	fichierSortie.close();
+	//fichier.close();
 	/*
 	// ouverture du fichier de sauvegarde
 	ofstream fichierEntree("formesSauvegardees.txt", ios::in);

@@ -2,11 +2,12 @@
 #include "Vecteur2D.h"
 #include "Cercle.h"
 #include "FormeGeometrique.h"
-#include "InterfaceUtilisateur.h"
-#include "InterfaceCalcul.h"
-#include "InterfaceCreerForme.h"
-#include "InterfaceQuitter.h"
-#include "InterfaceDessiner.h"
+
+#include "InterfaceChargement.h"
+#include "InterfaceChargementCercle.h"
+#include "InterfaceChargementPolygone.h"
+#include "InterfaceChargementSegment.h"
+#include "InterfaceChargementTriangle.h"
 #include "VisiteurForme.h"
 #include "SauvegardeForme.h"
 #include <iostream>
@@ -37,7 +38,13 @@ int main()
 	FormeComposee fc("red");
 	Vecteur2D rotation(5, 4);
 	int i;
+	vector<FormeGeometrique *> formes;
 
+	InterfaceChargement *corCercle = new InterfaceChargementCercle(NULL);
+	InterfaceChargement *corTriangle = new InterfaceChargementTriangle(corCercle);
+	InterfaceChargement *corSegment = new InterfaceChargementSegment(corTriangle);
+	InterfaceChargement *corPolygone = new InterfaceChargementPolygone(corSegment);
+	InterfaceChargement *cor = corPolygone;
 
 	try {
 
@@ -48,7 +55,7 @@ int main()
 		cout << "Translation du segment : " << *(segment.translation(rotation)) << endl << endl;*/
 
 		//Test cercle 
-		cin >> cercle;
+		//cin >> cercle;
 		/*cout << "Aire du cercle : " << cercle.getAire() << endl;
 		cout << "Rotation du cercle : " << *(cercle.rotation(rotation, 30)) << endl;
 		cout << "Homothetie du cercle : " << *(cercle.homothetie(rotation, 30)) << endl;
@@ -75,7 +82,20 @@ int main()
 	
 		//forme->dessin(new VisiteurDessinJava);
 
-		cercle.dessin(new VisiteurDessinJava);
+		//cercle.dessin(new VisiteurDessinJava);
+		//triangle.dessin(new VisiteurDessinJava);
+		//cout << "Test de la sauvegarde" << endl;
+		//cercle.accepteSauvegarde(new SauvegardeForme);
+		FormeGeometrique::ChargerFormes(formes, cor);
+		//cout << formes.empty();
+		cout << *formes[0];
+		/*out << "\ndeuxieme forme\n" << *formes[1];
+		cout << "\ntroisieme forme\n" << *formes[2];
+		cout << "\npremier polygone :\n" << *formes[3];
+		cout << "\nl'autre\n" << *formes[4];
+		*/
+
+		
 	}
 	catch (Erreur e) {
 
@@ -120,8 +140,7 @@ int main()
 	forme->affiche();
 	cout << "Test de la surchage string" << endl;
 	//string(forme);
-	cout << "Test de la sauvegarde" << endl;
-	forme->accepteSauvegarde(new SauvegardeForme);*/
+	*/
 	system("pause");
 	return 0;
 }

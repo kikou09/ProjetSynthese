@@ -12,7 +12,6 @@ public:
 protected:
 	InterfaceForme(InterfaceForme*suivant);
 	virtual bool peutExecuter(string &choix)const = 0;
-	//virtual Fraction* peutExecuter(string *f)const = 0;
 
 public:
 

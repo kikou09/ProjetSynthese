@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "FormeGeometrique.h"
 #include "VisiteurSauvegarde.h"
+#include "InterfaceChargement.h"
+#include "InterfaceCercle.h"
+#include "InterfaceSegment.h"
+#include "InterfacePolygone.h"
+#include "InterfaceTriangle.h"
 
 FormeGeometrique::FormeGeometrique(){}
 
@@ -67,6 +72,23 @@ void FormeGeometrique::operator=(const FormeGeometrique &forme)
 void FormeGeometrique::accepteSauvegarde(const VisiteurSauvegarde *visiteur) const
 {
 	visiteur->sauvegarde(this);
+}
+
+void FormeGeometrique::ChargerFormes(vector<FormeGeometrique*> & formes, InterfaceChargement * cor)
+{
+
+	string contenu;
+	ifstream fichierEntree("C:/Users/Alexis/source/kikou09/ProjetSynthese/ProjetSynthese/Nouveau_Dossier/FormesSauvegardees.txt", ios::in);
+	if (! fichierEntree) {
+		cerr << "Problème d'ouverture de fichier" << endl;
+		exit(1);
+	}
+	while (getline(fichierEntree, contenu) && !contenu.empty()) {
+		cout << "Lecture :\t" << contenu << endl;
+		cor->executer(contenu, formes);
+
+		
+	}
 }
 
 ostream & operator << (ostream & os, const FormeGeometrique &f)

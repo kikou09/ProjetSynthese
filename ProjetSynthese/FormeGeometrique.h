@@ -3,11 +3,14 @@
 #include "Vecteur2D.h"
 #include "Erreur.h"
 #include <stdlib.h>
-#include <sstream>;
+#include <sstream>
+#include <fstream>
+#include <vector>
 using namespace std;
 
 class VisiteurForme;
 class VisiteurSauvegarde;
+class InterfaceChargement;
 
 /**
 * \class FormeGeometrique
@@ -94,6 +97,8 @@ public:
 
 	friend ostream &operator << (ostream &os, const FormeGeometrique &f);
 	//virtual friend istream &operator >>(istream &is, FormeGeometrique *f)=0;
+
+	static void ChargerFormes(vector <FormeGeometrique*> &formes, InterfaceChargement *cor);
 
 };
 

@@ -147,6 +147,7 @@ Polygone::operator string() const
 {
 	ostringstream os;
 	os << "Polygone :";
+	os << formes.size() << " ";
 	for (int i = 0; i < formes.size(); i++) {
 
 		os << formes[i]->getX() << " " << formes[i]->getY() << " ";

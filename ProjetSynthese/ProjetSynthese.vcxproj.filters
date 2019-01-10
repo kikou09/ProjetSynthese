@@ -31,6 +31,18 @@
     <Filter Include="Fichiers d%27en-tête\NewFilter1">
       <UniqueIdentifier>{7803b55f-6027-4a7b-a510-1139d5865fae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Formes">
+      <UniqueIdentifier>{43308dc9-822f-40d0-a6d3-7ffd77220c7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Chargement">
+      <UniqueIdentifier>{ba1c0dd0-2011-4343-aefb-b3fd50c7895c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Connexion_Serveur">
+      <UniqueIdentifier>{b232a37d-210c-4986-bb2d-5cb4e4276e34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\A_Supprimer">
+      <UniqueIdentifier>{7a506b68-aeb7-447e-884c-6926f7facd60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -81,30 +93,6 @@
     <ClInclude Include="EnvoyeurReceveur.h">
       <Filter>Fichiers d%27en-tête\Client</Filter>
     </ClInclude>
-    <ClInclude Include="InterfaceCalcul.h">
-      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceCercle.h">
-      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceCreerForme.h">
-      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfacePolygone.h">
-      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceQuitter.h">
-      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceSegment.h">
-      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceTriangle.h">
-      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceUtilisateur.h">
-      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
-    </ClInclude>
     <ClInclude Include="SauvegardeForme.h">
       <Filter>Fichiers d%27en-tête\SauvegardeForme</Filter>
     </ClInclude>
@@ -114,97 +102,100 @@
     <ClInclude Include="VisiteurDessinJava.h">
       <Filter>Fichiers d%27en-tête\DessinForme</Filter>
     </ClInclude>
-    <ClInclude Include="InterfaceDessiner.h">
-      <Filter>Fichiers d%27en-tête\CORUtilisateur</Filter>
-    </ClInclude>
     <ClInclude Include="VisiteurSauvegarde.h">
       <Filter>Fichiers d%27en-tête\SauvegardeForme</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceChargementTriangle.h">
+      <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceChargementCercle.h">
+      <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceChargementPolygone.h">
+      <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceChargementSegment.h">
+      <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Vecteur2D.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="FormeGeometrique.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="FormeSimple.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="FormeComposee.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Cercle.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Triangle.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Polygone.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceUtilisateur.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceQuitter.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceCreerForme.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceDessiner.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceCalcul.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceForme.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceCercle.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceTriangle.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceSegment.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfacePolygone.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Application.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Segment.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="VisiteurForme.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SauvegardeForme.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="EnvoyeurReceveur.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceChargement.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="InterfaceFormes.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Matrice.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Cercle.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="FormeComposee.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="FormeGeometrique.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="FormeSimple.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygone.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Segment.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Vecteur2D.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceChargement.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceChargementCercle.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceChargementPolygone.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceChargementSegment.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceChargementTriangle.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="EnvoyeurReceveur.cpp">
+      <Filter>Fichiers sources\Connexion_Serveur</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceCercle.cpp">
+      <Filter>Fichiers sources\A_Supprimer</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceForme.cpp">
+      <Filter>Fichiers sources\A_Supprimer</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfacePolygone.cpp">
+      <Filter>Fichiers sources\A_Supprimer</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceSegment.cpp">
+      <Filter>Fichiers sources\A_Supprimer</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceTriangle.cpp">
+      <Filter>Fichiers sources\A_Supprimer</Filter>
+    </ClCompile>
     <ClCompile Include="VisiteurDessinJava.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
     <ClCompile Include="VisiteurSauvegarde.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="VisiteurForme.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="SauvegardeForme.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
