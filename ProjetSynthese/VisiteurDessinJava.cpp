@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "VisiteurDessinJava.h"
 #include "EnvoyeurReceveur.h"
-#include <time.h>
 
 VisiteurDessinJava::VisiteurDessinJava() {}
 
@@ -12,8 +11,9 @@ void VisiteurDessinJava::dessiner(const Cercle * c) const
 	string message = string(*c);
 	cout << message;
 	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
+
 	string reponse = EnvoyeurReceveur::getInstance()->recevoir();
-	
+
 	if ( reponse != "") {
 		cout << reponse << endl;
 	}
@@ -72,5 +72,16 @@ void VisiteurDessinJava::dessiner(const Segment * s) const
 
 void VisiteurDessinJava::dessiner(const FormeComposee * f) const
 {
+	string message = string(*f);
+	cout << message;
+	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 
+	string reponse = EnvoyeurReceveur::getInstance()->recevoir();
+
+	if (reponse != "") {
+		cout << reponse << endl;
+	}
+	else {
+		cout << "il y a eu une erreur lors de l'envoi" << endl;
+	}
 }

@@ -73,12 +73,6 @@ Polygone * Polygone::homothetie(const Vecteur2D &v , const double rapport)const
 	return polygone;
 }
 
-void Polygone::homothetie2(const Vecteur2D & v, const double rapport)
-{
-	Polygone * homothetie = this->homothetie(v, rapport);
-	*this = *homothetie;
-}
-
 
 /**
 * \brief Effectue la rotation du polygone
@@ -95,12 +89,6 @@ Polygone * Polygone::rotation(const Vecteur2D &v, const double angle)const
 	return polygone;
 }
 
-void Polygone::rotation2(const Vecteur2D & v, const double angle)
-{
-	Polygone* rotation = this->rotation(v, angle);
-	*this = *rotation;
-}
-
 
 /**
 * \brief Effectue la translation du polygone
@@ -114,12 +102,6 @@ Polygone * Polygone::translation(const Vecteur2D &v)const
 		*polygone->formes[i]=polygone->formes[i]->translation(v);
 	}
 	return polygone;
-}
-
-void Polygone::translation2(const Vecteur2D & v)
-{
-	Polygone *translation = this->translation(v);
-	*this = *translation;
 }
 
 const double Polygone::getAire() const
@@ -171,7 +153,7 @@ Polygone::operator string() const
 		os << formes[i]->getX() << " " << formes[i]->getY() << " ";
 	}
 
-	os << couleur << " \n";
+	os << couleur;
 	
 	return os.str();
 }
@@ -190,8 +172,6 @@ istream & operator>>(istream & is, Polygone &polygone)
 	string couleur;
 	int nbpoints;
 	Vecteur2D point;
-
-	cout << "--Saisie du polygone--" << endl;
 	try {
 
 		cout << "Saisir la couleur du polygone :";

@@ -43,16 +43,13 @@ public:
 	void supprimerDernier();
 
 	virtual Polygone * homothetie(const Vecteur2D &v,  const double)const ;
-	virtual void homothetie2(const Vecteur2D &v, const double);
 	virtual Polygone * rotation(const Vecteur2D &v , const double angle)const;
-	virtual void rotation2(const Vecteur2D &v, const double angle);
 	virtual Polygone * translation(const Vecteur2D &v)const;
-	virtual void translation2(const Vecteur2D &v);
 
 	const double getAire() const;
 
-	virtual void operator =(const Polygone&);
-	virtual bool operator ==(const Polygone&)const;
+	void operator =(const Polygone&);
+	bool operator ==(const Polygone&)const;
 	bool operator != (const Polygone&polygone)const { return !(this == &polygone); }
 	operator string() const;
 	friend istream &operator >> (istream& is, Polygone &);

@@ -161,10 +161,12 @@
     <ClInclude Include="FormeSimple.h" />
     <ClInclude Include="InterfaceChargement.h" />
     <ClInclude Include="InterfaceChargementCercle.h" />
+    <ClInclude Include="InterfaceChargementFormeComposee.h" />
     <ClInclude Include="InterfaceChargementPolygone.h" />
     <ClInclude Include="InterfaceChargementSegment.h" />
     <ClInclude Include="InterfaceChargementTriangle.h" />
     <ClInclude Include="InterfaceForme.h" />
+    <ClInclude Include="InterfaceFormes.h" />
     <ClInclude Include="Matrice.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Polygone.h" />
@@ -185,6 +187,7 @@
     <ClCompile Include="FormeSimple.cpp" />
     <ClCompile Include="InterfaceChargement.cpp" />
     <ClCompile Include="InterfaceChargementCercle.cpp" />
+    <ClCompile Include="InterfaceChargementFormeComposee.cpp" />
     <ClCompile Include="InterfaceChargementPolygone.cpp" />
     <ClCompile Include="InterfaceChargementSegment.cpp" />
     <ClCompile Include="InterfaceChargementTriangle.cpp" />
@@ -201,6 +204,7 @@
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
     <ClCompile Include="VisiteurDessinJava.cpp" />
+    <ClCompile Include="VisiteurForme.cpp" />
     <ClCompile Include="VisiteurSauvegarde.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

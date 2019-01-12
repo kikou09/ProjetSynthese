@@ -1,18 +1,11 @@
-﻿  Segment.cpp
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(23): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(30): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(31): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(32): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-  Triangle.cpp
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(23): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(30): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(31): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(32): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.cpp(8): warning C5043: 'Triangle::Triangle' : la spécification d'exception ne correspond pas à la déclaration précédente
-  c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.h(23): note: voir la déclaration de 'Triangle::Triangle'
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.cpp(31): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.cpp(44): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.cpp(55): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+﻿  Application.cpp
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\triangle.h(23): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\triangle.h(30): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\triangle.h(31): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\triangle.h(32): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\application.cpp(33): warning C4101: 'aire' : variable locale non référencée
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\application.cpp(34): warning C4101: 'forme' : variable locale non référencée
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\application.cpp(41): warning C4101: 'i' : variable locale non référencée
+  InterfaceChargementFormeComposee.cpp
   Génération de code en cours...
-c:\users\jorane\documents\github\projetsynthese\projetsynthese\triangle.cpp(86): warning C4715: 'Triangle::operator==' : les chemins de contrôle ne retournent pas tous une valeur
-  ProjetSynthese.vcxproj -> C:\Users\Jorane\Documents\GitHub\ProjetSynthese\x64\Debug\ProjetSynthese.exe
+  ProjetSynthese.vcxproj -> C:\Users\Alexis\Source\Repos\kikou09\ProjetSynthese\x64\Debug\ProjetSynthese.exe

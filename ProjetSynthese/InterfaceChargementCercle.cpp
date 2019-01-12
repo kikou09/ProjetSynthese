@@ -30,7 +30,7 @@ void InterfaceChargementCercle::executerInteraction(string contenu, vector<Forme
 	char* texteCercle = strdup(contenu.c_str()); // on transforme le texte string en char*
 	char* coordonnees = strtok(texteCercle, " "); // on utilise la fonction strtok pour créer un tableau avec le délimiteur espace
 
-	char * points[NBVALMAX];  //Faire une constante
+	char * points[NBVALMAX]; 
 
 	while (coordonnees != NULL) {
 		points[i] = coordonnees;

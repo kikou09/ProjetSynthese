@@ -70,7 +70,7 @@ Triangle::operator string() const {
 	os << "Triangle :" << p1.getX() << " " << p1.getY()
 		<< " " << p2.getX() << " " << p2.getY()
 		<< " " << p3.getX() << " " << p3.getY()
-		<< " " << couleur << " \n";
+		<< " " << couleur;
 	return os.str();
 }
 
@@ -81,7 +81,7 @@ void Triangle::affiche() const
 
 bool Triangle::operator==(const Triangle &t) const
 {
-	if(couleur==t.getCouleur())
+	if(FormeGeometrique::operator==(t))
 		return (p1 == t.p1 && p2 == t.p2 && p3==t.p3);
 }
 
@@ -132,12 +132,6 @@ Triangle *Triangle::homothetie(const Vecteur2D &v , const double rapport)const
 
 }
 
-void Triangle::homothetie2(const Vecteur2D & v, const double rapport)
-{
-	Triangle * homothetie = this->homothetie(v, rapport);
-	*this = *homothetie;
-}
-
 
 /**
 * \brief Effectue la rotation du triangle
@@ -154,12 +148,6 @@ Triangle * Triangle::rotation(const Vecteur2D & v, const double angle)const
 	return t;
 }
 
-void Triangle::rotation2(const Vecteur2D & v, const double angle)
-{
-	Triangle* rotation = this->rotation(v, angle);
-	*this = *rotation;
-}
-
 
 /**
 * \brief Effectue la translation du triangle
@@ -174,12 +162,6 @@ Triangle * Triangle::translation(const Vecteur2D &v)const
 	return t;
 }
 
-void Triangle::translation2(const Vecteur2D & v)
-{
-	Triangle* translation = this->translation(v);
-	*this = *translation;
-}
-
 istream & operator>>(istream & is, Triangle &triangle)
 {
 	Vecteur2D point1;
@@ -187,7 +169,6 @@ istream & operator>>(istream & is, Triangle &triangle)
 	Vecteur2D point3;
 	string couleur;
 
-	cout << "--Saisie du triangle--" << endl;
 	try {
 
 		is >> point1;

@@ -25,17 +25,20 @@
     <Filter Include="Fichiers d%27en-tête\Client">
       <UniqueIdentifier>{cd97bc49-10c2-4353-9bcb-e6bb4d0fdb78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\CORUtilisateur">
+      <UniqueIdentifier>{910e837d-b150-42e4-82c5-305356618a4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\NewFilter1">
+      <UniqueIdentifier>{7803b55f-6027-4a7b-a510-1139d5865fae}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Fichiers sources\Formes">
       <UniqueIdentifier>{43308dc9-822f-40d0-a6d3-7ffd77220c7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Connexion_Serveur">
-      <UniqueIdentifier>{b232a37d-210c-4986-bb2d-5cb4e4276e34}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\Sauvegarde/Chargement">
+    <Filter Include="Fichiers sources\Chargement">
       <UniqueIdentifier>{ba1c0dd0-2011-4343-aefb-b3fd50c7895c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\Formes">
-      <UniqueIdentifier>{cac88c0e-93bb-48bc-876c-d670484efd24}</UniqueIdentifier>
+    <Filter Include="Fichiers sources\Connexion_Serveur">
+      <UniqueIdentifier>{b232a37d-210c-4986-bb2d-5cb4e4276e34}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -45,14 +48,41 @@
     <ClInclude Include="Vecteur2D.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="FormeGeometrique.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="FormeSimple.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="FormeComposee.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Cercle.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygone.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
     <ClInclude Include="Erreur.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Segment.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="VisiteurForme.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
     <ClInclude Include="InterfaceChargement.h">
       <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceFormes.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="InterfaceForme.h">
       <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
@@ -84,29 +114,8 @@
     <ClInclude Include="InterfaceChargementSegment.h">
       <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
     </ClInclude>
-    <ClInclude Include="VisiteurForme.h">
-      <Filter>Fichiers d%27en-tête\DessinForme</Filter>
-    </ClInclude>
-    <ClInclude Include="Cercle.h">
-      <Filter>Fichiers d%27en-tête\Formes</Filter>
-    </ClInclude>
-    <ClInclude Include="FormeComposee.h">
-      <Filter>Fichiers d%27en-tête\Formes</Filter>
-    </ClInclude>
-    <ClInclude Include="FormeGeometrique.h">
-      <Filter>Fichiers d%27en-tête\Formes</Filter>
-    </ClInclude>
-    <ClInclude Include="FormeSimple.h">
-      <Filter>Fichiers d%27en-tête\Formes</Filter>
-    </ClInclude>
-    <ClInclude Include="Polygone.h">
-      <Filter>Fichiers d%27en-tête\Formes</Filter>
-    </ClInclude>
-    <ClInclude Include="Segment.h">
-      <Filter>Fichiers d%27en-tête\Formes</Filter>
-    </ClInclude>
-    <ClInclude Include="Triangle.h">
-      <Filter>Fichiers d%27en-tête\Formes</Filter>
+    <ClInclude Include="InterfaceChargementFormeComposee.h">
+      <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -144,31 +153,37 @@
       <Filter>Fichiers sources\Formes</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargement.cpp">
-      <Filter>Fichiers sources\Sauvegarde/Chargement</Filter>
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargementCercle.cpp">
-      <Filter>Fichiers sources\Sauvegarde/Chargement</Filter>
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargementPolygone.cpp">
-      <Filter>Fichiers sources\Sauvegarde/Chargement</Filter>
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargementSegment.cpp">
-      <Filter>Fichiers sources\Sauvegarde/Chargement</Filter>
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargementTriangle.cpp">
-      <Filter>Fichiers sources\Sauvegarde/Chargement</Filter>
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
     <ClCompile Include="EnvoyeurReceveur.cpp">
       <Filter>Fichiers sources\Connexion_Serveur</Filter>
     </ClCompile>
+    <ClCompile Include="VisiteurDessinJava.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
     <ClCompile Include="VisiteurSauvegarde.cpp">
-      <Filter>Fichiers sources\Sauvegarde/Chargement</Filter>
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="VisiteurForme.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
     <ClCompile Include="SauvegardeForme.cpp">
-      <Filter>Fichiers sources\Sauvegarde/Chargement</Filter>
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
-    <ClCompile Include="VisiteurDessinJava.cpp">
-      <Filter>Fichiers sources\Connexion_Serveur</Filter>
+    <ClCompile Include="InterfaceChargementFormeComposee.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

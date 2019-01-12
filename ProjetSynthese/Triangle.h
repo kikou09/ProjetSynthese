@@ -32,15 +32,12 @@ public:
 	void setP3(const Vecteur2D &) throw (Erreur);
 
 	virtual Triangle * homothetie(const Vecteur2D &v, const double rapport)const;
-	virtual void homothetie2(const Vecteur2D &v, const double);
 	virtual Triangle * rotation(const Vecteur2D &v, const double angle)const;
-	virtual void rotation2(const Vecteur2D &v, const double angle);
 	virtual Triangle * translation(const Vecteur2D &v)const;
-	virtual void translation2(const Vecteur2D &v);
 
 	operator string() const;
 	void affiche() const;
-	virtual bool operator ==(const Triangle&)const;
+	bool operator ==(const Triangle&)const;
 	bool operator !=(const Triangle &t)const { return !(this == &t); }
 	void operator = (const Triangle &);
 	friend istream & operator>>(istream & is, Triangle &triangle);

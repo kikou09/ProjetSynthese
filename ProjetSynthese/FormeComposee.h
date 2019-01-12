@@ -25,13 +25,13 @@ class FormeComposee :
 		\brief Verfie si la forme appartient deja ou pas au groupe de formes 
 		*\param[in] f : forme à verfier 
 		*/
-		bool contient(const FormeGeometrique *f)const ;
+		bool contient(FormeGeometrique *f);
 
 		/**
 		*\brief Ajoute la forme au groupe seulement si elle n'y appartient pas deja
 		*\param[in] f : forme a ajouter 
 		*/
-		void ajouterForme(const FormeGeometrique *f);
+		void ajouterForme(FormeGeometrique *f);
 
 		/**
 		*\brief Supprime une forme 
@@ -45,15 +45,9 @@ class FormeComposee :
 		*/
 		void supprimerForme(const FormeGeometrique *f);
 
-		const int getNbForme() const;
-		const FormeGeometrique * getForme(const int indice)const;
-
 		virtual FormeComposee* homothetie(const Vecteur2D &, const double)const;
-		virtual void homothetie2(const Vecteur2D &v, const double);
 		virtual FormeComposee * rotation(const Vecteur2D &, const double angle)const;
-		virtual void rotation2(const Vecteur2D &v, const double angle);
 		virtual FormeComposee * translation(const Vecteur2D &v) const;
-		virtual void translation2(const Vecteur2D &v);
 
 		/**
 		*\brief Aire groupe = somme aires de toutes les formes contenues
@@ -73,6 +67,6 @@ class FormeComposee :
 		void dessin(const VisiteurForme *visiteur)const;
 		//void accepteSauvegarde(const VisiteurForme *)const;
 
-		FormeComposee & operator = (const FormeComposee &);
+		friend istream & operator >> (istream &is, FormeComposee &fc);
 };
 

@@ -21,7 +21,7 @@ FormeComposee * FormeComposee::clone() const
 	return new FormeComposee(*this);
 }
 
-bool FormeComposee::contient(const FormeGeometrique *f)const
+bool FormeComposee::contient(FormeGeometrique *f)
 {
 	for (int i = 0; i < groupe.size(); i++) {
 
@@ -32,7 +32,7 @@ bool FormeComposee::contient(const FormeGeometrique *f)const
 	return false;
 }
 
-void FormeComposee::ajouterForme(const FormeGeometrique *forme)
+void FormeComposee::ajouterForme(FormeGeometrique *forme)
 {
 	if(!contient(forme))
 		groupe.push_back(forme->clone()); //On rajoute la forme à la fin 
@@ -62,18 +62,6 @@ void FormeComposee::supprimerForme(const FormeGeometrique *forme)
 	delete *it;
 }
 
-const int FormeComposee::getNbForme() const
-{
-	return groupe.size();
-}
-
-const FormeGeometrique * FormeComposee::getForme(const int indice) const
-{
-	if (indice < 0 || indice > groupe.size())
-		throw Erreur("indice incorrect");
-	return groupe[indice];
-}
-
 
 /**
 * \brief Effectue l'homothetie de toutes les formes contenues dans la forme composee
@@ -88,12 +76,6 @@ FormeComposee * FormeComposee::homothetie(const Vecteur2D &v, const double rappo
 		groupe2->groupe[i]=groupe2->groupe[i]->homothetie(v, rapport);
 	}
 	return groupe2;
-}
-
-void FormeComposee::homothetie2(const Vecteur2D & v, const double rapport)
-{
-	FormeComposee * homothetie = this->homothetie(v, rapport);
-	*this = *homothetie;
 }
 
 const double FormeComposee::getAire() const {
@@ -127,12 +109,6 @@ FormeComposee * FormeComposee::rotation(const Vecteur2D &v, const double angle)c
 	return groupe2;
 }
 
-void FormeComposee::rotation2(const Vecteur2D & v, const double angle)
-{
-	FormeComposee* rotation = this->rotation(v, angle);
-	*this = *rotation;
-}
-
 
 /**
 * \brief Effectue la translation de toutes les formes contenues dans la forme composee
@@ -146,12 +122,6 @@ FormeComposee * FormeComposee::translation(const Vecteur2D &v)const
 		groupe2->groupe[i]->translation(v);
 	}
 	return groupe2;
-}
-
-void FormeComposee::translation2(const Vecteur2D & v)
-{
-	FormeComposee* translation = this->translation(v);
-	*this = *translation;
 }
 
 FormeComposee::~FormeComposee()
@@ -173,7 +143,7 @@ FormeComposee::operator string() const
 		os << *groupe[i];
 	}
 
-	os << "] " << couleur << "\n";
+	os << "] " << couleur;
 
 	return os.str();
 }
@@ -185,20 +155,42 @@ void FormeComposee::affiche() const
 
 void FormeComposee::dessin(const VisiteurForme *visiteur)const
 {
-	for (int i=0; i< groupe.size() ; i++)
-	{
-		groupe[i]->dessin(visiteur);
-	}
+	return visiteur->dessiner(this);
 }
 
-FormeComposee & FormeComposee::operator=(const FormeComposee &fc)
+istream & operator>>(istream & is, FormeComposee & fc)
 {
-	if (this != &fc) {
+	int nbformes;
+	int i=0;
+	int choix;
 
-		this->couleur = fc.getCouleur();
-		this->groupe = fc.groupe;
+	cout << "Combien de formes voulez vous ajouter ? \n";
+	is >> nbformes;
+
+	try {
+
+		while (i != nbformes && (choix >5 || choix <1)) {
+
+			cout << "Quel forme voulez vous ajouter ?\n";
+			cout << "1. Un Cercle\n";
+			cout << "2. Un Segment\n";
+			cout << "3. Un Triangle\n";
+			cout << "4. Un Polygone\n";
+			cout << "5. Une forme composee\n";
+
+			is >> choix;
+
+			//obligé de faire un while donc pas bon 
+
+		}
+
+
+	}
+	catch (Erreur e) {
+
+		cerr << e.getMessage();
+		cin >> fc;
 	}
 
-	return *this;
+	return is;
 }
-

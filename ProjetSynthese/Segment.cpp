@@ -84,12 +84,6 @@ Segment * Segment::homothetie(const Vecteur2D &v, const double rapport) const
 
 }
 
-void Segment::homothetie2(const Vecteur2D & v, const double rapport)
-{
-	Segment * homothetie = this->homothetie(v, rapport);
-	*this = *homothetie;
-}
-
 
 /**
 * \brief Effectue la rotation du segment
@@ -105,12 +99,6 @@ Segment *Segment::rotation(const Vecteur2D &v ,const double angle) const
 	return s;
 }
 
-void Segment::rotation2(const Vecteur2D & v, const double angle)
-{
-	Segment* rotation = this->rotation(v, angle);
-	*this = *rotation;
-}
-
 
 /**
 * \brief Effectue la translation du segment
@@ -122,12 +110,6 @@ Segment * Segment::translation(const Vecteur2D &v)const
 	Vecteur2D *p2 = &pointB.translation(v);
 	Segment *s =new Segment(couleur, *p1, *p2);
 	return s;
-}
-
-void Segment::translation2(const Vecteur2D & v)
-{
-	Segment* translation = this->translation(v);
-	*this = *translation;
 }
 
 void Segment::operator=(const Segment &segment)
@@ -150,7 +132,7 @@ bool Segment::operator==(const Segment &segment) const
 Segment::operator string() const
 {
 	ostringstream os;
-	os << "Segment :" << pointA.getX() << " " << pointA.getY() << " " << pointB.getX() << " " << pointB.getY() << " " << couleur << " \n";
+	os << "Segment :" << pointA.getX() << " " << pointA.getY() << " " << pointB.getX() << " " << pointB.getY() << " " << couleur;
 	return os.str();
 }
 
@@ -171,7 +153,6 @@ istream & operator>>(istream & is, Segment &segment)
 	Vecteur2D pointb;
 	string couleur;
 
-	cout << "--Saisie du segment--" << endl;
 	try {
 		is >> pointa;
 		is >> pointb;
