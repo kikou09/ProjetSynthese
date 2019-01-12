@@ -32,12 +32,15 @@ public:
 	void setPointB(const Vecteur2D &);
 
 	virtual Segment * homothetie(const Vecteur2D &, const double)const;
+	virtual void homothetie2(const Vecteur2D &v, const double);
 	virtual Segment * rotation(const Vecteur2D &, const double angle)const;
+	virtual void rotation2(const Vecteur2D &v, const double angle);
 	virtual Segment * translation(const Vecteur2D &v)const;
+	virtual void translation2(const Vecteur2D &v);
 
-	void operator = (const Segment&);
+	virtual void operator = (const Segment&);
 
-	bool operator == (const Segment &) const;
+	virtual bool operator == (const Segment &) const;
 	bool operator != (const Segment &segment) const { return !(this == &segment); }
 
 	operator string() const;

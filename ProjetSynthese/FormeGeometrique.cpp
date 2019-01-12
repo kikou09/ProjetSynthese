@@ -20,17 +20,6 @@ FormeGeometrique::FormeGeometrique(const string &c)
 
 FormeGeometrique::~FormeGeometrique(){}
 
-void FormeGeometrique::homothetie2(const Vecteur2D &v, const double d)
-{
-	FormeGeometrique* homothetie = this->homothetie(v, d);
-	*this = *homothetie;
-}
-
-void FormeGeometrique::translation2(const Vecteur2D &v)
-{
-	FormeGeometrique* translation = this->translation(v);
-	*this = *translation;
-}
 
 const string FormeGeometrique::getCouleur() const
 {
@@ -52,18 +41,8 @@ void FormeGeometrique::setCouleur(const string &c)
 
 }
 
-bool FormeGeometrique::operator==(const FormeGeometrique &forme) const
-{
-	if (couleur==forme.couleur)
-		return true;
-	else
-		return false;
-}
 
-void FormeGeometrique::operator=(const FormeGeometrique &forme)
-{
-	setCouleur(forme.couleur);
-}
+
 
 void FormeGeometrique::accepteSauvegarde(const VisiteurSauvegarde *visiteur) const
 {
@@ -93,10 +72,4 @@ ostream & operator << (ostream & os, const FormeGeometrique &f)
 	os << v;
 	return os;
 
-}
-
-void FormeGeometrique::rotation2(const Vecteur2D &v, const double d)
-{
-	FormeGeometrique* rotation = this->rotation(v, d);
-	*this = *rotation;
 }

@@ -84,6 +84,11 @@ Segment * Segment::homothetie(const Vecteur2D &v, const double rapport) const
 
 }
 
+void Segment::homothetie2(const Vecteur2D & v, const double rapport)
+{
+	Segment * homothetie = this->homothetie(v, rapport);
+	*this = *homothetie;
+}
 
 /**
 * \brief Effectue la rotation du segment
@@ -99,7 +104,11 @@ Segment *Segment::rotation(const Vecteur2D &v ,const double angle) const
 	return s;
 }
 
-
+void Segment::rotation2(const Vecteur2D & v, const double angle)
+{
+	Segment* rotation = this->rotation(v, angle);
+	*this = *rotation;
+}
 /**
 * \brief Effectue la translation du segment
 * \param[in] v :
@@ -111,6 +120,13 @@ Segment * Segment::translation(const Vecteur2D &v)const
 	Segment *s =new Segment(couleur, *p1, *p2);
 	return s;
 }
+
+void Segment::translation2(const Vecteur2D & v)
+{
+	Segment* translation = this->translation(v);
+	*this = *translation;
+}
+
 
 void Segment::operator=(const Segment &segment)
 {
@@ -153,6 +169,7 @@ istream & operator>>(istream & is, Segment &segment)
 	Vecteur2D pointb;
 	string couleur;
 
+	cout << "--Saisie du segment--" << endl;
 	try {
 		is >> pointa;
 		is >> pointb;

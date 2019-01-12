@@ -104,45 +104,8 @@ int main()
 		cout << e.getMessage();
 	}
 
-	/*quitter = new InterfaceQuitter(nullptr);
-	creer_forme = new InterfaceCreerForme(quitter);
-	calcul = new InterfaceCalcul(creer_forme);
-	dessiner = new InterfaceDessiner(calcul);
-
-	ihm = creer_forme;
-	ihm_aux = ihm;
-
-	while (ihm_aux != nullptr) {
-		menu.push_back(ihm_aux->getDescription());
-		ihm_aux=ihm_aux->suivant;
-	}
-
-	while (choix != 2) {
-		for (i = 0; i < menu.size(); i++)
-		{
-			cout << i + 1 << ":" << menu[i] << endl;
-		}
-
-		cout << "Quelle est votre choix ? " << endl;
-		cin >> choix;
-
-		c = menu[choix - 1];
-		ihm->executer(c, f);
-	}
 	
 	system("pause");
 
-	delete f, quitter, creer_forme, dessiner, calcul,ihm , ihm_aux;*/
-
-	// Test de la sauvegarde
-	//création d'un cercle
-	/*Vecteur2D centre(2, 10);
-	forme = new Cercle("blue", centre, 5);
-	cout << "voici la forme créée" << endl;
-	forme->affiche();
-	cout << "Test de la surchage string" << endl;
-	//string(forme);
-	*/
-	system("pause");
 	return 0;
 }

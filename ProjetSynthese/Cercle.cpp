@@ -19,7 +19,7 @@ Cercle::Cercle(const Cercle &cercle): FormeSimple(cercle){
 
 	try {
 		setCentre(cercle.centre);
-		setRayon(rayon);
+		setRayon(cercle.rayon);
 	}
 	catch (Erreur e) {
 
@@ -83,6 +83,11 @@ Cercle * Cercle::homothetie(const Vecteur2D &v, const double rapport)const
 	Cercle* cercle = new Cercle(couleur, *c, rayon * rapport);
 	return cercle;
 }
+void Cercle::homothetie2(const Vecteur2D & v, const double rapport)
+{
+	Cercle * homothetie = this->homothetie(v, rapport);
+	*this = *homothetie;
+}
 
 /**
 * \brief Effectue la rotation du cercle
@@ -96,6 +101,12 @@ Cercle * Cercle::rotation(const Vecteur2D &v, const double angle)const
 	//delete c;
 	return cercle;
 }
+void Cercle::rotation2(const Vecteur2D &v, const double d)
+{
+	Cercle* rotation = this->rotation(v, d);
+	*this = *rotation;
+	//delete rotation;
+}
 
 /**
 * \brief Effectue la translation du cercle
@@ -107,6 +118,11 @@ Cercle * Cercle::translation(const Vecteur2D &v)const
 	Cercle* cercle = new Cercle(couleur, *c, rayon);
 	//delete c;
 	return cercle;
+}
+void Cercle::translation2(const Vecteur2D & v)
+{
+	Cercle* translation = this->translation(v);
+	*this = *translation;
 }
 
 void Cercle::operator=(const Cercle &c)
@@ -145,6 +161,8 @@ istream & operator>>(istream & is, Cercle &c)
 	Vecteur2D centre;
 	double rayon;
 	string couleur;
+
+	cout << "--Saisie du cercle--" << endl;
 	try {
 		is >> centre;
 

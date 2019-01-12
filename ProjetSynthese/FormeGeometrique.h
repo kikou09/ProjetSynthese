@@ -42,7 +42,7 @@ public:
 	* \param[in] v : centre d'homothetie
 	* \param[in] rapport
 	*/
-	virtual void homothetie2(const Vecteur2D &, const double);
+	virtual void homothetie2(const Vecteur2D &, const double) = 0;
 
 	/**
 	* \brief Effectue la rotation d'une forme géométrique
@@ -58,7 +58,7 @@ public:
 	* \param[in] v : centre de rotation
 	* \param[in] angle : angle de rotation
 	*/
-	virtual void rotation2(const Vecteur2D &, const double);
+	virtual void rotation2(const Vecteur2D &, const double) = 0;
 
 	/**
 	* \brief Effectue la translation d'une forme geometrique
@@ -72,7 +72,7 @@ public:
 	* Modifie l'objet this
 	* \param[in] v : vecteur par rapport auquel on effectue la translation
 	*/
-	virtual void translation2(const Vecteur2D &);
+	virtual void translation2(const Vecteur2D &) = 0;
 
 	virtual const double getAire()const = 0;
 	const string getCouleur() const;
@@ -81,9 +81,7 @@ public:
 	virtual operator string() const=0;
 	virtual void affiche()const = 0;
 
-	bool operator == (const FormeGeometrique &)const;
 	bool operator != (const FormeGeometrique &f)const { return !(this == &f); }
-	void operator = (const FormeGeometrique &);
 
 	/**
 	*\brief Accepte le visiteur qui va envoyer l'instruction de desssin au serveur
