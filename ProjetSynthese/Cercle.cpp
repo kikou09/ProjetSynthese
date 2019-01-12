@@ -19,7 +19,7 @@ Cercle::Cercle(const Cercle &cercle): FormeSimple(cercle){
 
 	try {
 		setCentre(cercle.centre);
-		setRayon(rayon);
+		setRayon(cercle.rayon);
 	}
 	catch (Erreur e) {
 
@@ -84,6 +84,12 @@ Cercle * Cercle::homothetie(const Vecteur2D &v, const double rapport)const
 	return cercle;
 }
 
+void Cercle::homothetie2(const Vecteur2D & v, const double rapport)
+{
+	Cercle * homothetie = this->homothetie(v, rapport);
+	*this = *homothetie;
+}
+
 /**
 * \brief Effectue la rotation du cercle
 * \param[in] v
@@ -109,6 +115,19 @@ Cercle * Cercle::translation(const Vecteur2D &v)const
 	return cercle;
 }
 
+void Cercle::translation2(const Vecteur2D & v)
+{
+	Cercle* translation = this->translation(v);
+	*this = *translation;
+}
+
+void Cercle::rotation2(const Vecteur2D &v, const double d)
+{
+	Cercle* rotation = this->rotation(v, d);
+	*this = *rotation;
+	//delete rotation;
+}
+
 void Cercle::operator=(const Cercle &c)
 {
 	if (this != &c) {
@@ -126,7 +145,7 @@ bool Cercle::operator==(const Cercle &c) const
 Cercle::operator string() const
 {
 	ostringstream oss;
-	oss << "Cercle:" << centre.getX() << " " << centre.getY() << " " << rayon << " " << couleur << " \n";
+	oss << "Cercle :" << centre.getX() << " " << centre.getY() << " " << rayon << " " << couleur << " \n";
 	return oss.str();
 }
 
@@ -145,6 +164,8 @@ istream & operator>>(istream & is, Cercle &c)
 	Vecteur2D centre;
 	double rayon;
 	string couleur;
+
+	cout << "--Saisie du cercle--" << endl;
 	try {
 		is >> centre;
 

@@ -34,12 +34,14 @@ public:
 	void setRayon(const double);
 
 	virtual Cercle * homothetie(const Vecteur2D & v, const double)const;
+	virtual void homothetie2(const Vecteur2D &v, const double);
 	virtual Cercle * rotation(const Vecteur2D &v , const double angle)const;
+	virtual void rotation2(const Vecteur2D &v, const double angle);
 	virtual Cercle * translation(const Vecteur2D &v)const;
+	virtual void translation2(const Vecteur2D &v);
 
-	void operator = (const Cercle&);
-
-	bool operator == (const Cercle &) const;
+	void operator = (const Cercle &c);
+	virtual bool operator == (const Cercle &f)const;
 	bool operator != (const Cercle &cercle) const { return !(this == &cercle); }
 
 	operator string() const;

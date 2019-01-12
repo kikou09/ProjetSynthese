@@ -165,7 +165,6 @@
     <ClInclude Include="InterfaceChargementSegment.h" />
     <ClInclude Include="InterfaceChargementTriangle.h" />
     <ClInclude Include="InterfaceForme.h" />
-    <ClInclude Include="InterfaceFormes.h" />
     <ClInclude Include="Matrice.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Polygone.h" />
@@ -184,16 +183,11 @@
     <ClCompile Include="FormeComposee.cpp" />
     <ClCompile Include="FormeGeometrique.cpp" />
     <ClCompile Include="FormeSimple.cpp" />
-    <ClCompile Include="InterfaceCercle.cpp" />
     <ClCompile Include="InterfaceChargement.cpp" />
     <ClCompile Include="InterfaceChargementCercle.cpp" />
     <ClCompile Include="InterfaceChargementPolygone.cpp" />
     <ClCompile Include="InterfaceChargementSegment.cpp" />
     <ClCompile Include="InterfaceChargementTriangle.cpp" />
-    <ClCompile Include="InterfaceForme.cpp" />
-    <ClCompile Include="InterfacePolygone.cpp" />
-    <ClCompile Include="InterfaceSegment.cpp" />
-    <ClCompile Include="InterfaceTriangle.cpp" />
     <ClCompile Include="Matrice.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -207,7 +201,6 @@
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
     <ClCompile Include="VisiteurDessinJava.cpp" />
-    <ClCompile Include="VisiteurForme.cpp" />
     <ClCompile Include="VisiteurSauvegarde.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
