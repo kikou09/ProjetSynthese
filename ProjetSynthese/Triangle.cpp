@@ -19,7 +19,18 @@ Triangle::Triangle(const string & couleur, const Vecteur2D &pointA, const Vecteu
 
 }
 
-Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle) , p1(triangle.p1), p2(triangle.p2) , p3(triangle.p3){}
+Triangle::Triangle(const Triangle &triangle): FormeSimple(triangle){
+	try {
+		setP1(triangle.p1);
+		setP2(triangle.p2);
+		setP3(triangle.p3);
+	}
+	catch (Erreur e) {
+
+		throw;
+	}
+
+}
 
 Triangle::~Triangle(){}
 

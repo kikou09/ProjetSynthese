@@ -93,6 +93,7 @@ int main()
 		//cout << formes.empty();
 		cout << *formes[0];
 		cout << "\ndeuxieme forme\n" << *formes[1];
+		formes[1]->dessin(new VisiteurDessinJava);
 		//cout << "\ntroisieme forme\n" << *formes[2];
 		//cout << "\npremier polygone :\n" << *formes[3];
 		//cout << "\nl'autre\n" << *formes[4];

@@ -25,7 +25,8 @@ void InterfaceChargementFormeComposee::executerInteraction(string contenu, vecto
 	InterfaceChargement *corTriangle = new InterfaceChargementTriangle(corCercle);
 	InterfaceChargement *corSegment = new InterfaceChargementSegment(corTriangle);
 	InterfaceChargement *corPolygone = new InterfaceChargementPolygone(corSegment);
-	InterfaceChargement *cor = corPolygone;
+	InterfaceChargement *corFormeComposee = new InterfaceChargementFormeComposee(corPolygone);
+	InterfaceChargement *cor = corFormeComposee;
 	vector<FormeGeometrique*> vformescomposees;
 
 	size_t pos = contenu.find("[");
@@ -33,7 +34,7 @@ void InterfaceChargementFormeComposee::executerInteraction(string contenu, vecto
 	pos = contenu.find("]");
 	couleur = contenu.substr(pos + 2); // la couleur est entre "] " et la fin
 	contenu = contenu.substr(0, pos); // on garde contenu de son début jusqu'à la position de "]"
-	FormeComposee fc(couleur);
+	FormeComposee* fc = new FormeComposee(couleur);
 	
 	// Les composantes de la forme sont séparées par des Maj,
 	char* texteFC = strdup(contenu.c_str()); // on transforme le texte string en char*
@@ -50,11 +51,12 @@ void InterfaceChargementFormeComposee::executerInteraction(string contenu, vecto
 	
 	// avec le vecteur de forme, on ajoute chaque composante à la forme composée
 	for (vector<FormeGeometrique*>::iterator it = vformescomposees.begin(); it != vformescomposees.end(); it++) {
-		fc.ajouterForme(*it);
+		fc->ajouterForme(*it);
 	}
 
-	FormeGeometrique *figure = new FormeComposee(fc);
+	FormeGeometrique *figure = new FormeComposee(*fc);
 	formes.push_back(figure);
+	delete fc;
 }
 
 InterfaceChargementFormeComposee::~InterfaceChargementFormeComposee()

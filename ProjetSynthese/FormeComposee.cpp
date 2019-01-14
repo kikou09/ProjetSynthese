@@ -13,7 +13,11 @@ FormeComposee::FormeComposee(const FormeComposee &forme_c): FormeGeometrique(for
 
 		delete groupe[i];
 	}
-	groupe = forme_c.groupe;
+	for (int i = 0; i < forme_c.groupe.size(); i++) {
+
+		this->ajouterForme(forme_c.groupe[i]);
+
+	}
 }
 
 FormeComposee * FormeComposee::clone() const
@@ -157,8 +161,6 @@ void FormeComposee::translation2(const Vecteur2D & v)
 FormeComposee::~FormeComposee()
 {
 	for (int i = 1; i < groupe.size(); i++) {
-
-		cout << groupe[i];
 		delete groupe[i];
 	}
 	groupe.clear();
@@ -169,7 +171,6 @@ FormeComposee::operator string() const
 	ostringstream os;
 	os << "Forme Composee [ ";
 	for (int i = 0; i < groupe.size(); i++) {
-
 		os << *groupe[i];
 	}
 

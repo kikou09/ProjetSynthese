@@ -6,6 +6,4 @@ c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\triangle.h(32
 c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\application.cpp(33): warning C4101: 'aire' : variable locale non référencée
 c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\application.cpp(34): warning C4101: 'forme' : variable locale non référencée
 c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\application.cpp(41): warning C4101: 'i' : variable locale non référencée
-  InterfaceChargementFormeComposee.cpp
-  Génération de code en cours...
   ProjetSynthese.vcxproj -> C:\Users\Alexis\Source\Repos\kikou09\ProjetSynthese\x64\Debug\ProjetSynthese.exe

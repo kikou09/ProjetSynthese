@@ -170,9 +170,6 @@
     <ClCompile Include="EnvoyeurReceveur.cpp">
       <Filter>Fichiers sources\Connexion_Serveur</Filter>
     </ClCompile>
-    <ClCompile Include="VisiteurDessinJava.cpp">
-      <Filter>Fichiers sources\Chargement</Filter>
-    </ClCompile>
     <ClCompile Include="VisiteurSauvegarde.cpp">
       <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
@@ -184,6 +181,9 @@
     </ClCompile>
     <ClCompile Include="InterfaceChargementFormeComposee.cpp">
       <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="VisiteurDessinJava.cpp">
+      <Filter>Fichiers sources\Connexion_Serveur</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

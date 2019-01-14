@@ -10,6 +10,7 @@ VisiteurDessinJava::~VisiteurDessinJava(){}
 void VisiteurDessinJava::dessiner(const Cercle * c) const
 {
 	string message = string(*c);
+	message += " \n";
 	cout << message;
 	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 	string reponse = EnvoyeurReceveur::getInstance()->recevoir();
@@ -25,6 +26,7 @@ void VisiteurDessinJava::dessiner(const Cercle * c) const
 void VisiteurDessinJava::dessiner(const Triangle * t) const
 {
 	string message = string(*t);
+	message += " \n";
 	cout << message;
 	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 
@@ -41,6 +43,7 @@ void VisiteurDessinJava::dessiner(const Triangle * t) const
 void VisiteurDessinJava::dessiner(const Polygone * p) const
 {
 	string message = string(*p);
+	message += " \n";
 	cout << message;
 	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 
@@ -57,6 +60,7 @@ void VisiteurDessinJava::dessiner(const Polygone * p) const
 void VisiteurDessinJava::dessiner(const Segment * s) const
 {
 	string message = string(*s);
+	message += " \n";
 	cout << message;
 	EnvoyeurReceveur::getInstance()->envoyer(message.c_str());
 
