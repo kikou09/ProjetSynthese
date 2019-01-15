@@ -1,9 +1,7 @@
-﻿  Application.cpp
-c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\triangle.h(23): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\triangle.h(30): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\triangle.h(31): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\triangle.h(32): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\application.cpp(33): warning C4101: 'aire' : variable locale non référencée
-c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\application.cpp(34): warning C4101: 'forme' : variable locale non référencée
-c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\application.cpp(41): warning C4101: 'i' : variable locale non référencée
-  ProjetSynthese.vcxproj -> C:\Users\Alexis\Source\Repos\kikou09\ProjetSynthese\x64\Debug\ProjetSynthese.exe
+﻿  FormeComposee.cpp
+c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\triangle.h(23): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\triangle.h(30): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\triangle.h(31): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\triangle.h(32): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
+c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\formecomposee.cpp(71): warning C4267: 'return' : conversion de 'size_t' en 'const int', perte possible de données
+  ProjetSynthese.vcxproj -> C:\Users\Jorane\Documents\GitHub\ProjetSyntheseC++\x64\Debug\ProjetSynthese.exe

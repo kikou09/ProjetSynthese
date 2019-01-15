@@ -57,14 +57,14 @@ int main()
 		cout << "Translation du segment : " << *(segment.translation(rotation)) << endl << endl;*/
 
 		//Test cercle 
-		//cin >> cercle;
+		cin >> cercle;
 		/*cout << "Aire du cercle : " << cercle.getAire() << endl;
 		cout << "Rotation du cercle : " << *(cercle.rotation(rotation, 30)) << endl;
 		cout << "Homothetie du cercle : " << *(cercle.homothetie(rotation, 30)) << endl;
 		cout << "Translation du cercle : " << *(cercle.translation(rotation)) << endl << endl;*/
 
-		/*cin >> triangle;
-		cout << "Aire du triangle : " << triangle.getAire() << endl;
+		cin >> triangle;
+		/*cout << "Aire du triangle : " << triangle.getAire() << endl;
 		cout << "Rotation du triangle : " << *(triangle.rotation(rotation, 30)) << endl;
 		cout << "Homothetie du triangle : " << *(triangle.homothetie(rotation, 30)) << endl;
 		cout << "Translation du triangle : " << *(triangle.translation(rotation)) << endl << endl;*/
@@ -75,8 +75,10 @@ int main()
 		cout << "Homothetie du polygone : " << *(polygone.homothetie(rotation, 30)) << endl;
 		cout << "Translation du polygone : " << *(polygone.translation(rotation)) << endl << endl;*/
 
-		/*fc.ajouterForme(&segment);
 		fc.ajouterForme(&triangle);
+		fc.ajouterForme(&cercle);
+		fc.dessin(new VisiteurDessinJava);
+		/*fc.ajouterForme(&segment);
 		cout << "Aire de la forme composee : " << fc.getAire() << endl;
 		cout << "Rotation de la forme composee : " << *(fc.rotation(rotation, 30)) << endl;
 		cout << "Homothetie de la forme composee : " << *(fc.homothetie(rotation, 30)) << endl;
@@ -89,11 +91,11 @@ int main()
 		//cout << "Test de la sauvegarde" << endl;
 		//segment.accepteSauvegarde(new SauvegardeForme);
 		//fc.accepteSauvegarde(new SauvegardeForme);
-		FormeGeometrique::ChargerFormes(formes, cor);
+		//FormeGeometrique::ChargerFormes(formes, cor);
 		//cout << formes.empty();
-		cout << *formes[0];
-		cout << "\ndeuxieme forme\n" << *formes[1];
-		formes[1]->dessin(new VisiteurDessinJava);
+		//cout << *formes[0];
+		//cout << "\ndeuxieme forme\n" << *formes[1];
+		//formes[1]->dessin(new VisiteurDessinJava);
 		//cout << "\ntroisieme forme\n" << *formes[2];
 		//cout << "\npremier polygone :\n" << *formes[3];
 		//cout << "\nl'autre\n" << *formes[4];

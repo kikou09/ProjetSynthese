@@ -169,12 +169,12 @@ FormeComposee::~FormeComposee()
 FormeComposee::operator string() const
 {
 	ostringstream os;
-	os << "Forme Composee [ ";
+	os << "Forme Composee [";
 	for (int i = 0; i < groupe.size(); i++) {
-		os << *groupe[i];
+		os << *groupe[i]<< ";";
 	}
 
-	os << "] " << couleur;
+	os << "]" << couleur;
 
 	return os.str();
 }
@@ -186,10 +186,7 @@ void FormeComposee::affiche() const
 
 void FormeComposee::dessin(const VisiteurForme *visiteur)const
 {
-	for (int i = 0; i < groupe.size(); i++)
-	{
-		groupe[i]->dessin(visiteur);
-	}
+	visiteur->dessiner(this);
 }
 
 FormeComposee & FormeComposee::operator=(const FormeComposee &fc)
