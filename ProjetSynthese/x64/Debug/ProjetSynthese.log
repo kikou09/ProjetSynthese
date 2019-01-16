@@ -1,7 +1,10 @@
-﻿  FormeComposee.cpp
+﻿  Vecteur2D.cpp
 c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\triangle.h(23): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
 c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\triangle.h(30): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
 c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\triangle.h(31): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
 c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\triangle.h(32): warning C4290: Spécification d'exception C++ ignorée sauf pour indiquer qu'une fonction n'est pas __declspec(nothrow)
-c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\formecomposee.cpp(71): warning C4267: 'return' : conversion de 'size_t' en 'const int', perte possible de données
+c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\vecteur2d.cpp(20): warning C4477: 'sscanf_s' : la chaîne de format '%f' nécessite un argument de type 'float *', mais l'argument variadique 1 est de type 'double *'
+  c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\vecteur2d.cpp(20): note: utilisez '%lf' dans la chaîne de format
+c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\vecteur2d.cpp(20): warning C4477: 'sscanf_s' : la chaîne de format '%f' nécessite un argument de type 'float *', mais l'argument variadique 2 est de type 'double *'
+  c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\vecteur2d.cpp(20): note: utilisez '%lf' dans la chaîne de format
   ProjetSynthese.vcxproj -> C:\Users\Jorane\Documents\GitHub\ProjetSyntheseC++\x64\Debug\ProjetSynthese.exe

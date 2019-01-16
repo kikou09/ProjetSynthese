@@ -41,11 +41,11 @@ void FormeComposee::ajouterForme(const FormeGeometrique *forme)
 	if(!contient(forme))
 		groupe.push_back(forme->clone()); //On rajoute la forme à la fin 
 
-	for (int i = 0; i < groupe.size()-1; i++) {
+	/*for (int i = 0; i < groupe.size()-1; i++) {
 
 		groupe[i]->setCouleur(forme->getCouleur());
 	}
-
+	*/
 	couleur = forme->getCouleur();
 
 	
@@ -169,12 +169,12 @@ FormeComposee::~FormeComposee()
 FormeComposee::operator string() const
 {
 	ostringstream os;
-	os << "Forme Composee [";
+	os << "Forme Composee ;";
 	for (int i = 0; i < groupe.size(); i++) {
 		os << *groupe[i]<< ";";
 	}
 
-	os << "]" << couleur;
+	os << couleur;
 
 	return os.str();
 }

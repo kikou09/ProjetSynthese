@@ -56,12 +56,7 @@ const double Cercle::getRayon() const
 }
 
 void Cercle::setCentre(const Vecteur2D &c)
-{
-	/*if (c.getX() < -1 || c.getX() > 20)
-		throw Erreur("x doit être entre -1 et 20\n");
-	if (c.getY() < -1 || c.getY() > 10)
-		throw Erreur("y doit être entre -1 et 10\n");*/
-	
+{	
 	centre = c;
 }
 
@@ -163,24 +158,29 @@ istream & operator>>(istream & is, Cercle &c)
 	string couleur;
 
 	cout << "--Saisie du cercle--" << endl;
-	try {
 		is >> centre;
 
+	try{
 		cout << "Saisir le rayon : " << endl;
 		is >> rayon;
+
+		if (isalpha(rayon))
+			throw Erreur("Saisir un nombre \n");
 
 		cout << "Saisir la couleur : " << endl;
 		is >> couleur;
 
-		c.setCentre(centre);
-		c.setRayon(rayon);
 		c.setCouleur(couleur);
+
 	}
 	catch (Erreur e) {
 
 		cerr << e.getMessage();
 		cin >> c;
 	}
+
+	c.setCentre(centre);
+	c.setRayon(rayon);
 
 	return is;
 	

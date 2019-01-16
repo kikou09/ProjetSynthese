@@ -57,7 +57,15 @@ int main()
 		cout << "Translation du segment : " << *(segment.translation(rotation)) << endl << endl;*/
 
 		//Test cercle 
-		cin >> cercle;
+		try {
+			cin >> cercle;
+		}
+		catch (Erreur e)
+		{
+			cout << e.what() << endl;
+			cin >> cercle;
+
+		}
 		/*cout << "Aire du cercle : " << cercle.getAire() << endl;
 		cout << "Rotation du cercle : " << *(cercle.rotation(rotation, 30)) << endl;
 		cout << "Homothetie du cercle : " << *(cercle.homothetie(rotation, 30)) << endl;
@@ -75,9 +83,9 @@ int main()
 		cout << "Homothetie du polygone : " << *(polygone.homothetie(rotation, 30)) << endl;
 		cout << "Translation du polygone : " << *(polygone.translation(rotation)) << endl << endl;*/
 
-		fc.ajouterForme(&triangle);
-		fc.ajouterForme(&cercle);
-		fc.dessin(new VisiteurDessinJava);
+		//fc.ajouterForme(&triangle);
+		//fc.ajouterForme(&cercle);
+		//fc.dessin(new VisiteurDessinJava);
 		/*fc.ajouterForme(&segment);
 		cout << "Aire de la forme composee : " << fc.getAire() << endl;
 		cout << "Rotation de la forme composee : " << *(fc.rotation(rotation, 30)) << endl;
@@ -86,8 +94,8 @@ int main()
 	
 		//forme->dessin(new VisiteurDessinJava);
 
-		//cercle.dessin(new VisiteurDessinJava);
-		//triangle.dessin(new VisiteurDessinJava);
+		cercle.dessin(new VisiteurDessinJava);
+		triangle.dessin(new VisiteurDessinJava);
 		//cout << "Test de la sauvegarde" << endl;
 		//segment.accepteSauvegarde(new SauvegardeForme);
 		//fc.accepteSauvegarde(new SauvegardeForme);

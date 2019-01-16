@@ -118,11 +118,18 @@ ostream & operator << (ostream & os, const Vecteur2D & u)
 istream & operator>>(istream & is, Vecteur2D &u)
 {
 		double x, y;
+		
+			cout << "Saisir le point x : " << endl;
+			is >> x;
 
-		cout << "Saisir le point x : " << endl;
-		is >> x;
-		cout << "Saisir le point y : " << endl;
-		is >> y;
+			
+			cout << "Saisir le point y : " << endl;
+			is >> y;
+
+			
+				
+
+		
 
 		u.setX(x);
 		u.setY(y);

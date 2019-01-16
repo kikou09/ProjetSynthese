@@ -81,12 +81,6 @@
     <ClInclude Include="InterfaceChargement.h">
       <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
     </ClInclude>
-    <ClInclude Include="InterfaceFormes.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="InterfaceForme.h">
-      <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
-    </ClInclude>
     <ClInclude Include="EnvoyeurReceveur.h">
       <Filter>Fichiers d%27en-tête\Client</Filter>
     </ClInclude>

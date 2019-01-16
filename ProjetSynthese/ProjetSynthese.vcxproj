@@ -165,8 +165,6 @@
     <ClInclude Include="InterfaceChargementPolygone.h" />
     <ClInclude Include="InterfaceChargementSegment.h" />
     <ClInclude Include="InterfaceChargementTriangle.h" />
-    <ClInclude Include="InterfaceForme.h" />
-    <ClInclude Include="InterfaceFormes.h" />
     <ClInclude Include="Matrice.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Polygone.h" />
