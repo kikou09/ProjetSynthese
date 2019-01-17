@@ -6,6 +6,11 @@
 #include "InterfaceChargementSegment.h"
 #include "InterfaceChargementTriangle.h"
 
+/**
+* \class InterfaceChargementFormeComposee
+* \brief Interface permettant le chargement des formes composées sauvegardées dans un fichier
+* Relance la chaîne de responsabilité pour chaque composante
+*/
 class InterfaceChargementFormeComposee :
 	public InterfaceChargement
 {

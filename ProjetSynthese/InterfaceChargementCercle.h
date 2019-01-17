@@ -1,5 +1,10 @@
 #pragma once
 #include "InterfaceChargement.h"
+
+/**
+* \class InterfaceChargementCercle
+* \brief Interface permettant le chargement des cercles sauvegardés dans un fichier
+*/
 class InterfaceChargementCercle :
 	public InterfaceChargement
 {

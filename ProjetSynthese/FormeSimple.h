@@ -1,5 +1,10 @@
 #pragma once
 #include "FormeGeometrique.h"
+
+/**
+* \class FormeSimple
+* \brief Classe FormeSimple qui modélise une forme composee et qui dérive de FormeGeometrique
+*/
 class FormeSimple :
 	public FormeGeometrique
 {

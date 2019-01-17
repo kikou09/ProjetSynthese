@@ -4,6 +4,11 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
+
+/**
+* \class SauvegardeForme
+* \brief Permet la sauvegarde d'une forme géométrique dans un fichier
+*/
 class SauvegardeForme :
 	public VisiteurSauvegarde
 {

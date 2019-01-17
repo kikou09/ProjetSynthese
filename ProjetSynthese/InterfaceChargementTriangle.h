@@ -1,5 +1,10 @@
 #pragma once
 #include "InterfaceChargement.h"
+
+/**
+* \class InterfaceChargementTriangle
+* \brief Interface permettant le chargement des triangles sauvegardés dans un fichier
+*/
 class InterfaceChargementTriangle :
 	public InterfaceChargement
 {

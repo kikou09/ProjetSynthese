@@ -16,7 +16,9 @@ Polygone::Polygone() : FormeSimple("black")
 
 Polygone::Polygone(const Polygone &p): FormeSimple(p.couleur)
 {
-	formes = p.formes;
+	for (int i = 0; i < p.formes.size(); i++) {
+		this->ajoutPoint(p.formes[i]);
+	}
 }
 
 

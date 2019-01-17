@@ -10,6 +10,10 @@
 
 using namespace std;
 
+/**
+* \class InterfaceChargement
+* \brief Interface permettant le chargement des formes sauvegardées dans un fichier
+*/
 class InterfaceChargement
 {
 public:

@@ -1,5 +1,10 @@
 #pragma once
 #include "InterfaceChargement.h"
+
+/**
+* \class InterfaceChargementSegment
+* \brief Interface permettant le chargement des segments sauvegardés dans un fichier
+*/
 class InterfaceChargementSegment :
 	public InterfaceChargement
 {

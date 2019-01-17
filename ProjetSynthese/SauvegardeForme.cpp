@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "SauvegardeForme.h"
 
-
 void SauvegardeForme::sauvegarde(const FormeGeometrique * f) const
 {
 	ofstream fichier("FormesSauvegardees.txt", ios::app);
