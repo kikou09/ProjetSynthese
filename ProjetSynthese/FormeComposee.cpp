@@ -13,6 +13,7 @@ FormeComposee::FormeComposee(const FormeComposee &forme_c): FormeGeometrique(for
 
 		delete groupe[i];
 	}
+	groupe.clear();
 	for (int i = 0; i < forme_c.groupe.size(); i++) {
 
 		this->ajouterForme(forme_c.groupe[i]);
@@ -41,11 +42,6 @@ void FormeComposee::ajouterForme(const FormeGeometrique *forme)
 	if(!contient(forme))
 		groupe.push_back(forme->clone()); //On rajoute la forme à la fin 
 
-	/*for (int i = 0; i < groupe.size()-1; i++) {
-
-		groupe[i]->setCouleur(forme->getCouleur());
-	}
-	*/
 	couleur = forme->getCouleur();
 
 	
@@ -56,7 +52,9 @@ void FormeComposee::supprimerForme(const int indice)
 	if (indice<0 || indice > groupe.size())
 		throw Erreur("Indice incorrect");
 
+	FormeGeometrique *forme = groupe.at(indice) ;
 	groupe.erase(groupe.begin() + indice);
+	delete forme;
 }
 
 void FormeComposee::supprimerForme(const FormeGeometrique *forme)

@@ -49,9 +49,10 @@ void FormeGeometrique::accepteSauvegarde(const VisiteurSauvegarde *visiteur) con
 	visiteur->sauvegarde(this);
 }
 
-void FormeGeometrique::ChargerFormes(vector<FormeGeometrique*> & formes, InterfaceChargement * cor)
+vector<FormeGeometrique *> FormeGeometrique::ChargerFormes(InterfaceChargement * cor)
 {
-
+	vector<FormeGeometrique *> formes;
+	FormeGeometrique * forme;
 	string contenu;
 	ifstream fichierEntree("FormesSauvegardees.txt", ios::in);
 	if (! fichierEntree) {
@@ -60,10 +61,10 @@ void FormeGeometrique::ChargerFormes(vector<FormeGeometrique*> & formes, Interfa
 	}
 	while (getline(fichierEntree, contenu) && !contenu.empty()) {
 		cout << "Lecture :\t" << contenu << endl;
-		cor->executer(contenu, formes);
-
-		
+		forme=cor->executer(contenu);
+		formes.push_back(forme);
 	}
+	return formes;
 }
 
 ostream & operator << (ostream & os, const FormeGeometrique &f)

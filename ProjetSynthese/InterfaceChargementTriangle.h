@@ -8,6 +8,6 @@ protected:
 public:
 	InterfaceChargementTriangle(InterfaceChargement *s);
 	virtual ~InterfaceChargementTriangle();
-	void executerInteraction(string contenu, vector <FormeGeometrique*> & formes) const;
+	FormeGeometrique * executerInteraction(string contenu) const;
 };
 

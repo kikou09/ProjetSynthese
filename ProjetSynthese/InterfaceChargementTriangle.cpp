@@ -19,7 +19,7 @@ InterfaceChargementTriangle::~InterfaceChargementTriangle()
 {
 }
 
-void InterfaceChargementTriangle::executerInteraction(string contenu, vector<FormeGeometrique*> & formes) const
+FormeGeometrique * InterfaceChargementTriangle::executerInteraction(string contenu) const
 {
 	int i = 0;
 	size_t pos = contenu.find(":");
@@ -43,5 +43,5 @@ void InterfaceChargementTriangle::executerInteraction(string contenu, vector<For
 
 	FormeGeometrique* figure = new Triangle(couleur, point1, point2, point3);
 
-	formes.push_back(figure);
+	return figure;
 }

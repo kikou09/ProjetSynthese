@@ -1,6 +1,0 @@
-Cercle:12 11 5 red 
-
-Cercle:12 12 5 red 
-
-Cercle:2 4 5 red 
-

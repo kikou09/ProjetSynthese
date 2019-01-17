@@ -20,13 +20,13 @@ InterfaceChargementCercle::~InterfaceChargementCercle()
 {
 }
 
-void InterfaceChargementCercle::executerInteraction(string contenu, vector<FormeGeometrique*> & formes) const
+FormeGeometrique * InterfaceChargementCercle::executerInteraction(string contenu) const
 {
 	double rayon;
 	int i = 0; 
 	size_t pos = contenu.find(":");
 	contenu = contenu.substr(pos + 1); // suppression de "Cercle:"
-
+	
 	char* texteCercle = strdup(contenu.c_str()); // on transforme le texte string en char*
 	char* coordonnees = strtok(texteCercle, " "); // on utilise la fonction strtok pour créer un tableau avec le délimiteur espace
 
@@ -44,6 +44,6 @@ void InterfaceChargementCercle::executerInteraction(string contenu, vector<Forme
 	Vecteur2D centre(stod(points[0]), stod(points[1]));
 	FormeGeometrique *figure = new Cercle(couleur, centre, rayon);
 
-	formes.push_back(figure);
+	return figure;
 }
 

@@ -8,7 +8,7 @@ protected:
 public:
 	InterfaceChargementPolygone(InterfaceChargement *s);
 	virtual ~InterfaceChargementPolygone();
-	void executerInteraction(string contenu, vector <FormeGeometrique*> & formes) const;
+	FormeGeometrique * executerInteraction(string contenu) const;
 
 };
 

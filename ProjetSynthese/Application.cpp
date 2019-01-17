@@ -2,7 +2,6 @@
 #include "Vecteur2D.h"
 #include "Cercle.h"
 #include "FormeGeometrique.h"
-
 #include "InterfaceChargement.h"
 #include "InterfaceChargementCercle.h"
 #include "InterfaceChargementPolygone.h"
@@ -14,30 +13,21 @@
 #include <iostream>
 #include "Application.h"
 #include "VisiteurDessinJava.h"
+#include <stdlib.h> 
+#include <crtdbg.h>
+
+#define _CRTDBG_MAP_ALLOC 
 
 using namespace std;
-/**
-*	Pour que la forme s'affiche sur l'ecran lors du dessin 
-*	Coordoonnes : X entre -1.5 et 40 et Y entre -2 et 20
-*	Donc difficultés à dessiner les rotations ... car les coordonnees risquent de dépasser l'écran
-*/
+
 int main()
 {
-
-	/*vector <string> menu;
-	InterfaceUtilisateur *ihm,*ihm_aux , *creer_forme , *calcul , *dessiner , *quitter ;
-	int choix=0;
-	string c;*/
-
-
-	double aire;
-	FormeGeometrique *forme;
 	Cercle cercle;
 	Triangle triangle;
 	Segment segment;
 	Polygone polygone;
-	FormeComposee fc("red");
-	Vecteur2D rotation(5, 4);
+	//FormeComposee fc("red");
+	//Vecteur2D rotation(5, 4);
 	int i;
 	vector<FormeGeometrique *> formes;
 
@@ -91,23 +81,31 @@ int main()
 		//cout << "Test de la sauvegarde" << endl;
 		//segment.accepteSauvegarde(new SauvegardeForme);
 		//fc.accepteSauvegarde(new SauvegardeForme);
-		FormeGeometrique::ChargerFormes(formes, cor);
-		cout << *formes[0];
+		//formes=FormeGeometrique::ChargerFormes(cor);
+		//cout << *formes[0];
 		//cout << *formes[1];
-		//formes[1]->dessin(new VisiteurDessinJava);
+		//formes[0]->dessin(new VisiteurDessinJava);
 		//cout << "\ntroisieme forme\n" << *formes[2];
 		//cout << "\npremier polygone :\n" << *formes[3];
 		//cout << "\nl'autre\n" << *formes[4];
 		//cout << "Tremblez mon enfant voici la FC\n" << *formes[5];*/
 		
+
+		delete corCercle, corSegment, corPolygone, corFormeComposee, corTriangle,cor;
+		for (i = 0; i < formes.size(); i++) {
+
+			delete formes[i];
+
+		}
+		formes.clear();
 	}
 	catch (Erreur e) {
 
-		cout << e.getMessage();
+		cerr << e.getMessage();
+		exit(1);
 	}
 
-	
+	_CrtSetDbgFlag(_CRTDBG_LEAK_CHECK_DF);	
 	system("pause");
-
 	return 0;
 }

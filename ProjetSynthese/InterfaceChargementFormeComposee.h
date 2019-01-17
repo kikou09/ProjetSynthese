@@ -14,6 +14,12 @@ protected:
 public:
 	InterfaceChargementFormeComposee(InterfaceChargement *s);
 	virtual ~InterfaceChargementFormeComposee();
-	void executerInteraction(string contenu, vector <FormeGeometrique*> & formes) const;
+	FormeGeometrique * executerInteraction(string contenu) const;
+
+	/**
+	* Coupe la chaine de caractères et met chaque partie dans un vector 
+	*\param[in] chaine : contenu à couper 
+	*/
+	const vector<string> split(string chaine) const;
 };
 

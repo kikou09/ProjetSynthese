@@ -96,7 +96,7 @@ public:
 	friend ostream &operator << (ostream &os, const FormeGeometrique &f);
 	//virtual friend istream &operator >>(istream &is, FormeGeometrique *f)=0;
 
-	static void ChargerFormes(vector <FormeGeometrique*> &formes, InterfaceChargement *cor);
+	static vector<FormeGeometrique *>  ChargerFormes(InterfaceChargement *cor);
 
 };
 

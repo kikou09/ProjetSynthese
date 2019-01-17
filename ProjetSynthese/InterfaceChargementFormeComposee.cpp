@@ -14,12 +14,10 @@ bool InterfaceChargementFormeComposee::peutExecuter(string & contenu) const {
 		return false;
 }
 
-void InterfaceChargementFormeComposee::executerInteraction(string contenu, vector <FormeGeometrique*> & formes) const {
-	string forme;
+FormeGeometrique * InterfaceChargementFormeComposee::executerInteraction(string contenu) const {
+	string forme,temp;
 	string couleur;
-	int i = 1;
-	int maj = 0;
-	int taille = 0;
+	size_t i ;
 
 	vector<string> formes_chaine;
 
@@ -35,43 +33,70 @@ void InterfaceChargementFormeComposee::executerInteraction(string contenu, vecto
 	contenu = contenu.substr(pos + 1); // Suppression de "Forme Composee ;"
 
 	//split
-	size_t pos_precedente = 0;
-	pos = 0;
-	while ((pos = contenu.find(";",pos)) != string::npos) {
-
-		string souschaine = contenu.substr(pos_precedente, pos - pos_precedente);
-		formes_chaine.push_back(souschaine);
-		pos++;
-		pos_precedente = pos;
-	}
-	
-	formes_chaine.push_back(contenu.substr(pos_precedente, pos - pos_precedente));
+	formes_chaine = split(contenu);
 
 	couleur = formes_chaine[0];
-
 	FormeComposee* fc = new FormeComposee(couleur);
 
-	for (int i = 1; i < formes_chaine.size(); i++) {
+	i = 1;
+	while(i<formes_chaine.size()) {
 
-		if(formes_chaine[i]!="/" )
-			corFormeComposee->executer(formes_chaine[i], vformescomposees);
+		if (formes_chaine[i] == "Forme Composee") {
+
+			size_t j = i;
+			while (formes_chaine[j] != "/")
+				j++;
+
+			while (i <= j)
+			{
+				temp += formes_chaine[i] + ";";
+				i++;
+			}
+			fc->ajouterForme(corFormeComposee->executer(temp));
+
+		}
+		else {
+			if (formes_chaine[i] != "/" && formes_chaine[i] !="" )
+				fc->ajouterForme(corFormeComposee->executer(formes_chaine[i]));
+			i++;
+		}
 	}
 
-	for (vector<FormeGeometrique*>::iterator it = vformescomposees.begin(); it != vformescomposees.end(); it++) {
-		fc->ajouterForme(*it);
-	}
-	
-	FormeGeometrique *figure = new FormeComposee(*fc);
-	formes.push_back(figure);
-
-	delete fc; 
 	delete corCercle;
 	delete corFormeComposee;
 	delete corPolygone;
 	delete corSegment;
 	delete corTriangle;
+
+	return fc;
 }
 
 InterfaceChargementFormeComposee::~InterfaceChargementFormeComposee()
 {
 }
+
+const vector<string> InterfaceChargementFormeComposee::split(string chaine) const
+{
+	vector<string> chaines;
+	size_t pos_precedente = 0;
+	size_t pos = 0;
+	while ((pos = chaine.find(";", pos)) != string::npos) {
+
+		string souschaine = chaine.substr(pos_precedente, pos - pos_precedente);
+		if (souschaine[0] == '/') {
+			string car = souschaine;
+			car = car.substr(0, 1);
+			chaines.push_back(car);
+			souschaine = souschaine.substr(1);
+		}
+		chaines.push_back(souschaine);
+		pos++;
+		pos_precedente = pos;
+	}
+
+	//Derniere partie
+	chaines.push_back(chaine.substr(pos_precedente, pos - pos_precedente));
+
+	return chaines;
+}
+

@@ -1,4 +1,2 @@
 ﻿  Application.cpp
-c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\application.cpp(33): warning C4101: 'aire' : variable locale non référencée
-c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\application.cpp(34): warning C4101: 'forme' : variable locale non référencée
-c:\users\jorane\documents\github\projetsynthesec++\projetsynthese\application.cpp(41): warning C4101: 'i' : variable locale non référencée
+  ProjetSynthese.vcxproj -> C:\Users\Jorane\Documents\GitHub\ProjetSyntheseC++\x64\Debug\ProjetSynthese.exe

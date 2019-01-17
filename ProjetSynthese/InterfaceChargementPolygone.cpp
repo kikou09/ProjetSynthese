@@ -19,7 +19,7 @@ InterfaceChargementPolygone::~InterfaceChargementPolygone()
 {
 }
 
-void InterfaceChargementPolygone::executerInteraction(string contenu, vector<FormeGeometrique*> & formes) const
+FormeGeometrique * InterfaceChargementPolygone::executerInteraction(string contenu) const
 {
 	int nbPoints;
 	int indice = 7;
@@ -57,6 +57,5 @@ void InterfaceChargementPolygone::executerInteraction(string contenu, vector<For
 	}
 
 	FormeGeometrique* forme = new Polygone(figure);
-	formes.push_back(forme);
-
+	return forme;
 }

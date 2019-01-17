@@ -15,15 +15,15 @@ InterfaceChargement::~InterfaceChargement()
 {
 }
 
-void InterfaceChargement::executer(string contenu,vector <FormeGeometrique *> & forme) const
+FormeGeometrique * InterfaceChargement::executer(string contenu) const
 {
 	if (peutExecuter(contenu)) 			// cet expert a trouvé une solution 
-		executerInteraction(contenu, forme);
+		return executerInteraction(contenu);
 
 	else            			// échec de cet expert
 		if (this->suivant != NULL) {  		// le problème est transmis à   
 			// l’expert suivant
-			return this->suivant->executer(contenu, forme);
+			return this->suivant->executer(contenu);
 		}
 		else {
 			//exception
@@ -31,3 +31,4 @@ void InterfaceChargement::executer(string contenu,vector <FormeGeometrique *> & 
 		}
 	
 }
+

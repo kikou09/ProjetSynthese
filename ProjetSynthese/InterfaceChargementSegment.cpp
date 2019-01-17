@@ -21,7 +21,7 @@ InterfaceChargementSegment::~InterfaceChargementSegment()
 {
 }
 
-void InterfaceChargementSegment::executerInteraction(string contenu, vector<FormeGeometrique*> & formes) const
+FormeGeometrique * InterfaceChargementSegment::executerInteraction(string contenu) const
 {
 	int i = 0;
 	size_t pos = contenu.find(":");
@@ -44,6 +44,5 @@ void InterfaceChargementSegment::executerInteraction(string contenu, vector<Form
 	Vecteur2D point2(stod(points[2]), stod(points[3]));
 	FormeGeometrique *figure = new Segment(couleur, point1, point2);
 
-	formes.push_back(figure);
-
+	return figure;
 }

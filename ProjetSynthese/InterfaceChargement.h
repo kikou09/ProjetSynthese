@@ -9,6 +9,7 @@
 #define NBVALMAX 50
 
 using namespace std;
+
 class InterfaceChargement
 {
 public:
@@ -19,8 +20,13 @@ protected:
 	virtual bool peutExecuter(string &choix)const = 0;
 public:
 
-	virtual void executerInteraction(string contenu, vector <FormeGeometrique*> & formes)const = 0;
-	void executer(string contenu, vector <FormeGeometrique*> & formes) const;
+	/**
+	* Reconstruit la forme recupérer du fichier texte
+	* \param[in] contenu forme recuperé du fichier texte
+	* \return la forme crée 
+	*/
+	virtual FormeGeometrique * executerInteraction(string contenu)const = 0;
+	FormeGeometrique * executer(string contenu) const;
 	virtual ~InterfaceChargement();
 	InterfaceChargement();
 };
