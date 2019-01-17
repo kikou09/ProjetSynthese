@@ -23,7 +23,6 @@ InterfaceChargementSegment::~InterfaceChargementSegment()
 
 void InterfaceChargementSegment::executerInteraction(string contenu, vector<FormeGeometrique*> & formes) const
 {
-	double x1, y1, x2, y2;
 	int i = 0;
 	size_t pos = contenu.find(":");
 	contenu = contenu.substr(pos + 1); // suppression de "Segment:"

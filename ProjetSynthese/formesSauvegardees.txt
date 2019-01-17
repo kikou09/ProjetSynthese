@@ -1,2 +1,1 @@
-Cercle:2 3 5 red 
-
+Forme Composee;red;Triangle :2 5 6 3 2 5 cyan;Cercle :1 5 6 red;/

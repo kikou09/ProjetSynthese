@@ -7,7 +7,7 @@
 
 using namespace std;
 
-#define ADRESSE_IP "10.10.200.102"
+#define ADRESSE_IP "10.188.211.38"
 #define PORT_SERVEUR 9111
 
 const static int L = 200;

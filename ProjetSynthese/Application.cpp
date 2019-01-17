@@ -57,21 +57,13 @@ int main()
 		cout << "Translation du segment : " << *(segment.translation(rotation)) << endl << endl;*/
 
 		//Test cercle 
-		try {
-			cin >> cercle;
-		}
-		catch (Erreur e)
-		{
-			cout << e.what() << endl;
-			cin >> cercle;
-
-		}
+		//cin >> cercle;
 		/*cout << "Aire du cercle : " << cercle.getAire() << endl;
 		cout << "Rotation du cercle : " << *(cercle.rotation(rotation, 30)) << endl;
 		cout << "Homothetie du cercle : " << *(cercle.homothetie(rotation, 30)) << endl;
 		cout << "Translation du cercle : " << *(cercle.translation(rotation)) << endl << endl;*/
 
-		cin >> triangle;
+		//cin >> triangle;
 		/*cout << "Aire du triangle : " << triangle.getAire() << endl;
 		cout << "Rotation du triangle : " << *(triangle.rotation(rotation, 30)) << endl;
 		cout << "Homothetie du triangle : " << *(triangle.homothetie(rotation, 30)) << endl;
@@ -94,15 +86,14 @@ int main()
 	
 		//forme->dessin(new VisiteurDessinJava);
 
-		cercle.dessin(new VisiteurDessinJava);
-		triangle.dessin(new VisiteurDessinJava);
+		//cercle.dessin(new VisiteurDessinJava);
+		//triangle.dessin(new VisiteurDessinJava);
 		//cout << "Test de la sauvegarde" << endl;
 		//segment.accepteSauvegarde(new SauvegardeForme);
 		//fc.accepteSauvegarde(new SauvegardeForme);
-		//FormeGeometrique::ChargerFormes(formes, cor);
-		//cout << formes.empty();
-		//cout << *formes[0];
-		//cout << "\ndeuxieme forme\n" << *formes[1];
+		FormeGeometrique::ChargerFormes(formes, cor);
+		cout << *formes[0];
+		//cout << *formes[1];
 		//formes[1]->dessin(new VisiteurDessinJava);
 		//cout << "\ntroisieme forme\n" << *formes[2];
 		//cout << "\npremier polygone :\n" << *formes[3];

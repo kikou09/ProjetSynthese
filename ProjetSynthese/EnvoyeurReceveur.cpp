@@ -109,7 +109,7 @@ void EnvoyeurReceveur::envoyer(const char* message) const {
 
 	try {
 
-		int l = strlen(message);
+		size_t l = strlen(message);
 		int r = send(sock, message, l, 0);             //------------------ envoi de la requête au serveur -------------------------------
 														// envoie au plus  l octets
 		if (r == SOCKET_ERROR)

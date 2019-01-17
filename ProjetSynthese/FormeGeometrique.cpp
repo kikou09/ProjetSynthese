@@ -53,7 +53,7 @@ void FormeGeometrique::ChargerFormes(vector<FormeGeometrique*> & formes, Interfa
 {
 
 	string contenu;
-	ifstream fichierEntree("C:/Users/Alexis/source/kikou09/ProjetSynthese/ProjetSynthese/Nouveau_Dossier/FormesSauvegardees.txt", ios::in);
+	ifstream fichierEntree("FormesSauvegardees.txt", ios::in);
 	if (! fichierEntree) {
 		cerr << "Problème d'ouverture de fichier" << endl;
 		exit(1);

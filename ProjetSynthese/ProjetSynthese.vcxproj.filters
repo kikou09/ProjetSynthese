@@ -81,9 +81,6 @@
     <ClInclude Include="InterfaceChargement.h">
       <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
     </ClInclude>
-    <ClInclude Include="EnvoyeurReceveur.h">
-      <Filter>Fichiers d%27en-tête\Client</Filter>
-    </ClInclude>
     <ClInclude Include="SauvegardeForme.h">
       <Filter>Fichiers d%27en-tête\SauvegardeForme</Filter>
     </ClInclude>
@@ -110,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="InterfaceChargementFormeComposee.h">
       <Filter>Fichiers d%27en-tête\ChargementFormes</Filter>
+    </ClInclude>
+    <ClInclude Include="EnvoyeurReceveur.h">
+      <Filter>Fichiers d%27en-tête\DessinForme</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

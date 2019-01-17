@@ -39,37 +39,25 @@ Triangle * Triangle::clone() const
 	return new Triangle(*this);
 }
 
-void Triangle::setP1(const Vecteur2D &b) throw (Erreur)
+void Triangle::setP1(const Vecteur2D &b)
 {
 	if (p1 != b) {
-		/*if (b.getX() < -1 || b.getX() > 20)
-			throw Erreur("x doit etre entre -1 et 20");
-		if (b.getY() < -1 || b.getY()>12)
-			throw Erreur("y doit etre entre -1 et 12");*/
-
 		p1 = b;
 	}
 
 }
 
-void Triangle::setP2(const Vecteur2D &b) throw (Erreur)
+void Triangle::setP2(const Vecteur2D &b)
 {
 	if (p2 != b) {
-		/*if (b.getX() < -1 || b.getX() > 20)
-			throw Erreur("x doit etre entre -1 et 20");
-		if (b.getY() < -1 || b.getY() > 12)
-			throw Erreur("y doit etre entre -1 et 12");*/
+
 		p2 = b;
 	}
 }
 
-void Triangle::setP3(const Vecteur2D &b) throw (Erreur)
+void Triangle::setP3(const Vecteur2D &b) 
 {
 	if (p3 != b) {
-		/*if (b.getX() < -1 || b.getX() > 20)
-			throw Erreur("x doit etre entre -1 et 20");
-		if (b.getY() < -1 || b.getY() > 12)
-			throw Erreur("y doit etre entre -1 et 12");*/
 
 		p3 = b;
 	}
@@ -93,7 +81,9 @@ void Triangle::affiche() const
 bool Triangle::operator==(const Triangle &t) const
 {
 	if (couleur == t.getCouleur())
-		return (p1 == t.p1 && p2 == t.p2 && p3==t.p3);
+		return (p1 == t.p1 && p2 == t.p2 && p3 == t.p3);
+	else
+		return false;
 }
 
 void Triangle::operator=(const Triangle &t)

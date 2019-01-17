@@ -68,7 +68,7 @@ void FormeComposee::supprimerForme(const FormeGeometrique *forme)
 
 const int FormeComposee::getNbForme() const
 {
-	return groupe.size();
+	return (int)groupe.size();
 }
 
 const FormeGeometrique * FormeComposee::getForme(const int indice) const
@@ -169,12 +169,13 @@ FormeComposee::~FormeComposee()
 FormeComposee::operator string() const
 {
 	ostringstream os;
-	os << "Forme Composee ;";
-	for (int i = 0; i < groupe.size(); i++) {
+	os << "Forme Composee;"<< couleur << ";";
+	for (int i = 0; i < groupe.size()-1; i++) {
 		os << *groupe[i]<< ";";
 	}
 
-	os << couleur;
+	os << *groupe[groupe.size()-1];
+	os << ";/";
 
 	return os.str();
 }

@@ -160,24 +160,15 @@ istream & operator>>(istream & is, Cercle &c)
 	cout << "--Saisie du cercle--" << endl;
 		is >> centre;
 
-	try{
-		cout << "Saisir le rayon : " << endl;
-		is >> rayon;
 
-		if (isalpha(rayon))
-			throw Erreur("Saisir un nombre \n");
+	cout << "Saisir le rayon : " << endl;
+	is >> rayon;
 
-		cout << "Saisir la couleur : " << endl;
-		is >> couleur;
+	cout << "Saisir la couleur : " << endl;
+	is >> couleur;
 
-		c.setCouleur(couleur);
+	c.setCouleur(couleur);
 
-	}
-	catch (Erreur e) {
-
-		cerr << e.getMessage();
-		cin >> c;
-	}
 
 	c.setCentre(centre);
 	c.setRayon(rayon);

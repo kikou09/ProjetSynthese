@@ -17,7 +17,7 @@ Vecteur2D::Vecteur2D(const double &x, const double &y) : x(x), y(y) {}
 Vecteur2D::Vecteur2D(const char * s)
 {
 	double x, y;
-	sscanf_s(s, "(%f,%f)", &x, &y);
+	sscanf_s(s, "(%lf,%lf)", &x, &y);
 	this->x = x;
 	this->y = y;
 }
@@ -119,17 +119,11 @@ istream & operator>>(istream & is, Vecteur2D &u)
 {
 		double x, y;
 		
-			cout << "Saisir le point x : " << endl;
-			is >> x;
-
+		cout << "Saisir le point x : " << endl;
+		is >> x;
 			
-			cout << "Saisir le point y : " << endl;
-			is >> y;
-
-			
-				
-
-		
+		cout << "Saisir le point y : " << endl;
+		is >> y;
 
 		u.setX(x);
 		u.setY(y);

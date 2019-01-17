@@ -4,7 +4,7 @@
 
 bool InterfaceChargementTriangle::peutExecuter(string & contenu) const
 {
-	size_t trouve = contenu.find("Triangle:"); // si contenu contient "Triangle:" alors la forme a charger est un Triangle
+	size_t trouve = contenu.find("Triangle :"); // si contenu contient "Triangle:" alors la forme a charger est un Triangle
 	if (trouve != string::npos)
 		return true;
 	else
@@ -21,7 +21,6 @@ InterfaceChargementTriangle::~InterfaceChargementTriangle()
 
 void InterfaceChargementTriangle::executerInteraction(string contenu, vector<FormeGeometrique*> & formes) const
 {
-	double x1, y1, x2, y2, x3, y3;
 	int i = 0;
 	size_t pos = contenu.find(":");
 	contenu = contenu.substr(pos + 1); // suppression de "Triangle:"

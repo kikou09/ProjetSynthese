@@ -5,7 +5,7 @@
 
 bool InterfaceChargementCercle::peutExecuter(string & contenu) const
 {
-	size_t trouve = contenu.find("Cercle:"); // si contenu contient "cercle:" alors la forme a charger est un cercle
+	size_t trouve = contenu.find("Cercle :"); // si contenu contient "cercle:" alors la forme a charger est un cercle
 	if (trouve != string::npos)
 		return true;
 	else
@@ -22,7 +22,7 @@ InterfaceChargementCercle::~InterfaceChargementCercle()
 
 void InterfaceChargementCercle::executerInteraction(string contenu, vector<FormeGeometrique*> & formes) const
 {
-	double x, y, rayon;
+	double rayon;
 	int i = 0; 
 	size_t pos = contenu.find(":");
 	contenu = contenu.substr(pos + 1); // suppression de "Cercle:"

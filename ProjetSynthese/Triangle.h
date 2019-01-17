@@ -20,16 +20,16 @@ private :
 	Vecteur2D p3;
 public:
 	Triangle();
-	Triangle(const string &couleur , const Vecteur2D &pointA , const Vecteur2D &pointB , const Vecteur2D &pointC) throw (Erreur);
+	Triangle(const string &couleur , const Vecteur2D &pointA , const Vecteur2D &pointB , const Vecteur2D &pointC);
 	Triangle(const Triangle &);
 	virtual ~Triangle();
 	Triangle*  clone() const;
 
 	const double getAire() const;
 	const double getDeterminant() const;
-	void setP1(const Vecteur2D &) throw (Erreur);
-	void setP2(const Vecteur2D &) throw (Erreur);
-	void setP3(const Vecteur2D &) throw (Erreur);
+	void setP1(const Vecteur2D &);
+	void setP2(const Vecteur2D &);
+	void setP3(const Vecteur2D &);
 
 	virtual Triangle * homothetie(const Vecteur2D &v, const double rapport)const;
 	virtual void homothetie2(const Vecteur2D &v, const double);
