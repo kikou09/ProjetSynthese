@@ -28,7 +28,7 @@ public:
 
 	friend ostream & operator << (ostream &os , const Erreur &erreur)
 	{ 
-		return os << erreur;
+		return os << erreur.getMessage();
 	}
 
 

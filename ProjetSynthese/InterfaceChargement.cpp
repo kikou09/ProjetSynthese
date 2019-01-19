@@ -20,7 +20,7 @@ FormeGeometrique * InterfaceChargement::executer(string contenu) const
 	if (peutExecuter(contenu)) 			// cet expert a trouvé une solution 
 		return executerInteraction(contenu);
 
-	else            			// échec de cet expert
+	else            						// échec de cet expert
 		if (this->suivant != NULL) {  		// le problème est transmis à   
 			// l’expert suivant
 			return this->suivant->executer(contenu);

@@ -1,0 +1,50 @@
+﻿  pch.cpp
+  Application.cpp
+  Cercle.cpp
+  EnvoyeurReceveur.cpp
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\envoyeurreceveur.cpp(45): error C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\winsock2.h(1830): note: voir la déclaration de 'inet_addr'
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\envoyeurreceveur.cpp(113): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+  FormeComposee.cpp
+  FormeGeometrique.cpp
+  FormeSimple.cpp
+  InterfaceChargement.cpp
+  InterfaceChargementCercle.cpp
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementcercle.cpp(30): error C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(536): note: voir la déclaration de 'strdup'
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementcercle.cpp(31): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(440): note: voir la déclaration de 'strtok'
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementcercle.cpp(38): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(440): note: voir la déclaration de 'strtok'
+  InterfaceChargementFormeComposee.cpp
+  InterfaceChargementPolygone.cpp
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementpolygone.cpp(30): error C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(536): note: voir la déclaration de 'strdup'
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementpolygone.cpp(31): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(440): note: voir la déclaration de 'strtok'
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementpolygone.cpp(38): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(440): note: voir la déclaration de 'strtok'
+  InterfaceChargementSegment.cpp
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementsegment.cpp(30): error C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(536): note: voir la déclaration de 'strdup'
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementsegment.cpp(31): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(440): note: voir la déclaration de 'strtok'
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementsegment.cpp(38): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(440): note: voir la déclaration de 'strtok'
+  InterfaceChargementTriangle.cpp
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementtriangle.cpp(28): error C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(536): note: voir la déclaration de 'strdup'
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementtriangle.cpp(29): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(440): note: voir la déclaration de 'strtok'
+c:\users\alexis\source\repos\kikou09\projetsynthese\projetsynthese\interfacechargementtriangle.cpp(36): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h(440): note: voir la déclaration de 'strtok'
+  Matrice.cpp
+  Polygone.cpp
+  SauvegardeForme.cpp
+  Segment.cpp
+  Triangle.cpp
+  Vecteur2D.cpp
+  VisiteurDessinJava.cpp
+  VisiteurForme.cpp
+  Compilation en cours...
+  VisiteurSauvegarde.cpp

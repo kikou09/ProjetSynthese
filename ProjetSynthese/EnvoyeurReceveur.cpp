@@ -122,6 +122,7 @@ void EnvoyeurReceveur::envoyer(const char* message) const {
 const string EnvoyeurReceveur::recevoir() const {
 
 	char reponse[L];
+	
 
 	try {
 
@@ -129,7 +130,7 @@ const string EnvoyeurReceveur::recevoir() const {
 													// reçoit au plus L octets
 													// en cas de succès, r contient le nombre d'octets reçus
 		if (r == SOCKET_ERROR)
-			throw Erreur("La réception de la réponse a échoué");
+			throw Erreur("La reception de la reponse a echoue");
 
 		char * p = strchr(reponse, '\n');
 		*(p + 1) = '\0';
@@ -137,7 +138,9 @@ const string EnvoyeurReceveur::recevoir() const {
 	}
 	catch (Erreur erreur) {
 		cerr << erreur << endl;
+		exit(1);
 	}
 	string msg(reponse);
 	return msg;
+
 }

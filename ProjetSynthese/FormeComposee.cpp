@@ -19,6 +19,7 @@ FormeComposee::FormeComposee(const FormeComposee &forme_c): FormeGeometrique(for
 		this->ajouterForme(forme_c.groupe[i]);
 
 	}
+
 }
 
 FormeComposee * FormeComposee::clone() const
@@ -39,9 +40,13 @@ bool FormeComposee::contient(const FormeGeometrique *f)const
 
 void FormeComposee::ajouterForme(const FormeGeometrique *forme)
 {
+
 	if(!contient(forme))
 		groupe.push_back(forme->clone()); //On rajoute la forme à la fin 
 
+	for (int i = 0; i < groupe.size(); i++) {
+		groupe[i]->setCouleur(forme->getCouleur());
+	}
 	couleur = forme->getCouleur();
 
 	

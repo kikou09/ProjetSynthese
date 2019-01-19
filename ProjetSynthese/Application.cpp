@@ -22,12 +22,26 @@ using namespace std;
 
 int main()
 {
-	Cercle cercle;
-	Triangle triangle;
+	string couleur = "cyan";
+	Vecteur2D centre(7, 30);
+	Vecteur2D centre2(5, 100);
+	Cercle cercle(couleur, Vecteur2D(0, 80), 60);
+	Cercle cercle1(couleur, Vecteur2D(0,0), 40);
+
+	Vecteur2D pt1(10, 0);
+	Vecteur2D pt2(20, 20);
+	Vecteur2D pt3(80, 10);
+	string couleur2 = "cyan";
+	Triangle triangle(couleur2, pt1, pt2, pt3);
+
+	FormeComposee fc("cyan");
+	fc.ajouterForme(&cercle);
+	fc.ajouterForme(&cercle1);
+	fc.ajouterForme(&triangle);
+
+	//Vecteur2D rotation(5, 4);
 	Segment segment;
 	Polygone polygone;
-	//FormeComposee fc("red");
-	//Vecteur2D rotation(5, 4);
 	int i;
 	vector<FormeGeometrique *> formes;
 
@@ -67,7 +81,12 @@ int main()
 
 		//fc.ajouterForme(&triangle);
 		//fc.ajouterForme(&cercle);
-		//fc.dessin(new VisiteurDessinJava);
+
+		fc.dessin(new VisiteurDessinJava);
+
+		
+		//cercle.dessin(new VisiteurDessinJava);
+		//cercle1.dessin(new VisiteurDessinJava);
 		/*fc.ajouterForme(&segment);
 		cout << "Aire de la forme composee : " << fc.getAire() << endl;
 		cout << "Rotation de la forme composee : " << *(fc.rotation(rotation, 30)) << endl;
