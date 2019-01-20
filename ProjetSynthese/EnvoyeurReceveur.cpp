@@ -58,7 +58,10 @@ EnvoyeurReceveur::EnvoyeurReceveur(const char * adresseIP, int portServeur)
 	}
 }
 
-EnvoyeurReceveur::~EnvoyeurReceveur() {}
+EnvoyeurReceveur::~EnvoyeurReceveur() {
+
+	delete instance;
+}
 
 void EnvoyeurReceveur::init() const {
 

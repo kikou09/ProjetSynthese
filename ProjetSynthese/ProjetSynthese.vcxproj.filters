@@ -25,14 +25,14 @@
     <Filter Include="Fichiers sources\Formes">
       <UniqueIdentifier>{43308dc9-822f-40d0-a6d3-7ffd77220c7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Chargement">
-      <UniqueIdentifier>{ba1c0dd0-2011-4343-aefb-b3fd50c7895c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers sources\Connexion_Serveur">
       <UniqueIdentifier>{b232a37d-210c-4986-bb2d-5cb4e4276e34}</UniqueIdentifier>
     </Filter>
     <Filter Include="Fichiers d%27en-tête\Formes">
       <UniqueIdentifier>{9baf81f7-c609-451d-9272-8ee51e932582}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Chargement/Sauvegarde">
+      <UniqueIdentifier>{ba1c0dd0-2011-4343-aefb-b3fd50c7895c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -103,7 +103,7 @@
       <Filter>Fichiers d%27en-tête\Formes</Filter>
     </ClInclude>
     <ClInclude Include="VisiteurForme.h">
-      <Filter>Fichiers d%27en-tête\Formes</Filter>
+      <Filter>Fichiers d%27en-tête\DessinForme</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -141,37 +141,31 @@
       <Filter>Fichiers sources\Formes</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargement.cpp">
-      <Filter>Fichiers sources\Chargement</Filter>
+      <Filter>Fichiers sources\Chargement/Sauvegarde</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargementCercle.cpp">
-      <Filter>Fichiers sources\Chargement</Filter>
+      <Filter>Fichiers sources\Chargement/Sauvegarde</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargementPolygone.cpp">
-      <Filter>Fichiers sources\Chargement</Filter>
+      <Filter>Fichiers sources\Chargement/Sauvegarde</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargementSegment.cpp">
-      <Filter>Fichiers sources\Chargement</Filter>
+      <Filter>Fichiers sources\Chargement/Sauvegarde</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargementTriangle.cpp">
-      <Filter>Fichiers sources\Chargement</Filter>
+      <Filter>Fichiers sources\Chargement/Sauvegarde</Filter>
     </ClCompile>
     <ClCompile Include="EnvoyeurReceveur.cpp">
       <Filter>Fichiers sources\Connexion_Serveur</Filter>
     </ClCompile>
-    <ClCompile Include="VisiteurSauvegarde.cpp">
-      <Filter>Fichiers sources\Chargement</Filter>
-    </ClCompile>
     <ClCompile Include="SauvegardeForme.cpp">
-      <Filter>Fichiers sources\Chargement</Filter>
+      <Filter>Fichiers sources\Chargement/Sauvegarde</Filter>
     </ClCompile>
     <ClCompile Include="InterfaceChargementFormeComposee.cpp">
-      <Filter>Fichiers sources\Chargement</Filter>
+      <Filter>Fichiers sources\Chargement/Sauvegarde</Filter>
     </ClCompile>
     <ClCompile Include="VisiteurDessinJava.cpp">
       <Filter>Fichiers sources\Connexion_Serveur</Filter>
-    </ClCompile>
-    <ClCompile Include="VisiteurForme.cpp">
-      <Filter>Fichiers sources\Formes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

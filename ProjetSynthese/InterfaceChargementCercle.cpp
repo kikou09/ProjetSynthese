@@ -5,7 +5,7 @@
 
 bool InterfaceChargementCercle::peutExecuter(string & contenu) const
 {
-	size_t trouve = contenu.find("Cercle :"); // si contenu contient "cercle:" alors la forme a charger est un cercle
+	size_t trouve = contenu.find("Cercle :"); // si contenu contient "cercle :" alors la forme a charger est un cercle
 	if (trouve != string::npos)
 		return true;
 	else
@@ -25,7 +25,7 @@ FormeGeometrique * InterfaceChargementCercle::executerInteraction(string contenu
 	double rayon;
 	int i = 0; 
 	size_t pos = contenu.find(":");
-	contenu = contenu.substr(pos + 1); // suppression de "Cercle:"
+	contenu = contenu.substr(pos + 1); // suppression de "Cercle :"
 	
 	char* texteCercle = strdup(contenu.c_str()); // on transforme le texte string en char*
 	char* coordonnees = strtok(texteCercle, " "); // on utilise la fonction strtok pour créer un tableau avec le délimiteur espace

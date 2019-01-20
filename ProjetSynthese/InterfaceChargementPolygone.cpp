@@ -4,7 +4,7 @@
 
 bool InterfaceChargementPolygone::peutExecuter(string & contenu) const
 {
-	size_t trouve = contenu.find("Polygone:"); // si contenu contient "Polygone:" alors la forme a charger est un polygone
+	size_t trouve = contenu.find("Polygone :"); // si contenu contient "Polygone:" alors la forme a charger est un polygone
 	if (trouve != string::npos)
 		return true;
 	else

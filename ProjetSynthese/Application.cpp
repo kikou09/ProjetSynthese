@@ -14,36 +14,34 @@
 #include "Application.h"
 #include "VisiteurDessinJava.h"
 #include <stdlib.h> 
-#include <crtdbg.h>
-
-#define _CRTDBG_MAP_ALLOC 
 
 using namespace std;
 
 int main()
 {
-	string couleur = "cyan";
+
 	Vecteur2D centre(7, 30);
 	Vecteur2D centre2(5, 100);
-	Cercle cercle(couleur, Vecteur2D(0, 80), 60);
-	Cercle cercle1(couleur, Vecteur2D(0,0), 40);
 
-	Vecteur2D pt1(10, 0);
-	Vecteur2D pt2(20, 20);
-	Vecteur2D pt3(80, 10);
-	string couleur2 = "cyan";
-	Triangle triangle(couleur2, pt1, pt2, pt3);
+	Vecteur2D point1(40, 180);
+	Vecteur2D point2(80, 220);
 
-	FormeComposee fc("cyan");
-	fc.ajouterForme(&cercle);
+
+	Cercle cercle1("red", Vecteur2D(0,0), 40);
+	Triangle triangle1("cyan", Vecteur2D(-5,-2),Vecteur2D(-5,30), Vecteur2D(-2,10));
+
+	FormeComposee fc("black");
 	fc.ajouterForme(&cercle1);
-	fc.ajouterForme(&triangle);
+	fc.ajouterForme(&triangle1);
 
-	//Vecteur2D rotation(5, 4);
-	Segment segment;
-	Polygone polygone;
+	Segment segment1("black", Vecteur2D(100, 80), Vecteur2D(120, 60));
+
+	Polygone polygone1("yellow", &Vecteur2D(-1, 50), &Vecteur2D(-2, 100), &Vecteur2D(1, 50));
+	polygone1.ajoutPoint(&point1);
+	polygone1.ajoutPoint(&point2);
+
+	
 	int i;
-	vector<FormeGeometrique *> formes;
 
 	InterfaceChargement *corCercle = new InterfaceChargementCercle(NULL);
 	InterfaceChargement *corTriangle = new InterfaceChargementTriangle(corCercle);
@@ -54,69 +52,102 @@ int main()
 
 	try {
 		
-		/*cin >> segment;
-		cout << "Aire du segment : " << segment.getAire() << endl;
-		cout << "Rotation du segment : " << *(segment.rotation(rotation, 30)) << endl;
-		cout << "Homothetie du segment : " << *(segment.homothetie(rotation, 30)) << endl;
-		cout << "Translation du segment : " << *(segment.translation(rotation)) << endl << endl;*/
+		Vecteur2D rotation(5, 4);
+
+		//Test Segment 
+		Segment *s;
+		s = segment1.rotation(rotation, 30);
+		cout << "Aire du segment : " << segment1.getAire() << endl;
+		cout << "Rotation du segment : " << *s << endl;
+
+		s = segment1.homothetie(rotation, 30);
+		cout << "Homothetie du segment : " << *s << endl;
+
+		s = segment1.translation(rotation);
+		cout << "Translation du segment : " << *s << endl << endl;
 
 		//Test cercle 
-		//cin >> cercle;
-		/*cout << "Aire du cercle : " << cercle.getAire() << endl;
-		cout << "Rotation du cercle : " << *(cercle.rotation(rotation, 30)) << endl;
-		cout << "Homothetie du cercle : " << *(cercle.homothetie(rotation, 30)) << endl;
-		cout << "Translation du cercle : " << *(cercle.translation(rotation)) << endl << endl;*/
+		Cercle *c;
+		cout << "Aire du cercle : " << cercle1.getAire() << endl;
 
-		//cin >> triangle;
-		/*cout << "Aire du triangle : " << triangle.getAire() << endl;
-		cout << "Rotation du triangle : " << *(triangle.rotation(rotation, 30)) << endl;
-		cout << "Homothetie du triangle : " << *(triangle.homothetie(rotation, 30)) << endl;
-		cout << "Translation du triangle : " << *(triangle.translation(rotation)) << endl << endl;*/
+		c = cercle1.rotation(rotation, 30);
+		cout << "Rotation du cercle : " << *c << endl;
 
-		/*cin >> polygone;
-		cout << "Aire du polygone : " << polygone.getAire() << endl;
-		cout << "Rotation du polygone : " << *(polygone.rotation(rotation, 30)) << endl;
-		cout << "Homothetie du polygone : " << *(polygone.homothetie(rotation, 30)) << endl;
-		cout << "Translation du polygone : " << *(polygone.translation(rotation)) << endl << endl;*/
+		c = cercle1.homothetie(rotation, 30);
+		cout << "Homothetie du cercle : " << *c << endl;
 
-		//fc.ajouterForme(&triangle);
-		//fc.ajouterForme(&cercle);
+		c = cercle1.translation(rotation);
+		cout << "Translation du cercle : " << *c << endl << endl;
 
-		fc.dessin(new VisiteurDessinJava);
+		//Test triangle
+		Triangle *t;
+		cout << "Aire du triangle : " << triangle1.getAire() << endl;
 
-		
-		//cercle.dessin(new VisiteurDessinJava);
-		//cercle1.dessin(new VisiteurDessinJava);
-		/*fc.ajouterForme(&segment);
+		t = triangle1.rotation(rotation, 30);
+		cout << "Rotation du triangle : " << *t << endl;
+
+		t = triangle1.homothetie(rotation, 30);
+		cout << "Homothetie du triangle : " << *t << endl;
+
+		t = triangle1.translation(rotation);
+		cout << "Translation du triangle : " << *t << endl << endl;
+
+		//Test polygone
+		Polygone *p;
+		cout << "Aire du polygone : " << polygone1.getAire() << endl;
+
+		p = polygone1.rotation(rotation, 30);
+		cout << "Rotation du polygone : " << *p << endl;
+
+		p = polygone1.homothetie(rotation, 30);
+		cout << "Homothetie du polygone : " << *p << endl;
+
+		p = polygone1.translation(rotation);
+		cout << "Translation du polygone : " << *p << endl << endl;
+
+		//Test forme composee
+		FormeComposee *f;
 		cout << "Aire de la forme composee : " << fc.getAire() << endl;
-		cout << "Rotation de la forme composee : " << *(fc.rotation(rotation, 30)) << endl;
-		cout << "Homothetie de la forme composee : " << *(fc.homothetie(rotation, 30)) << endl;
-		cout << "Translation de la forme composee : " << *(fc.translation(rotation)) << endl;*/
-	
-		//forme->dessin(new VisiteurDessinJava);
 
-		//cercle.dessin(new VisiteurDessinJava);
-		//triangle.dessin(new VisiteurDessinJava);
-		//cout << "Test de la sauvegarde" << endl;
-		//segment.accepteSauvegarde(new SauvegardeForme);
-		//fc.accepteSauvegarde(new SauvegardeForme);
-		//formes=FormeGeometrique::ChargerFormes(cor);
-		//cout << *formes[0];
-		//cout << *formes[1];
-		//formes[0]->dessin(new VisiteurDessinJava);
-		//cout << "\ntroisieme forme\n" << *formes[2];
-		//cout << "\npremier polygone :\n" << *formes[3];
-		//cout << "\nl'autre\n" << *formes[4];
-		//cout << "Tremblez mon enfant voici la FC\n" << *formes[5];*/
-		
+		f = fc.rotation(rotation, 30);
+		cout << "Rotation  de la forme composee : " << *f << endl;
 
+		f = fc.homothetie(rotation, 30);
+		cout << "Homothetie  de la forme composee : " << *f << endl;
+
+		f = fc.translation(rotation);
+		cout << "Translation  de la forme composee : " << *f << endl << endl;
+
+
+		//Test Chargement
+		vector<FormeGeometrique *> formes_chargees;
+		formes_chargees=FormeGeometrique::ChargerFormes(cor);
+
+		//Test Sauvegarde 
+		SauvegardeForme *sauv = new SauvegardeForme;
+		segment1.accepteSauvegarde(sauv);
+		fc.accepteSauvegarde(sauv);
+		polygone1.accepteSauvegarde(sauv);
+		cercle1.accepteSauvegarde(sauv);
+		triangle1.accepteSauvegarde(sauv);
+
+		//Test dessin
+		VisiteurDessinJava *visiteurDessin = new VisiteurDessinJava;
+		for (int i = 0; i < formes_chargees.size(); i++) {
+			formes_chargees[i]->dessin(visiteurDessin);
+		}
+
+		//Liberation pointeurs
 		delete corCercle, corSegment, corPolygone, corFormeComposee, corTriangle,cor;
-		for (i = 0; i < formes.size(); i++) {
+		for (i = 0; i < formes_chargees.size(); i++) {
 
-			delete formes[i];
+			delete formes_chargees[i];
 
 		}
-		formes.clear();
+		formes_chargees.clear();
+
+		delete s, f, c, t, p;
+		delete sauv, visiteurDessin;
 	}
 	catch (Erreur e) {
 
@@ -124,7 +155,6 @@ int main()
 		exit(1);
 	}
 
-	_CrtSetDbgFlag(_CRTDBG_LEAK_CHECK_DF);	
 	system("pause");
 	return 0;
 }

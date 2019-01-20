@@ -202,8 +202,6 @@
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
     <ClCompile Include="VisiteurDessinJava.cpp" />
-    <ClCompile Include="VisiteurForme.cpp" />
-    <ClCompile Include="VisiteurSauvegarde.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

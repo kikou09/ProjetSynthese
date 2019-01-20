@@ -27,7 +27,6 @@ FormeGeometrique * InterfaceChargementFormeComposee::executerInteraction(string 
 	InterfaceChargement *corPolygone = new InterfaceChargementPolygone(corSegment);
 	InterfaceChargement *corFormeComposee = new InterfaceChargementFormeComposee(corPolygone);
 	InterfaceChargement *cor = corFormeComposee;
-	vector<FormeGeometrique*> vformescomposees;
 
 	size_t pos = contenu.find(";");
 	contenu = contenu.substr(pos + 1); // Suppression de "Forme Composee ;"
@@ -67,6 +66,7 @@ FormeGeometrique * InterfaceChargementFormeComposee::executerInteraction(string 
 	delete corPolygone;
 	delete corSegment;
 	delete corTriangle;
+	formes_chaine.clear();
 
 	return fc;
 }

@@ -6,7 +6,7 @@
 
 bool InterfaceChargementSegment::peutExecuter(string & contenu) const
 {
-	size_t trouve = contenu.find("Segment:"); // si contenu contient "Segment:" alors la forme a charger est un segment
+	size_t trouve = contenu.find("Segment :"); // si contenu contient "Segment:" alors la forme a charger est un segment
 	if (trouve != string::npos)
 		return true;
 	else

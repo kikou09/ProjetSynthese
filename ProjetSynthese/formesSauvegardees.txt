@@ -1,1 +1,5 @@
-Forme Composee;red;Triangle :2 5 60 30 25 50 cyan;Cercle :2.5 5 6 red;Forme Composee;cyan;Cercle :1 2 6 red;/;/
+Triangle :20.5 5 40 30 30 50 cyan
+Cercle :0 5 6 red
+Segment :-4 100.5 80 60 yellow
+Polygone :4 70 190 50 80 220 120 200 180 green
+Forme Composee;red;Triangle :-50 80 -50 120 -25 90 cyan;Cercle :2.5 5 6 red;Forme Composee;cyan;Cercle :30 100 10 red;/;/
