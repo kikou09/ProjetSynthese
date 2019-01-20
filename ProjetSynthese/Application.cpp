@@ -155,6 +155,6 @@ int main()
 		exit(1);
 	}
 
-	system("pause");
+	getchar();
 	return 0;
 }

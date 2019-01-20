@@ -106,13 +106,13 @@ void FormeComposee::homothetie2(const Vecteur2D & v, const double rapport)
 const double FormeComposee::getAire() const {
 
 	
-	vector<FormeGeometrique *>::iterator it;
+	int i;
 	double somme_aire = 0;
 
-	/*for (it=groupe.begin() ; it != groupe.end() ; it++)
+	for (i=0 ; i<groupe.size() ; i++)
 	{
-		//somme_aire += it.getAire();
-	}*/
+		somme_aire += groupe[i]->getAire();
+	}
 
 	return somme_aire;
 

@@ -3,3 +3,18 @@ Cercle :0 5 6 red
 Segment :-4 100.5 80 60 yellow
 Polygone :4 70 190 50 80 220 120 200 180 green
 Forme Composee;red;Triangle :-50 80 -50 120 -25 90 cyan;Cercle :2.5 5 6 red;Forme Composee;cyan;Cercle :30 100 10 red;/;/
+Segment :100 80 120 60 black
+Forme Composee;cyan;Cercle :0 0 40 cyan;Triangle :-5 -2 -5 30 -2 10 cyan;/
+Polygone :5 -1 50 -2 100 1 50 40 180 80 220 yellow
+Cercle :0 0 40 red
+Triangle :-5 -2 -5 30 -2 10 cyan
+Segment :100 80 120 60 black
+Forme Composee;cyan;Cercle :0 0 40 cyan;Triangle :-5 -2 -5 30 -2 10 cyan;/
+Polygone :5 -1 50 -2 100 1 50 40 180 80 220 yellow
+Cercle :0 0 40 red
+Triangle :-5 -2 -5 30 -2 10 cyan
+Segment :100 80 120 60 black
+Forme Composee;cyan;Cercle :0 0 40 cyan;Triangle :-5 -2 -5 30 -2 10 cyan;/
+Polygone :5 -1 50 -2 100 1 50 40 180 80 220 yellow
+Cercle :0 0 40 red
+Triangle :-5 -2 -5 30 -2 10 cyan
